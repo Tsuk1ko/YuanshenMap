@@ -2736,7 +2736,7 @@ var JS_YST = {
     ]
 };
 
-var JS_DLY_MD = {
+var JS_DLK_MD = {
     "type": "FeatureCollection",
     "features": [{
         "geometry": {
@@ -2871,7 +2871,7 @@ var JS_DLY_MD = {
     }]
 };
 
-var JS_DLY_LY = {
+var JS_DLK_LY = {
     "type": "FeatureCollection",
     "features": [{
         "geometry": {

@@ -5,6 +5,7 @@
 	<title>原神地图</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+	<script src="js/jquery-3.5.1.min.js"></script>
 </head>
 <style>
 	@font-face {
@@ -44,7 +45,7 @@
 	border-radius: 2px 2px;
 	background-color: white;
 	width: 250px;
-	height: 230px;
+	height: 280px;
 	top: 10%;
 	left: 10%;
 	font-family: font;
@@ -106,8 +107,11 @@
 				<li>修改点位</li>
 				<li>删除点位</li>
 			</ul>
-			<div class="add-panel">
-				<label class="tool-label">请选择点位类型</label>
+			<div class="panel add-panel">
+				<div class="locations-banel">
+					<label class="tool-label" style="margin-bottom: 20px;">点击地图，新增点位</label>
+				</div>
+				<label class="tool-label">请选择点位类型（若出现图与点不对应的情况，请切换一下该项重试）</label>
 				<select class="mark-type">
 					<option class="ST">神瞳</option>
 					<option class="DLK">地灵龛</option>
@@ -117,15 +121,60 @@
 					<option class="CJW-MD">采集物-蒙德</option>
 					<option class="JYG-LY">精英怪-璃月</option>
 				</select>
-				<label class="tool-label">请选择点位实例类型</label>
-				<select class="mark-item-type">
-					<option>风神瞳</option>
-					<option>岩神瞳</option>
+				<label class="tool-label">请选择点位实例类型（若出现图与点不对应的情况，请切换一下该项重试）</label>
+				<select class="mark-item-type on">
+					<option class="FST">风神瞳</option>
+					<option class="YST">岩神瞳</option>
 				</select>
-				<div class="locations-banel">
-					<label class="tool-label">点击记录坐标功能<input type="checkbox"></label>
-				</div>
-				<input type="button" class="clear-btn" value="清除所有点位">
+				<select class="mark-item-type" style="display: none;">
+					<option class="DLK_MD">蒙德</option>
+					<option class="DLK_LY">璃月</option>
+				</select>
+				<select class="mark-item-type" style="display: none;">
+					<option class="SJK">水晶矿</option>
+					<option class="BTK">白铁矿</option>
+				</select>
+				<select class="mark-item-type" style="display: none;">
+					<option class="SJK">水晶矿</option>
+					<option class="BTK">白铁矿</option>
+				</select>
+				<select class="mark-item-type" style="display: none;">
+					<option class="JYJJ"> 绝云椒椒</option>
+					<option class="NSH">霓裳花</option>
+					<option class="LLBH">琉璃百合</option>
+					<option class="YPS">夜泊石</option>
+					<option class="SP">石珀</option>
+				</select>
+				<select class="mark-item-type" style="display: none;">
+					<option class="GGG">钩钩果</option>
+					<option class="DDL">嘟嘟莲</option>
+					<option class="LLM">落落梅</option>
+					<option class="SXLYH">塞西莉亚花</option>
+					<option class="MFMG">慕风蘑菇</option>
+					<option class="FCJ">风车菊</option>
+					<option class="PGYZ">蒲公英籽</option>
+				</select>
+				<select class="mark-item-type" style="display: none;">
+					<option class="YJSW">遗迹守卫</option>
+					<option class="YJLZ">遗迹猎者</option>
+					<option class="DXQQR">大型丘丘人</option>
+					<option class="SYFS">深渊法师</option>
+					<option class="ZWCLR">债务处理人</option>
+					<option class="LYSS">雷莹术士</option>
+				</select>
+				<input type="button" class="clear-btn" value="清除所有新增点位">
+				<input type="submit" class="add-submit-btn" value="提交新增点位">
+			</div>
+			<div class="panel modify-panel" style="display: none;">
+				<lable class="tool-label" style="margin-bottom: 20px;">请拖动要修改的点位,获取其坐标</lable>
+				<lable class="tool-label">要修改的点位X,Y坐标如下
+					<span style="display: block;">x:<input type="text" class="modify-x"> </span></span>
+					<span  style="display: block;">y:<input type="text" class="modify-y"> </span></span>
+				</lable>
+			</div>
+			<div class="panel del-panel" style="display: none;">
+				<label class="tool-label">点击一个已有点位，点击弹出面板之中的删除即可删除</label>
+				<label class="tool-label"><b style="color: red;">注意</b>：删除原有的点位会同时从数据库中删除对应点位数据，请谨慎操作</label>
 			</div>
 		</div>
 	<div id='map'></div>
@@ -133,18 +182,46 @@
 	<script src="leaflet/leaflet.js"></script>
 	<script src="js/Item_Json.js"></script>
 	<script src="js/Item_dev.js"></script>
-	<script src="js/jquery-3.5.1.min.js"></script>
 	<script>
-	//初始化地图
+	//获取点击点位的坐标
 	map.on('click', function (e) {
 		console.log(e.latlng);
 	});
-
 	//编辑面板相关
 
-	//切换面板样式
+	//切换面板可见度
 	$(".swtich-tools-btn").click(function(){
 		$(".tools").toggle();
+	});
+	//切换面板子页
+	$(".tools-options li").click(function(){
+		let i=$(this).index();
+		$(".panel").hide();
+		$(".panel").eq(i).show();
+		$(".tools-options li").removeClass("on")
+		$(".tools-options li").eq(i).addClass("on");
+	});
+	//添加点位子页相关函数
+	$(document).ready(function(){
+		for(let i=0;i<$(".mark-item-type option").length;i++)
+		{
+			$(".mark-item-type option").eq(i).attr("op-idx",i);
+		}
+	});
+	var markericon=FST
+	var add_type_icon_array=[FST,YST,DLK_MD,DLK_LY,SJK,BTK,JYJJ,NSH,LLBH,YPS,SP,GGG,DDL,LLM,SXLYH,MFMG,FCJ,PGYZ,YJSW,YJLZ,DXQQR,SYFS,ZWCLR,LYSS];
+	$(".mark-type").change(function(){
+		var marktypeindex=$(".mark-type option:selected").index();
+		$(".mark-item-type").hide().removeClass("on");
+		$(".mark-item-type").eq(marktypeindex).show().addClass("on");
+		var marktypeindex2=$(`.mark-item-type.on option:selected`).attr("op-idx");
+		markericon=add_type_icon_array[marktypeindex2];
+	});
+	
+	$(".mark-item-type").change(function(){
+		var marktypeindex=$(`.mark-item-type.on option:selected`).attr("op-idx");
+		console.log(marktypeindex);
+		markericon=add_type_icon_array[marktypeindex];
 	});
 	var markers=[];
 	var markerid=0;
@@ -169,18 +246,39 @@
 		loactionsarray.push(locationtype);
 		//添加地图标记
 		markerid=markers.length+1;
-		var marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+		var marker = L.marker([e.latlng.lat, e.latlng.lng],{
+				alt:`${e.latlng.lng},${e.latlng.lat}`,
+				draggable:true,
+				icon:markericon
+			}).addTo(map);
+			marker.on('dragend', function (event) {
+				var position = marker.getLatLng();
+				$(".modify-x").val(position.lat);
+				$(".modify-y").val(position.lng);
+			})
 		markers.push(marker);
-		marker.bindPopup(`<b>添加的点</b><br><span>x:${e.latlng.lat},y:${e.latlng.lng}</span><br><a href="javascript:delmarker(${markerid});" class="marker-del-btn markerid-${markerid}">删除</a>`);
+		marker.bindPopup(`<b>添加的点</b><br><span>初始坐标 x:${e.latlng.lat},y:${e.latlng.lng}</span><br><a href="javascript:delmarker(${markerid});" class="marker-del-btn markerid-${markerid}">删除</a>`);
 		console.log(markers);
 	});
-	//删除对应点位的函数
+	//删除对应点位的函数(新增点位，未上传)
 	function delmarker(index){
 		//清除选中的地图标记
 		map.removeLayer(markers[index-1]);
 		//清除选中的地图标记在数组中的值
 		markers.splice(markers[index-1]);
 		console.log(markers);
+	};
+	//删除对应点位的函数(已有点位)
+	function delmarker2(index){
+		//确认点位类别
+		var delmarker2index=0;
+		if(index>0&&index<65)
+		{
+			if(index==1)
+			{Layer_FST.removeLayer(146);}
+			else
+			{Layer_FST.removeLayer(index+146);}
+		}
 	};
 	//清除所有点位及其数据
 	$(".clear-btn").click(function(){
