@@ -263,7 +263,9 @@ var overlays = {
     "<span class='JYG-LY-OPT map-opts'>雷莹术士</span>": Layer_LYSS_LY,
 };
 //添加筛选器
-L.control.layers(null, overlays).addTo(map);
+L.control.layers(null, overlays,{
+    collapsed: false,
+}).addTo(map);
 $(".leaflet-control-layers-overlays label").eq(0).before('<a class="ST-OPT assortType">神瞳</a>');
 $(".leaflet-control-layers-overlays label").eq(2).before('<a class="DLK-OPT assortType">地灵龛</a>');
 $(".leaflet-control-layers-overlays label").eq(4).before('<a class="KW-LY-OPT assortType">矿物——璃月</a>');
