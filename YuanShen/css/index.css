@@ -1,7 +1,7 @@
 /* 初始化地图样式，字体 */
 @font-face {
     font-family: font;
-    src: url(css/hywh.ttf);
+    src: url(hywh_thin.ttf);
 }
 html,
 body,
@@ -79,6 +79,7 @@ body,
     font-size: 25px;
     line-height: 67px;
     color: #866343;
+    font-weight: bold;
 }
 .lable1.on
 {
