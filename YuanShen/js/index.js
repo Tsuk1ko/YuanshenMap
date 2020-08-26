@@ -1,3 +1,4 @@
+//初始化地图
 t = L.latLngBounds([0, 0], [-66.5, 90]);
 var map = L.map("map", {
     //crs: L.CRS.Simple,
@@ -47,10 +48,11 @@ L.tileLayer.t1 = function () {
     return new L.TileLayer.T1();
 }
 map.addLayer(L.tileLayer.t1());
+//各个坐标的分类类别的初始化
 var Layer_FST = L.layerGroup();
 var Layer_YST = L.layerGroup();
-var Layer_DLY_MD = L.layerGroup();
-var Layer_DLY_LY = L.layerGroup();
+var Layer_DLK_MD = L.layerGroup();
+var Layer_DLK_LY = L.layerGroup();
 var Layer_JYJJ = L.layerGroup();
 var Layer_NSH = L.layerGroup();
 var Layer_LLBH = L.layerGroup();
@@ -73,7 +75,7 @@ var Layer_LYSS_LY = L.layerGroup();
 var Layer_ZWCLR_LY = L.layerGroup();
 var Layer_SYFS_LY = L.layerGroup();
 var Layer_DXQQR_LY = L.layerGroup();
-
+//定义各个坐标使用的图标
 var ST = L.Icon.extend({
     options: {
         iconSize: [21.6, 22.8], // size of the icon
@@ -138,11 +140,11 @@ var FST = new ST({
 var YST = new ST({
     iconUrl: "./imgs/YST.png"
 });
-var DLY_MD = new DLK({
-    iconUrl: "./imgs/DLY_MD.png",
+var DLK_MD = new DLK({
+    iconUrl: "./imgs/DLK_MD.png",
 });
-var DLY_LY = new DLK({
-    iconUrl: "./imgs/DLY_LY.png"
+var DLK_LY = new DLK({
+    iconUrl: "./imgs/DLK_LY.png"
 });
 var JYJJ = new WP({
     iconUrl: "./imgs/JYJJ.png"
@@ -204,255 +206,39 @@ var LYSS = new PTG({
 var DXQQR = new PTG({
     iconUrl: "./imgs/DXQQR.png"
 });
-
+//添加坐标点击信息
 function onEachFeature(feature, layer) {
-    var popupContent = "<b>" + feature.properties.popTitle + "</b>&nbsp&nbsp&nbsp&nbsp&nbspid:" + feature.id + "<br>";
+    var popupContent = `<b>${feature.properties.popTitle}</b>&nbsp&nbsp&nbsp&nbsp&nbspid:${feature.id}<br>`;
 
     if (feature.properties && feature.properties.popupContent) {
         popupContent += feature.properties.popupContent;
     }
-
     layer.bindPopup(popupContent);
 }
-L.geoJSON(JS_FST, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: FST
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_FST);
-
-L.geoJSON(JS_YST, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: YST
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_YST);
-
-L.geoJSON(JS_DLY_MD, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: DLY_MD
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_DLY_MD);
-
-L.geoJSON(JS_DLY_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: DLY_LY
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_DLY_LY);
-
-L.geoJSON(JS_JYJJ, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: JYJJ
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_JYJJ);
-
-L.geoJSON(JS_NSH, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: NSH
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_NSH);
-
-L.geoJSON(JS_LLBH, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: LLBH
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_LLBH);
-
-L.geoJSON(JS_GGG, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: GGG
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_GGG);
-
-L.geoJSON(JS_DDL, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: DDL
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_DDL);
-
-L.geoJSON(JS_SXLYH, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: SXLYH
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_SXLYH);
-
-L.geoJSON(JS_MFMG, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: MFMG
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_MFMG);
-
-L.geoJSON(JS_LLM, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: LLM
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_LLM);
-
-L.geoJSON(JS_FCJ, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: FCJ
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_FCJ);
-
-L.geoJSON(JS_PGYZ, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: PGYZ
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_PGYZ);
-
-L.geoJSON(JS_YPS, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: YPS
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_YPS);
-
-L.geoJSON(JS_SP, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: SP
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_SP);
-
-L.geoJSON(JS_SJK_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: SJK
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_SJK_LY);
-
-L.geoJSON(JS_BTK_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: BTK
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_BTK_LY);
-
-L.geoJSON(JS_SJK_MD, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: SJK
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_SJK_MD);
-
-L.geoJSON(JS_BTK_MD, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: BTK
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_BTK_MD);
-
-L.geoJSON(JS_YJSW_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: YJSW
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_YJSW_LY);
-
-L.geoJSON(JS_YJLZ_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: YJLZ
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_YJLZ_LY);
-
-L.geoJSON(JS_DXQQR_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: DXQQR
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_DXQQR_LY);
-
-L.geoJSON(JS_SYFS_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: SYFS
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_SYFS_LY);
-
-L.geoJSON(JS_LYSS_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: LYSS
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_LYSS_LY);
-
-L.geoJSON(JS_ZWCLR_LY, {
-    pointToLayer: function (feature, latlng) {
-        return L.marker([latlng.lng, latlng.lat], {
-            icon: ZWCLR
-        });
-    },
-    onEachFeature: onEachFeature
-}).addTo(Layer_ZWCLR_LY);
-
+//定义分类的三个数组，分别对应坐标的组别，坐标的位置和坐标的名称，新增时在对应数组后增加对象即可
+var typearray1=[Layer_FST,Layer_YST,Layer_DLK_MD,Layer_DLK_LY,Layer_JYJJ,Layer_NSH,Layer_LLBH,Layer_GGG,Layer_DDL,Layer_SXLYH,Layer_MFMG,Layer_LLM,Layer_FCJ,Layer_PGYZ,Layer_YPS,Layer_SP,Layer_SJK_LY,Layer_BTK_LY,Layer_SJK_MD,Layer_BTK_MD,Layer_YJSW_LY,Layer_YJLZ_LY,Layer_LYSS_LY,Layer_ZWCLR_LY,Layer_SYFS_LY,Layer_DXQQR_LY];
+var typearray2=[JS_FST,JS_YST ,JS_DLK_MD,JS_DLK_LY,JS_JYJJ,JS_NSH ,JS_LLBH,JS_GGG ,JS_DDL ,JS_SXLYH ,JS_MFMG,JS_LLM ,JS_FCJ ,JS_PGYZ,JS_YPS ,JS_SP,JS_SJK_LY ,JS_BTK_LY ,JS_SJK_MD ,JS_BTK_MD ,JS_YJSW_LY ,JS_YJLZ_LY ,JS_LYSS_LY ,JS_ZWCLR_LY,JS_SYFS_LY ,JS_DXQQR_LY];
+var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR];
+//初始化各个坐标
+for(let i=0;i<typearray2.length;i++)
+{
+    L.geoJSON(typearray2[i], {
+        pointToLayer: function (feature, latlng) {
+            return L.marker([latlng.lng, latlng.lat], {
+                icon: typearray3[i],
+                alt:`${latlng.lng},${latlng.lat}`
+            },
+            ).addTo(typearray1[i]);
+        },
+        onEachFeature: onEachFeature
+    })
+};
+//定义筛选器项目
 var overlays = {
     "<span class='ST-OPT map-opts'>风神瞳</span>": Layer_FST,
     "<span class='ST-OPT map-opts'>岩神瞳</span>": Layer_YST,
-    "<span class='DLK-OPT map-opts'>蒙德</span>": Layer_DLY_MD,
-    "<span class='DLK-OPT map-opts'>璃月</span>": Layer_DLY_LY,
+    "<span class='DLK-OPT map-opts'>蒙德</span>": Layer_DLK_MD,
+    "<span class='DLK-OPT map-opts'>璃月</span>": Layer_DLK_LY,
     "<span class='KW-LY-OPT map-opts'>水晶矿</span>": Layer_SJK_LY,
     "<span class='KW-LY-OPT map-opts'>白铁矿</span>": Layer_BTK_LY,
     "<span class='KW-MD-OPT map-opts'>水晶矿</span>": Layer_SJK_MD,
@@ -476,7 +262,7 @@ var overlays = {
     "<span class='JYG-LY-OPT map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
     "<span class='JYG-LY-OPT map-opts'>雷莹术士</span>": Layer_LYSS_LY,
 };
-
+//添加筛选器
 L.control.layers(null, overlays).addTo(map);
 $(".leaflet-control-layers-overlays label").eq(0).before('<a class="ST-OPT assortType">神瞳</a>');
 $(".leaflet-control-layers-overlays label").eq(2).before('<a class="DLK-OPT assortType">地灵龛</a>');
@@ -485,9 +271,6 @@ $(".leaflet-control-layers-overlays label").eq(6).before('<a class="KW-MD-OPT as
 $(".leaflet-control-layers-overlays label").eq(8).before('<a class="CJW-OPT assortType">采集物——璃月</a>');
 $(".leaflet-control-layers-overlays label").eq(13).before('<a class="CJW-MD-OPT assortType">采集物——蒙德</a>');
 $(".leaflet-control-layers-overlays label").eq(20).before('<a class="JYG-LY-OPT assortType">精英怪——璃月</a>');
-map.on('click', function (e) {
-    console.log(e.latlng);
-});
 
 //给所有图例查找的label标签添加类
 
@@ -515,7 +298,7 @@ for (let i = 0; i < $(".leaflet-control-layers-overlays label").length; i++) {
         $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("JYG-LY-OPT");
     }
 }
-
+//更改筛选器的样式
 $(".leaflet-control-layers-overlays").wrapInner('<ul  id="demo-list"/>')
 $(".leaflet-control-layers-overlays").prepend('<div class="jquery-accordion-menu-header" id="form"></div>');
 $(".leaflet-control-layers-overlays").append('<div class="jquery-accordion-menu-footer"><a href="https://bbs.mihoyo.com/ys/accountCenter/postList?id=5284717">空荧酒馆@A8</a></div>');
@@ -543,24 +326,3 @@ $("label.KW-MD-OPT").wrapAll('<ul class="submenu"/>');
 
 $(".JYG-LY-OPT").wrapAll('<li/>');
 $("label.JYG-LY-OPT").wrapAll('<ul class="submenu"/>');
-
-// $(document).ready(function(){
-// 		$(".assortType").click(function(){
-// 		if($(this).hasClass("ST")==true)
-// 		{
-// 			$(".leaflet-control-layers-overlays label").hide();
-// 			$("label.ST-OPT").show();
-// 		}
-// 		else if($(this).hasClass("DLK")==true)
-// 		{
-// 			$(".leaflet-control-layers-overlays label").hide();
-// 			$("label.DLK-OPT").show();
-//         }
-//         else if($(this).hasClass("CJW")==true)
-// 		{
-// 			$(".leaflet-control-layers-overlays label").hide();
-// 			$("label.CJW-OPT").show();
-// 		}
-// 	});
-// 	$(".assortType.ST").trigger("click");
-// });

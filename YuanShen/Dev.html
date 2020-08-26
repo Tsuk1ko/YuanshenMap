@@ -292,4 +292,23 @@
 		console.log(markers);
 	});
 	</script>
+	<script>
+		var datalist=['YuanShen.GuaiWu','YuanShen.KuangWu'];
+		for(let i=0;i<datalist.length;i++)
+		{
+			var postdata=datalist[i]
+			$.ajax(
+			{
+				type : "POST",
+				url:'php/dbdata.php',
+				data:{postdata:postdata},
+				success:function(result)
+				{
+					result=JSON.parse(result)
+					console.log(result);
+				}
+			}
+		)
+		}
+	</script>
 </html>
