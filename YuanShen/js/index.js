@@ -235,96 +235,34 @@ for(let i=0;i<typearray2.length;i++)
 };
 //定义筛选器项目
 var overlays = {
-    "<span class='ST-OPT map-opts'>风神瞳</span>": Layer_FST,
-    "<span class='ST-OPT map-opts'>岩神瞳</span>": Layer_YST,
-    "<span class='DLK-OPT map-opts'>蒙德</span>": Layer_DLK_MD,
-    "<span class='DLK-OPT map-opts'>璃月</span>": Layer_DLK_LY,
-    "<span class='KW-LY-OPT map-opts'>水晶矿</span>": Layer_SJK_LY,
-    "<span class='KW-LY-OPT map-opts'>白铁矿</span>": Layer_BTK_LY,
-    "<span class='KW-MD-OPT map-opts'>水晶矿</span>": Layer_SJK_MD,
-    "<span class='KW-MD-OPT map-opts'>白铁矿</span>": Layer_BTK_MD,
-    "<span class='CJW-OPT map-opts'>绝云椒椒</span>": Layer_JYJJ,
-    "<span class='CJW-OPT map-opts'>霓裳花</span>": Layer_NSH,
-    "<span class='CJW-OPT map-opts'>琉璃百合</span>": Layer_LLBH,
-    "<span class='CJW-OPT map-opts'>夜泊石</span>": Layer_YPS,
-    "<span class='CJW-OPT map-opts'>石珀</span>": Layer_SP,
-    "<span class='CJW-MD-OPT map-opts'>钩钩果</span>": Layer_GGG,
-    "<span class='CJW-MD-OPT map-opts'>嘟嘟莲</span>": Layer_DDL,
-    "<span class='CJW-MD-OPT map-opts'>落落梅</span>": Layer_LLM,
-    "<span class='CJW-MD-OPT map-opts'>塞西莉亚花</span>": Layer_SXLYH,
-    "<span class='CJW-MD-OPT map-opts'>慕风蘑菇</span>": Layer_MFMG,
-    "<span class='CJW-MD-OPT map-opts'>风车菊</span>": Layer_FCJ,
-    "<span class='CJW-MD-OPT map-opts'>蒲公英籽</span>": Layer_PGYZ,
-    "<span class='JYG-LY-OPT map-opts'>遗迹守卫</span>": Layer_YJSW_LY,
-    "<span class='JYG-LY-OPT map-opts'>遗迹猎者</span>": Layer_YJLZ_LY,
-    "<span class='JYG-LY-OPT map-opts'>大型丘丘人</span>": Layer_DXQQR_LY,
-    "<span class='JYG-LY-OPT map-opts'>深渊法师</span>": Layer_SYFS_LY,
-    "<span class='JYG-LY-OPT map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
-    "<span class='JYG-LY-OPT map-opts'>雷莹术士</span>": Layer_LYSS_LY,
+    "<span class='Layer_FST map-opts'>风神瞳</span>": Layer_FST,
+    "<span class='Layer_YST map-opts'>岩神瞳</span>": Layer_YST,
+    "<span class='Layer_DLK_MD map-opts'>蒙德</span>": Layer_DLK_MD,
+    "<span class='Layer_DLK_LY map-opts'>璃月</span>": Layer_DLK_LY,
+    "<span class='Layer_SJK_LY map-opts'>水晶矿</span>": Layer_SJK_LY,
+    "<span class='Layer_BTK_LY map-opts'>白铁矿</span>": Layer_BTK_LY,
+    "<span class='Layer_SJK_MD map-opts'>水晶矿</span>": Layer_SJK_MD,
+    "<span class='Layer_BTK_MD map-opts'>白铁矿</span>": Layer_BTK_MD,
+    "<span class='Layer_JYJJ map-opts'>绝云椒椒</span>": Layer_JYJJ,
+    "<span class='Layer_NSH map-opts'>霓裳花</span>": Layer_NSH,
+    "<span class='Layer_LLBH map-opts'>琉璃百合</span>": Layer_LLBH,
+    "<span class='Layer_YPS map-opts'>夜泊石</span>": Layer_YPS,
+    "<span class='Layer_SP map-opts'>石珀</span>": Layer_SP,
+    "<span class='Layer_GGG map-opts'>钩钩果</span>": Layer_GGG,
+    "<span class='Layer_DDL map-opts'>嘟嘟莲</span>": Layer_DDL,
+    "<span class='Layer_LLM map-opts'>落落梅</span>": Layer_LLM,
+    "<span class='Layer_SXLYH map-opts'>塞西莉亚花</span>": Layer_SXLYH,
+    "<span class='Layer_MFMG map-opts'>慕风蘑菇</span>": Layer_MFMG,
+    "<span class='Layer_FCJ map-opts'>风车菊</span>": Layer_FCJ,
+    "<span class='Layer_PGYZ map-opts'>蒲公英籽</span>": Layer_PGYZ,
+    "<span class='Layer_YJSW_LY map-opts'>遗迹守卫</span>": Layer_YJSW_LY,
+    "<span class='Layer_YJLZ_LY map-opts'>遗迹猎者</span>": Layer_YJLZ_LY,
+    "<span class='Layer_DXQQR_LY map-opts'>大型丘丘人</span>": Layer_DXQQR_LY,
+    "<span class='Layer_SYFS_LY map-opts'>深渊法师</span>": Layer_SYFS_LY,
+    "<span class='Layer_ZWCLR_LY map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
+    "<span class='Layer_LYSS_LY map-opts'>雷莹术士</span>": Layer_LYSS_LY,
 };
 //添加筛选器
 L.control.layers(null, overlays,{
     collapsed: false,
-}).addTo(map);
-$(".leaflet-control-layers-overlays label").eq(0).before('<a class="ST-OPT assortType">神瞳</a>');
-$(".leaflet-control-layers-overlays label").eq(2).before('<a class="DLK-OPT assortType">地灵龛</a>');
-$(".leaflet-control-layers-overlays label").eq(4).before('<a class="KW-LY-OPT assortType">矿物——璃月</a>');
-$(".leaflet-control-layers-overlays label").eq(6).before('<a class="KW-MD-OPT assortType">矿物——蒙德</a>');
-$(".leaflet-control-layers-overlays label").eq(8).before('<a class="CJW-OPT assortType">采集物——璃月</a>');
-$(".leaflet-control-layers-overlays label").eq(13).before('<a class="CJW-MD-OPT assortType">采集物——蒙德</a>');
-$(".leaflet-control-layers-overlays label").eq(20).before('<a class="JYG-LY-OPT assortType">精英怪——璃月</a>');
-
-//给所有图例查找的label标签添加类
-
-for (let i = 0; i < $(".leaflet-control-layers-overlays label").length; i++) {
-    if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("ST-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("ST-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("ST-OPT");
-    } else if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("DLK-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("DLK-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("DLK-OPT");
-    } else if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("CJW-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("CJW-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("CJW-OPT");
-    }else if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("CJW-MD-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("CJW-MD-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("CJW-MD-OPT");
-    }else if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("KW-LY-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("KW-LY-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("KW-LY-OPT");
-    }else if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("KW-MD-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("KW-MD-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("KW-MD-OPT");
-    }else if ($(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).hasClass("JYG-LY-OPT") == true) {
-        $(`.leaflet-control-layers-overlays label:eq(${i})`).addClass("JYG-LY-OPT");
-        $(`.leaflet-control-layers-overlays label:eq(${i}) div span span`).removeClass("JYG-LY-OPT");
-    }
-}
-//更改筛选器的样式
-$(".leaflet-control-layers-overlays").wrapInner('<ul  id="demo-list"/>')
-$(".leaflet-control-layers-overlays").prepend('<div class="jquery-accordion-menu-header" id="form"></div>');
-$(".leaflet-control-layers-overlays").append('<div class="jquery-accordion-menu-footer"><a href="https://bbs.mihoyo.com/ys/accountCenter/postList?id=5284717">空荧酒馆@A8</a></div>');
-$(".leaflet-control-layers-overlays").wrapInner('<div class="htmleaf-container"/><form class="ac-custom ac-checkbox ac-checkmark" autocomplete="off"/><div id="jquery-accordion-menu" class="jquery-accordion-menu black"/>')
-
-$(".leaflet-control-layers-overlays label").wrapInner('<li/><a/>');
-
-$(".ST-OPT").wrapAll('<li/>');
-$("label.ST-OPT").wrapAll('<ul class="submenu"/>');
-
-$(".DLK-OPT").wrapAll('<li/>');
-$("label.DLK-OPT").wrapAll('<ul class="submenu"/>');
-
-$(".CJW-MD-OPT").wrapAll('<li/>');
-$("label.CJW-MD-OPT").wrapAll('<ul class="submenu"/>');
-
-$(".CJW-OPT").wrapAll('<li/>');
-$("label.CJW-OPT").wrapAll('<ul class="submenu"/>');
-
-$(".KW-LY-OPT").wrapAll('<li/>');
-$("label.KW-LY-OPT").wrapAll('<ul class="submenu"/>');
-
-$(".KW-MD-OPT").wrapAll('<li/>');
-$("label.KW-MD-OPT").wrapAll('<ul class="submenu"/>');
-
-$(".JYG-LY-OPT").wrapAll('<li/>');
-$("label.JYG-LY-OPT").wrapAll('<ul class="submenu"/>');
+}).addTo(map); 

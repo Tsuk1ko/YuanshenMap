@@ -17,6 +17,7 @@ body,
 {
     position: absolute;
     top: 0;
+    /* right: 0px; */
     right: -1000px;
 }
 /* 地图筛选器样式 */
@@ -97,15 +98,123 @@ body,
 {
     background: url(../imgs/con_img/classify4-on.png);
 }
-/* .con-close-btn
+.area-list-containor
 {
     position: absolute;
-    z-index: 410;
-    top: 50px;
-    right: 50px;
+    top: 45px;
+    left: 129px;
+    width: 245px;
+    display: flex;
+    justify-content: space-between;
+}
+.area-list-li-containor
+{
+    position: relative;
     display: block;
-    width: 50px;
-    height: 50px;
-    background: url(../imgs/con_img/close.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    background:url(../imgs/con_img/area-list-li-off.png) no-repeat;
+}
+.area-list-li-containor.off
+{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    background:#D2A36F;
+}
+.area-list-li-containor.undone
+{
+    opacity: 0.4;
+    cursor:not-allowed;
+}
+.area-img1
+{
+    display: block;
+    width: 23px;
+    height: 28px;
+    background:url(../imgs/l1-on.png) no-repeat;
     background-size: 100% 100%;
-} */
+    margin: 2px auto 0;
+}
+.area-img1.off
+{
+    display: block;
+    width: 23px;
+    height: 28px;
+    background:url(../imgs/l1.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px auto 0;
+}
+.area-img2
+{
+    display: block;
+    width: 25px;
+    height: 28px;
+    background:url(../imgs/l2-on.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 2.8px;
+}
+.area-img2.off
+{
+    display: block;
+    width: 24px;
+    height: 28px;
+    background:url(../imgs/l2.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 2.8px;
+}
+.area-img3.off
+{
+    display: block;
+    width: 24px;
+    height: 28px;
+    background:url(../imgs/l3.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 3.8px;
+}
+.area-img4.off
+{
+    display: block;
+    width: 24px;
+    height: 28px;
+    background:url(../imgs/l4.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 2.8px;
+}
+.area-img5.off
+{
+    display: block;
+    width: 24px;
+    height: 28px;
+    background:url(../imgs/l5.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 3.15px;
+}
+.area-img6.off
+{
+    display: block;
+    width: 24px;
+    height: 28px;
+    background:url(../imgs/l6.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 2.8px;
+}
+.area-img7.off
+{
+    display: block;
+    width: 24px;
+    height: 28px;
+    background:url(../imgs/l7.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 2px 0 0 3.3px;
+}
+.area-text
+{
+    position: absolute;
+    top: -18px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    font-family: font;
+    color: #866343;
+}

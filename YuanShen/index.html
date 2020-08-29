@@ -18,7 +18,34 @@
 			<li class="con-type-label lable4">特性</li>
 		</ul>
 		<ul class="area-list-containor">
-
+			<a href="javascript:;" class="area-list-li-containor">
+				<span class="area-text">璃月</span>
+				<span class="area-img area-img1 hd">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off">
+				<span class="area-text">蒙德</span>
+				<span class="area-img area-img2 hd off">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off undone">
+				<span class="area-text">??</span>
+				<span class="area-img area-img3 hd off">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off undone">
+				<span class="area-text">??</span>
+				<span class="area-img area-img4 hd off">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off undone">
+				<span class="area-text">??</span>
+				<span class="area-img area-img5 hd off">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off undone">
+				<span class="area-text">??</span>
+				<span class="area-img area-img6 hd off">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off undone">
+				<span class="area-text">??</span>
+				<span class="area-img area-img7 hd off">area-img</span>
+			</a>
 		</ul>
 	</div>
 	<script src="js/jquery-3.5.1.min.js"></script>
@@ -36,15 +63,15 @@
 				$(".con-type-label").fadeIn(500);
 			}
 		});
-		$(".control-containor").mouseleave(function(){
-			$(".control-containor").animate({
-				right:'-270px'
-			});
-			for(let i=0;i<4;i++)
-			{
-				$(".con-type-label").fadeOut(500);
-			}
-		});
+		// $(".control-containor").mouseleave(function(){
+		// 	$(".control-containor").animate({
+		// 		right:'-270px'
+		// 	});
+		// 	for(let i=0;i<4;i++)
+		// 	{
+		// 		$(".con-type-label").fadeOut(500);
+		// 	}
+		// });
 		$(".con-type-label").click(function(){
 			$(".con-type-label").removeClass("on");
 			$(this).addClass("on");
