@@ -75,6 +75,7 @@ var Layer_LYSS_LY = L.layerGroup();
 var Layer_ZWCLR_LY = L.layerGroup();
 var Layer_SYFS_LY = L.layerGroup();
 var Layer_DXQQR_LY = L.layerGroup();
+var Layer_BX_MD = L.layerGroup();
 //定义各个坐标使用的图标
 var ST = L.Icon.extend({
     options: {
@@ -127,6 +128,16 @@ var JYG = L.Icon.extend({
 var PTG = L.Icon.extend({
     options: {
         shadowUrl: "./imgs/BK_32.png",
+        iconSize: [16, 16], // size of the icon
+        shadowSize: [22, 22], // size of the shadow
+        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+        shadowAnchor: [11, 11], // the same for the shadow
+        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var BX_Base = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_32_1.png",
         iconSize: [16, 16], // size of the icon
         shadowSize: [22, 22], // size of the shadow
         iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
@@ -206,6 +217,9 @@ var LYSS = new PTG({
 var DXQQR = new PTG({
     iconUrl: "./imgs/DXQQR.png"
 });
+var BX_MD = new BX_Base({
+    iconUrl: "./imgs/BX.png"
+});
 //添加坐标点击信息
 function onEachFeature(feature, layer) {
     var popupContent = `<b>${feature.properties.popTitle}</b>&nbsp&nbsp&nbsp&nbsp&nbspid:${feature.id}<br>`;
@@ -216,9 +230,9 @@ function onEachFeature(feature, layer) {
     layer.bindPopup(popupContent);
 }
 //定义分类的三个数组，分别对应坐标的组别，坐标的位置和坐标的名称，新增时在对应数组后增加对象即可
-var typearray1=[Layer_FST,Layer_YST,Layer_DLK_MD,Layer_DLK_LY,Layer_JYJJ,Layer_NSH,Layer_LLBH,Layer_GGG,Layer_DDL,Layer_SXLYH,Layer_MFMG,Layer_LLM,Layer_FCJ,Layer_PGYZ,Layer_YPS,Layer_SP,Layer_SJK_LY,Layer_BTK_LY,Layer_SJK_MD,Layer_BTK_MD,Layer_YJSW_LY,Layer_YJLZ_LY,Layer_LYSS_LY,Layer_ZWCLR_LY,Layer_SYFS_LY,Layer_DXQQR_LY];
-var typearray2=[JS_FST,JS_YST ,JS_DLK_MD,JS_DLK_LY,JS_JYJJ,JS_NSH ,JS_LLBH,JS_GGG ,JS_DDL ,JS_SXLYH ,JS_MFMG,JS_LLM ,JS_FCJ ,JS_PGYZ,JS_YPS ,JS_SP,JS_SJK_LY ,JS_BTK_LY ,JS_SJK_MD ,JS_BTK_MD ,JS_YJSW_LY ,JS_YJLZ_LY ,JS_LYSS_LY ,JS_ZWCLR_LY,JS_SYFS_LY ,JS_DXQQR_LY];
-var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR];
+var typearray1=[Layer_FST,Layer_YST,Layer_DLK_MD,Layer_DLK_LY,Layer_JYJJ,Layer_NSH,Layer_LLBH,Layer_GGG,Layer_DDL,Layer_SXLYH,Layer_MFMG,Layer_LLM,Layer_FCJ,Layer_PGYZ,Layer_YPS,Layer_SP,Layer_SJK_LY,Layer_BTK_LY,Layer_SJK_MD,Layer_BTK_MD,Layer_YJSW_LY,Layer_YJLZ_LY,Layer_LYSS_LY,Layer_ZWCLR_LY,Layer_SYFS_LY,Layer_DXQQR_LY,Layer_BX_MD];
+var typearray2=[JS_FST,JS_YST,JS_DLK_MD,JS_DLK_LY,JS_JYJJ,JS_NSH ,JS_LLBH,JS_GGG ,JS_DDL ,JS_SXLYH ,JS_MFMG,JS_LLM ,JS_FCJ ,JS_PGYZ,JS_YPS ,JS_SP,JS_SJK_LY ,JS_BTK_LY ,JS_SJK_MD ,JS_BTK_MD ,JS_YJSW_LY ,JS_YJLZ_LY ,JS_LYSS_LY ,JS_ZWCLR_LY,JS_SYFS_LY ,JS_DXQQR_LY,JS_BX_MD];
+var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR,BX_MD];
 //初始化各个坐标
 for(let i=0;i<typearray2.length;i++)
 {
@@ -261,6 +275,7 @@ var overlays = {
     "<span class='Layer_SYFS_LY map-opts'>深渊法师</span>": Layer_SYFS_LY,
     "<span class='Layer_ZWCLR_LY map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
     "<span class='Layer_LYSS_LY map-opts'>雷莹术士</span>": Layer_LYSS_LY,
+    "<span class='Layer_BX_MD map-opts'>宝箱—蒙德</span>": Layer_BX_MD,
 };
 //添加筛选器
 L.control.layers(null, overlays,{

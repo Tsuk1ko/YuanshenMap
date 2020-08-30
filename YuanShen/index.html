@@ -55,10 +55,10 @@
 				<span class="Layer_YST map-opts" area="LY" itemtype="TX"><div class="img-border"><img src="imgs/YST.png" class="map-opts-icon" alt="icon"></div>岩神瞳</span>
 				<span class="Layer_DLK_MD map-opts" area="MD" itemtype="TX"><div class="img-border"><img src="imgs/DLK_MD.png" class="map-opts-icon" alt="icon"></div>地灵龛-蒙德</span>
 				<span class="Layer_DLK_LY map-opts" area="LY" itemtype="TX"><div class="img-border"><img src="imgs/DLK_LY.png" class="map-opts-icon" alt="icon"></div>地灵龛-璃月</span>
-				<span class='Layer_SJK_LY map-opts' area="LY" itemtype="KW"><div class="img-border"><img src="imgs/PGYZ.png" class="map-opts-icon" alt="icon"></div><div class="img-border"><img src="imgs/SJK.png" class="map-opts-icon" alt="icon"></div>水晶矿-璃月</span>
-				<span class='Layer_BTK_LY map-opts' area="LY" itemtype="KW"><div class="img-border"><img src="imgs/PGYZ.png" class="map-opts-icon" alt="icon"></div><div class="img-border"><img src="imgs/BTK.png" class="map-opts-icon" alt="icon"></div>白铁矿-璃月</span>
-				<span class="Layer_SJK_MD map-opts" area="MD" itemtype="KW"><div class="img-border"><img src="imgs/PGYZ.png" class="map-opts-icon" alt="icon"></div><div class="img-border"><img src="imgs/SJK.png" class="map-opts-icon" alt="icon"></div>水晶矿-蒙德</span>
-				<span class="Layer_BTK_MD map-opts" area="MD" itemtype="KW"><div class="img-border"><img src="imgs/PGYZ.png" class="map-opts-icon" alt="icon"></div><div class="img-border"><img src="imgs/BTK.png" class="map-opts-icon" alt="icon"></div>白铁矿-蒙德</span>
+				<span class='Layer_SJK_LY map-opts' area="LY" itemtype="KW"><div class="img-border"><img src="imgs/SJK.png" class="map-opts-icon" alt="icon"></div>水晶矿-璃月</span>
+				<span class='Layer_BTK_LY map-opts' area="LY" itemtype="KW"><div class="img-border"><img src="imgs/BTK.png" class="map-opts-icon" alt="icon"></div>白铁矿-璃月</span>
+				<span class="Layer_SJK_MD map-opts" area="MD" itemtype="KW"><div class="img-border"><img src="imgs/SJK.png" class="map-opts-icon" alt="icon"></div>水晶矿-蒙德</span>
+				<span class="Layer_BTK_MD map-opts" area="MD" itemtype="KW"><div class="img-border"><img src="imgs/BTK.png" class="map-opts-icon" alt="icon"></div>白铁矿-蒙德</span>
 				<span class="Layer_JYJJ map-opts" area="LY" itemtype="TC"><div class="img-border"><img src="imgs/JYJJ.png" class="map-opts-icon" alt="icon"></div>绝云椒椒</span>
 				<span class="Layer_NSH map-opts" area="LY" itemtype="TC"><div class="img-border"><img src="imgs/NSH.png" class="map-opts-icon" alt="icon"></div>霓裳花</span>
 				<span class="Layer_LLBH map-opts" area="LY" itemtype="TC"><div class="img-border"><img src="imgs/LLBH.png" class="map-opts-icon" alt="icon"></div>琉璃百合</span>
@@ -77,6 +77,7 @@
 				<span class="Layer_SYFS_LY map-opts" area="LY" itemtype="GW"><div class="img-border"><img src="imgs/SYFS.png" class="map-opts-icon" alt="icon"></div>深渊法师</span>
 				<span class="Layer_ZWCLR_LY map-opts" area="LY" itemtype="GW"><div class="img-border"><img src="imgs/ZWCLR.png" class="map-opts-icon" alt="icon"></div>债务处理人</span>
 				<span class="Layer_LYSS_LY map-opts" area="LY" itemtype="GW"><div class="img-border"><img src="imgs/LYSS.png" class="map-opts-icon" alt="icon"></div>雷莹术士</span>
+				<span class="Layer_BX_MD map-opts" area="MD" itemtype="TX"><div class="img-border"><img src="imgs/BX.png" class="map-opts-icon" alt="icon"></div>宝箱-蒙德</span>
 			</div>
 		</div>
 	</div>
@@ -95,15 +96,15 @@
 				$(".con-type-label").fadeIn(500);
 			}
 		});
-		// $(".control-containor").mouseleave(function(){
-		// 	$(".control-containor").animate({
-		// 		right:'-270px'
-		// 	});
-		// 	for(let i=0;i<5;i++)
-		// 	{
-		// 		$(".con-type-label").fadeOut(500);
-		// 	}
-		// });
+		$(".control-containor").mouseleave(function(){
+			$(".control-containor").animate({
+				right:'-270px'
+			});
+			for(let i=0;i<5;i++)
+			{
+				$(".con-type-label").fadeOut(500);
+			}
+		});
 
 		//筛选函数
 		var i_type="ALL";
