@@ -17,7 +17,6 @@
 			<li class="con-type-label lable2" i_type="KW">矿物</li>
 			<li class="con-type-label lable3" i_type="TC">特产</li>
 			<li class="con-type-label lable4" i_type="TX">特性</li>
-			
 		</ul>
 		<ul class="area-list-containor">
 			<a href="javascript:;" class="area-list-li-containor on" i_area="LY">
@@ -81,27 +80,43 @@
 			</div>
 		</div>
 	</div>
+	<div class="bottom-rules">
+		<a href="disclaimer.html" target="_blank" class="disclaimer">免责声明</a>
+	</div>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="leaflet/leaflet.js"></script>
 	<script src="js/Item_Json.js"></script>
 	<script src="js/index.js"></script>
 	<script>
 		//面板切换动画
+		var statu=1;//防止动画抖动
 		$(".control-containor").mouseenter(function(){
-			$(".control-containor").animate({
-				right:'0px'
-			});
-			for(let i=0;i<5;i++)
+			if(statu==0)
 			{
+
+			}
+			else
+			{
+				$(".control-containor").animate({
+					right:'0px'
+				},function(){
+					statu=0;
+				});
 				$(".con-type-label").fadeIn(500);
 			}
 		});
 		$(".control-containor").mouseleave(function(){
-			$(".control-containor").animate({
-				right:'-270px'
-			});
-			for(let i=0;i<5;i++)
+			if(statu==1)
 			{
+
+			}
+			else
+			{
+				$(".control-containor").animate({
+					right:'-270px'
+				},function(){
+					statu=1;
+				});
 				$(".con-type-label").fadeOut(500);
 			}
 		});

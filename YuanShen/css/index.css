@@ -32,7 +32,7 @@ body,
     z-index: 400;
     top: 0;
     right:-270px;
-    width: 401px;
+    width: 420px;
     height: 600px;
     background: url(../imgs/con_img/con_bg.png) no-repeat top right;
     background-size: 301px 600px;
@@ -42,7 +42,7 @@ body,
 {
     position: absolute;
     top: 100px;
-    left: 7px;
+    left: 25px;
     cursor: pointer;
 }
 .con-type-label
@@ -110,7 +110,7 @@ body,
 {
     position: absolute;
     top: 45px;
-    left: 129px;
+    left: 150px;
     width: 245px;
     display: flex;
     justify-content: space-between;
@@ -274,8 +274,8 @@ body,
     position: absolute;
     top: -3px;
     left: -13px;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     background: url(../imgs/con_img/img-border.png) no-repeat;
     background-size: 100% 100%;
 }
@@ -286,4 +286,22 @@ body,
     height: 35px;
     top: 5px;
     left: 5px;
+}
+.bottom-rules
+{
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.7)
+}
+.disclaimer
+{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    color: #0078A8;
+    font-size: 12px;
 }
