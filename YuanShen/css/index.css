@@ -218,3 +218,54 @@ body,
     font-family: font;
     color: #866343;
 }
+.options-containor
+{
+    position: absolute;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    top: 82px;
+    right: 17px;
+    width: 255px;
+    height: 497px;
+    background: url(../imgs/con_img/border.png) no-repeat;
+    background-size: 100% 100%;
+}
+.options-list
+{
+    margin: 20px 0 0 35px;
+    width: 75%;
+    height: 90%;
+    padding-right:10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.options-list::-webkit-scrollbar
+{
+    background:none;
+    width: 4px;
+}
+.options-list::-webkit-scrollbar-thumb
+{
+    background: #AB8F77;
+    border-radius: 1px;
+}
+.map-opts
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: #AB8F77;
+    margin-bottom: 20px;
+    line-height: 40px;
+    text-indent: 40px;
+    cursor: pointer;
+    color: #F0E9E2;
+}
+.map-opts-icon
+{
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+}

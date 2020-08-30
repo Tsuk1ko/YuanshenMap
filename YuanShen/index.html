@@ -12,17 +12,17 @@
 	<div id='map'></div>
 	<div class="control-containor">
 		<ul class="con-type-label-containor">
-			<li class="con-type-label on lable1">怪物</li>
-			<li class="con-type-label lable2">矿物</li>
-			<li class="con-type-label lable3">特产</li>
-			<li class="con-type-label lable4">特性</li>
+			<li class="con-type-label on lable1" i_type="GW">怪物</li>
+			<li class="con-type-label lable2" i_type="KW">矿物</li>
+			<li class="con-type-label lable3" i_type="TC">特产</li>
+			<li class="con-type-label lable4" i_type="TX">特性</li>
 		</ul>
 		<ul class="area-list-containor">
-			<a href="javascript:;" class="area-list-li-containor">
+			<a href="javascript:;" class="area-list-li-containor on" i_area="LY">
 				<span class="area-text">璃月</span>
-				<span class="area-img area-img1 hd">area-img</span>
+				<span class="area-img area-img1 on hd">area-img</span>
 			</a>
-			<a href="javascript:;" class="area-list-li-containor off">
+			<a href="javascript:;" class="area-list-li-containor off" i_area="LY">
 				<span class="area-text">蒙德</span>
 				<span class="area-img area-img2 hd off">area-img</span>
 			</a>
@@ -47,6 +47,36 @@
 				<span class="area-img area-img7 hd off">area-img</span>
 			</a>
 		</ul>
+		<div class="options-containor">
+			<div class="options-list">
+				<span class="Layer_FST map-opts" area="MD" itemtype="TX"><img src="imgs/FST.png" class="map-opts-icon" alt="icon">风神瞳</span>
+				<span class="Layer_YST map-opts" area="LY" itemtype="TX"><img src="imgs/YST.png" class="map-opts-icon" alt="icon">岩神瞳</span>
+				<span class="Layer_DLK_MD map-opts" area="MD" itemtype="TX"><img src="imgs/DLK_MD.png" class="map-opts-icon" alt="icon">地灵龛-蒙德</span>
+				<span class="Layer_DLK_LY map-opts" area="LY" itemtype="TX"><img src="imgs/DLK_LY.png" class="map-opts-icon" alt="icon">地灵龛-璃月</span>
+				<span class='Layer_SJK_LY map-opts' area="LY" itemtype="KW"><img src="imgs/SJK.png" class="map-opts-icon" alt="icon">水晶矿-璃月</span>
+				<span class='Layer_BTK_LY map-opts' area="LY" itemtype="KW"><img src="imgs/BTK.png" class="map-opts-icon" alt="icon">白铁矿-璃月</span>
+				<span class="Layer_SJK_MD map-opts" area="MD" itemtype="KW"><img src="imgs/SJK.png" class="map-opts-icon" alt="icon">水晶矿-蒙德</span>
+				<span class="Layer_BTK_MD map-opts" area="MD" itemtype="KW"><img src="imgs/BTK.png" class="map-opts-icon" alt="icon">白铁矿-蒙德</span>
+				<span class="Layer_JYJJ map-opts" area="LY" itemtype="TC">绝云椒椒</span>
+				<span class="Layer_NSH map-opts" area="LY" itemtype="TC">霓裳花</span>
+				<span class="Layer_LLBH map-opts" area="LY" itemtype="TC">琉璃百合</span>
+				<span class="Layer_YPS map-opts" area="LY" itemtype="TC">夜泊石</span>
+				<span class="Layer_SP map-opts" area="LY" itemtype="TC">石珀</span>
+				<span class="Layer_GGG map-opts" area="MD" itemtype="TC">钩钩果</span>
+				<span class="Layer_DDL map-opts" area="MD" itemtype="TC">嘟嘟莲</span>
+				<span class="Layer_LLM map-opts" area="MD" itemtype="TC">落落梅</span>
+				<span class="Layer_SXLYH map-opts" area="MD" itemtype="TC">塞西莉亚花</span>
+				<span class="Layer_MFMG map-opts" area="MD" itemtype="TC">慕风蘑菇</span>
+				<span class="Layer_FCJ map-opts" area="MD" itemtype="TC">风车菊</span>
+				<span class="Layer_PGYZ map-opts" area="MD" itemtype="TC">蒲公英籽</span>
+				<span class="Layer_YJSW_LY map-opts" area="LY" itemtype="GW">遗迹守卫</span>
+				<span class="Layer_YJLZ_LY map-opts" area="LY" itemtype="GW">遗迹猎者</span>
+				<span class="Layer_DXQQR_LY map-opts" area="LY" itemtype="GW">大型丘丘人</span>
+				<span class="Layer_SYFS_LY map-opts" area="LY" itemtype="GW">深渊法师</span>
+				<span class="Layer_ZWCLR_LY map-opts" area="LY" itemtype="GW">债务处理人</span>
+				<span class="Layer_LYSS_LY map-opts" area="LY" itemtype="GW">雷莹术士</span>
+			</div>
+		</div>
 	</div>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="leaflet/leaflet.js"></script>
@@ -75,6 +105,18 @@
 		$(".con-type-label").click(function(){
 			$(".con-type-label").removeClass("on");
 			$(this).addClass("on");
+		});
+		$(".area-list-li-containor").click(function(){
+			if($(this).hasClass("undone")==false)
+			{
+				var idx=$(this).index();
+				$(".area-list-li-containor,.area-list-li-containor .area-img").removeClass("on");
+				$(".area-list-li-containor,.area-list-li-containor .area-img").addClass("off");
+				$(`.area-list-li-containor:eq(${idx})`).removeClass("off");
+				$(`.area-list-li-containor:eq(${idx})`).addClass("on");
+				$(`.area-list-li-containor:eq(${idx}) .area-img`).removeClass("off");
+				$(`.area-list-li-containor:eq(${idx}) .area-img`).addClass("on");
+			}
 		});
 	</script>
 </body>
