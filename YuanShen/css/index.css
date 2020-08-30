@@ -58,19 +58,23 @@ body,
 }
 .lable1
 {
-    background: url(../imgs/con_img/classify1.png);
+    background: url(../imgs/con_img/classify1.png) no-repeat;
 }
 .lable2
 {
-    background: url(../imgs/con_img/classify2.png);
+    background: url(../imgs/con_img/classify2.png) no-repeat;
 }
 .lable3
 {
-    background: url(../imgs/con_img/classify3.png);
+    background: url(../imgs/con_img/classify3.png) no-repeat;
 }
 .lable4
 {
-    background: url(../imgs/con_img/classify4.png);
+    background: url(../imgs/con_img/classify4.png) no-repeat;
+}
+.lable5
+{
+    background: url(../imgs/con_img/classify5.png) no-repeat;
 }
 .con-type-label.on
 {
@@ -84,19 +88,23 @@ body,
 }
 .lable1.on
 {
-    background: url(../imgs/con_img/classify1-on.png);
+    background: url(../imgs/con_img/classify1-on.png) no-repeat;
 }
 .lable2.on
 {
-    background: url(../imgs/con_img/classify2-on.png);
+    background: url(../imgs/con_img/classify2-on.png) no-repeat;
 }
 .lable3.on
 {
-    background: url(../imgs/con_img/classify3-on.png);
+    background: url(../imgs/con_img/classify3-on.png) no-repeat;
 }
 .lable4.on
 {
-    background: url(../imgs/con_img/classify4-on.png);
+    background: url(../imgs/con_img/classify4-on.png) no-repeat;
+}
+.lable5.on
+{
+    background: url(../imgs/con_img/classify5-on.png) no-repeat;
 }
 .area-list-containor
 {
@@ -231,8 +239,8 @@ body,
 }
 .options-list
 {
-    margin: 20px 0 0 35px;
-    width: 75%;
+    margin: 20px 0 0 18px;
+    width: 85%;
     height: 90%;
     padding-right:10px;
     overflow-y: scroll;
@@ -248,24 +256,34 @@ body,
     background: #AB8F77;
     border-radius: 1px;
 }
-.map-opts
+.options-list .map-opts
 {
     position: relative;
     display: block;
-    width: 100%;
+    width: 90%;
     height: 40px;
+    margin:10px 0 10px 10%;
     background: #AB8F77;
-    margin-bottom: 20px;
     line-height: 40px;
     text-indent: 40px;
     cursor: pointer;
     color: #F0E9E2;
 }
+.img-border
+{
+    position: absolute;
+    top: -3px;
+    left: -13px;
+    width: 45px;
+    height: 45px;
+    background: url(../imgs/con_img/img-border.png) no-repeat;
+    background-size: 100% 100%;
+}
 .map-opts-icon
 {
     position: absolute;
+    width: 35px;
+    height: 35px;
     top: 5px;
-    left: 3px;
-    width: 30px;
-    height: 30px;
+    left: 5px;
 }
