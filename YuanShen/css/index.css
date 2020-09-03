@@ -41,8 +41,8 @@ body,
 .con-type-label-containor
 {
     position: absolute;
-    top: 100px;
-    left: 25px;
+    top: 80px;
+    left: 21px;
     cursor: pointer;
 }
 .con-type-label
@@ -319,6 +319,8 @@ body,
 .options-list .map-opts.on
 {
     background: linear-gradient(270deg, #FFFFFF -95.11%, rgba(255, 255, 255, 0) 100%), #F0E9E2;
+    line-height: 39px;
+    text-indent: 39px;
     border: 1px solid #D2C6BB;
     box-sizing: border-box;
     color: #78583D;
@@ -332,6 +334,11 @@ body,
     height: 48px;
     background: url(../imgs/con_img/img-border.png) no-repeat;
     background-size: 100% 100%;
+}
+.options-list .map-opts.on .img-border
+{
+    top: -4px;
+    left: -14px;
 }
 .map-opts-icon
 {
