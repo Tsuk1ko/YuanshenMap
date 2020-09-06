@@ -53,12 +53,6 @@
 		</ul>
 		<ul class="selector-list-containor">
 			<p style="display: none;"></p>
-			<p class="opt-selector">风神瞳<a href="javascript:;" class="opt-selector-close hd">close</a></p>
-			<p class="opt-selector">风神瞳<a href="javascript:;" class="opt-selector-close hd">close</a></p>
-			<p class="opt-selector">风神瞳<a href="javascript:;" class="opt-selector-close hd">close</a></p>
-			<p class="opt-selector">风神瞳<a href="javascript:;" class="opt-selector-close hd">close</a></p>
-			<p class="opt-selector">风神瞳<a href="javascript:;" class="opt-selector-close hd">close</a></p>
-
 		</ul>
 		<div class="options-containor">
 			<div class="options-list">
@@ -198,12 +192,50 @@
 			area_idx = $(this).attr("i_area");
 			filter();
 		});
-		$(".map-opts").click(function () {
+		//点击筛选项以改变地图图例显示
+		$(".options-list .map-opts").click(function () {
 			var typeclass = $(this).attr("class");
 			var idx = typeclass.indexOf(" ");
 			var typetext = typeclass.slice(0, idx);
-			$(this).toggleClass("on");
+			
 			$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
+		});
+		//点击筛选项以改变选择器项目
+		$(".options-list .map-opts").click(function(){
+			if($(this).hasClass("on")==true)
+			{
+				let text=$(this).text();
+				let fclass=$(this).attr("class");
+				fclass=fclass.slice(0,fclass.indexOf(" "));
+				for(let i=0;i<$(".selector-list-containor p").length;i++)
+				{
+					let bind=$(".selector-list-containor p").eq(i).attr("bind");
+					if(fclass==bind)
+					{
+						$(".selector-list-containor p").eq(i).remove();
+					}
+				}
+			}
+			else
+			{
+				let text=$(this).text();
+				let fclass=$(this).attr("class");
+				fclass=fclass.slice(0,fclass.indexOf(" "));
+				$(".selector-list-containor p:last").after(`
+					<p class="opt-selector" bind="${fclass}">${text}<a href="javascript:;" class="opt-selector-close hd">close</a></p>
+				`);
+				$(".selector-list-containor p:last a").click(function(){
+					let bind=$(this).parent().attr("bind");
+					for(let i=0;i<$(".options-list .map-opts").length;i++)
+					{
+						if($(".options-list .map-opts").eq(i).hasClass(bind)==true)
+						{
+							$(".options-list .map-opts").eq(i).trigger("click");
+						}
+					}
+				});
+			}
+			$(this).toggleClass("on");
 		});
 		//初始化筛选器功能
 		$(document).ready(function () {
