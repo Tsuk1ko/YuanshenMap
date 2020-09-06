@@ -22,13 +22,13 @@
 			<li class="con-type-label lable4" i_type="TX">特性</li>
 		</ul>
 		<ul class="area-list-containor">
-			<a href="javascript:;" class="area-list-li-containor on" i_area="LY">
-				<span class="area-text">璃月</span>
-				<span class="area-img area-img1 on hd">area-img</span>
-			</a>
-			<a href="javascript:;" class="area-list-li-containor off" i_area="MD">
+			<a href="javascript:;" class="area-list-li-containor on" i_area="MD">
 				<span class="area-text">蒙德</span>
-				<span class="area-img area-img2 hd off">area-img</span>
+				<span class="area-img area-img2 on hd">area-img</span>
+			</a>
+			<a href="javascript:;" class="area-list-li-containor off" i_area="LY">
+				<span class="area-text">璃月</span>
+				<span class="area-img area-img1 hd off">area-img</span>
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off undone">
 				<span class="area-text">??</span>
@@ -188,8 +188,8 @@
 		$(".area-list-li-containor").click(function () {
 			if ($(this).hasClass("undone") == false) {
 				var idx = $(this).index();
-				$(".area-list-li-containor,.area-list-li-containor .area-img").removeClass("on");
-				$(".area-list-li-containor,.area-list-li-containor .area-img").addClass("off");
+				$(".area-list-li-containor,.area-list-li-containor:not(.undone) .area-img").removeClass("on");
+				$(".area-list-li-containor,.area-list-li-containor:not(.undone) .area-img").addClass("off");
 				$(`.area-list-li-containor:eq(${idx})`).removeClass("off");
 				$(`.area-list-li-containor:eq(${idx})`).addClass("on");
 				$(`.area-list-li-containor:eq(${idx}) .area-img`).removeClass("off");
