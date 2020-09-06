@@ -348,15 +348,15 @@ body,
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 70px;
-    height: 25px;
+    width: 66px;
+    height: 18px; 
     background: rgba(255, 255, 255, 0.7)
 }
 .disclaimer
 {
     position: absolute;
-    left: 10px;
-    top: 5px;
+    left: 6px;
+    top: 1px;
     color: #0078A8;
     font-size: 12px;
 }
