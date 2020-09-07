@@ -191,48 +191,41 @@
 				$(`.area-list-li-containor:eq(${idx})`).addClass("on");
 				$(`.area-list-li-containor:eq(${idx}) .area-img`).removeClass("off");
 				$(`.area-list-li-containor:eq(${idx}) .area-img`).addClass("on");
+				area_idx = $(this).attr("i_area");
+				filter();
 			}
-			area_idx = $(this).attr("i_area");
-			filter();
 		});
 		//点击筛选项以改变地图图例显示
 		$(".options-list .map-opts").click(function () {
 			var typeclass = $(this).attr("class");
 			var idx = typeclass.indexOf(" ");
 			var typetext = typeclass.slice(0, idx);
-			
+
 			$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
 		});
 		//点击筛选项以改变选择器项目
-		$(".options-list .map-opts").click(function(){
-			if($(this).hasClass("on")==true)
-			{
-				let text=$(this).text();
-				let fclass=$(this).attr("class");
-				fclass=fclass.slice(0,fclass.indexOf(" "));
-				for(let i=0;i<$(".selector-list-containor p").length;i++)
-				{
-					let bind=$(".selector-list-containor p").eq(i).attr("bind");
-					if(fclass==bind)
-					{
+		$(".options-list .map-opts").click(function () {
+			if ($(this).hasClass("on") == true) {
+				let text = $(this).text();
+				let fclass = $(this).attr("class");
+				fclass = fclass.slice(0, fclass.indexOf(" "));
+				for (let i = 0; i < $(".selector-list-containor p").length; i++) {
+					let bind = $(".selector-list-containor p").eq(i).attr("bind");
+					if (fclass == bind) {
 						$(".selector-list-containor p").eq(i).remove();
 					}
 				}
-			}
-			else
-			{
-				let text=$(this).text();
-				let fclass=$(this).attr("class");
-				fclass=fclass.slice(0,fclass.indexOf(" "));
+			} else {
+				let text = $(this).text();
+				let fclass = $(this).attr("class");
+				fclass = fclass.slice(0, fclass.indexOf(" "));
 				$(".selector-list-containor p:last").after(`
 					<p class="opt-selector" bind="${fclass}">${text}<a href="javascript:;" class="opt-selector-close hd">close</a></p>
 				`);
-				$(".selector-list-containor p:last a").click(function(){
-					let bind=$(this).parent().attr("bind");
-					for(let i=0;i<$(".options-list .map-opts").length;i++)
-					{
-						if($(".options-list .map-opts").eq(i).hasClass(bind)==true)
-						{
+				$(".selector-list-containor p:last a").click(function () {
+					let bind = $(this).parent().attr("bind");
+					for (let i = 0; i < $(".options-list .map-opts").length; i++) {
+						if ($(".options-list .map-opts").eq(i).hasClass(bind) == true) {
 							$(".options-list .map-opts").eq(i).trigger("click");
 						}
 					}
@@ -271,7 +264,7 @@
 			} else {
 
 				//面板切换动画(pc)
-				var Lock = true;//锁，防止抖动
+				var Lock = true; //锁，防止抖动
 				$(".control-containor").mouseenter(function () {
 					Lock = true;
 					$(".control-containor").animate({
@@ -292,7 +285,7 @@
 								$(".con-type-label").fadeOut(500);
 							}
 						}
-					}, 500)//移出鼠标延迟500ms收回
+					}, 500) //移出鼠标延迟500ms收回
 				});
 			}
 		});
