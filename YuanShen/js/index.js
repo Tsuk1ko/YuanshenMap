@@ -1,3 +1,5 @@
+
+
 //初始化地图
 t = L.latLngBounds([0, 0], [-66.5, 90]);
 var map = L.map("map", {
@@ -76,177 +78,175 @@ var Layer_ZWCLR_LY = L.layerGroup();
 var Layer_SYFS_LY = L.layerGroup();
 var Layer_DXQQR_LY = L.layerGroup();
 var Layer_BX_MD = L.layerGroup();
+var Layer_BX_LY = L.layerGroup();
 //定义各个坐标使用的图标
-var ST = L.Icon.extend({
-    options: {
-        iconSize: [21.6, 22.8], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [10.8, 11.4], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [0, -11.4] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var DLK = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_45.png",
-        iconSize: [33, 33], // size of the icon
-        shadowSize: [45, 45], // size of the shadow
-        iconAnchor: [16.5, 16.5], // point of the icon which will correspond to marker's location
-        shadowAnchor: [22.5, 22.5], // the same for the shadow
-        popupAnchor: [0, -16.5] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var WP = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32.png",
-        iconSize: [16, 16], // size of the icon
-        shadowSize: [22, 22], // size of the shadow
-        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-        shadowAnchor: [11, 11], // the same for the shadow
-        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var KW = L.Icon.extend({
-    options: {
-        iconSize: [20, 20], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [0, -10] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var JYG = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32.png",
-        iconSize: [24, 24], // size of the icon
-        shadowSize: [32, 32], // size of the shadow
-        iconAnchor: [12, 12], // point of the icon which will correspond to marker's location
-        shadowAnchor: [16, 16], // the same for the shadow
-        popupAnchor: [0, -12] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var PTG = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32.png",
-        iconSize: [16, 16], // size of the icon
-        shadowSize: [22, 22], // size of the shadow
-        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-        shadowAnchor: [11, 11], // the same for the shadow
-        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var BX_Base = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32_1.png",
-        iconSize: [16, 16], // size of the icon
-        shadowSize: [22, 22], // size of the shadow
-        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-        shadowAnchor: [11, 11], // the same for the shadow
-        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var FST = new ST({
-    iconUrl: "./imgs/FST.png"
-});
-var YST = new ST({
-    iconUrl: "./imgs/YST.png"
-});
-var DLK_MD = new DLK({
-    iconUrl: "./imgs/DLK_MD.png",
-});
-var DLK_LY = new DLK({
-    iconUrl: "./imgs/DLK_LY.png"
-});
-var JYJJ = new WP({
-    iconUrl: "./imgs/JYJJ.png"
-});
-var NSH = new WP({
-    iconUrl: "./imgs/NSH.png"
-});
-var LLBH = new WP({
-    iconUrl: "./imgs/LLBH.png"
-});
-var PGYZ = new WP({
-    iconUrl: "./imgs/PGYZ.png"
-});
-var FCJ = new WP({
-    iconUrl: "./imgs/FCJ.png"
-});
-var GGG = new WP({
-    iconUrl: "./imgs/GGG.png"
-});
-var DDL = new WP({
-    iconUrl: "./imgs/DDL.png"
-});
-var SXLYH = new WP({
-    iconUrl: "./imgs/SXLYH.png"
-});
-var MFMG = new WP({
-    iconUrl: "./imgs/MFMG.png"
-});
-var LLM = new WP({
-    iconUrl: "./imgs/LLM.png"
-});
-var YPS = new WP({
-    iconUrl: "./imgs/YPS.png"
-});
-var SP = new WP({
-    iconUrl: "./imgs/SP.png"
-});
-var SJK = new KW({
-    iconUrl: "./imgs/SJK.png"
-});
-var BTK = new KW({
-    iconUrl: "./imgs/BTK.png"
-});
-var YJSW = new JYG({
-    iconUrl: "./imgs/YJSW.png"
-});
-var YJLZ = new JYG({
-    iconUrl: "./imgs/YJLZ.png"
-});
-var SYFS = new PTG({
-    iconUrl: "./imgs/SYFS.png"
-});
-var ZWCLR = new PTG({
-    iconUrl: "./imgs/ZWCLR.png"
-});
-var LYSS = new PTG({
-    iconUrl: "./imgs/LYSS.png"
-});
-var DXQQR = new PTG({
-    iconUrl: "./imgs/DXQQR.png"
-});
-var BX_MD = new BX_Base({
-    iconUrl: "./imgs/BX.png"
-});
+function getIconInfo(i){
+ 	if( i < 2 ) { //ST
+	  var op = {
+			shadowUrl: "./imgs/BK_32.png",
+			iconSize: [24, 24], // size of the icon
+			shadowSize: [32, 32], // size of the shadow
+			iconAnchor: [12, 12], // point of the icon which will correspond to marker's location
+			shadowAnchor: [16, 16], // the same for the shadow
+			popupAnchor: [0, -12] // point from which the popup should open relative to the iconAnchor
+		};
+		return op;
+    } 
+	if( i< 4 ) //DLK 
+	{
+		var op = {
+			shadowUrl: "./imgs/BK_45.png",
+			iconSize: [33, 33], // size of the icon
+			shadowSize: [45, 45], // size of the shadow
+			iconAnchor: [16.5, 16.5], // point of the icon which will correspond to marker's location
+			shadowAnchor: [22.5, 22.5], // the same for the shadow
+			popupAnchor: [0, -16.5] // point from which the popup should open relative to the iconAnchor
+		};
+		return op;
+    } 
+	if (i < 16 ) {//WP
+		var op = {
+			iconSize: [20, 20], // size of the icon
+			shadowSize: [50, 64], // size of the shadow
+			iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
+			shadowAnchor: [4, 62], // the same for the shadow
+			popupAnchor: [0, -10] // point from which the popup should open relative to the iconAnchor
+		};
+		return op;
+	} 
+	if (i < 18 ) {//KW
+	    var op =  {
+			iconSize: [20, 20], // size of the icon
+			shadowSize: [50, 64], // size of the shadow
+			iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
+			shadowAnchor: [4, 62], // the same for the shadow
+			popupAnchor: [0, -10] // point from which the popup should open relative to the iconAnchor
+		};
+		return op;
+	}
+	if (i < 20 ) {//JYG
+		var op =   {
+			shadowUrl: "./imgs/BK_32.png",
+			iconSize: [24, 24], // size of the icon
+			shadowSize: [32, 32], // size of the shadow
+			iconAnchor: [12, 12], // point of the icon which will correspond to marker's location
+			shadowAnchor: [16, 16], // the same for the shadow
+			popupAnchor: [0, -12] // point from which the popup should open relative to the iconAnchor
+		};
+		return op;
+	} 
+	if (i < 24) {//PTG
+		var op =   {
+			shadowUrl: "./imgs/BK_32.png",
+			iconSize: [16, 16], // size of the icon
+			shadowSize: [22, 22], // size of the shadow
+			iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+			shadowAnchor: [11, 11], // the same for the shadow
+			popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+		};
+		return op;
+	} else {// BX_Base
+	
+		var op =   {
+			shadowUrl: "./imgs/BK_32_1.png",
+			iconSize: [16, 16], // size of the icon
+			shadowSize: [22, 22], // size of the shadow
+			iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+			shadowAnchor: [11, 11], // the same for the shadow
+			popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+		}
+		return op;
+	}
+}
+
+
+/*
+	
+*/
 //添加坐标点击信息
 function onEachFeature(feature, layer) {
-    var popupContent = `<b>${feature.properties.popTitle}</b>&nbsp&nbsp&nbsp&nbsp&nbspid:${feature.id}<br>`;
+    var layerNumber = localStorage.getItem("layerNumber");
+	var key = layerNumber + "_" + feature.id;
+    var popupHtml = '<div class="myPopContainer">';
+	popupHtml = '<div class="myPopTitle" >';
+    popupHtml += '<div class="myPopName" >' + feature.properties.popTitle + '</div>';
+	var switchClass = (!(localStorage.getItem(key)))? "myPopSwitchTodo" : "myPopSwitchDone"
+	popupHtml += '<div class="'+switchClass+'" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
+	popupHtml += '</div>';
+    popupHtml += '<div class="myPopLine"></div>';
+	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';	   
+	popupHtml += '<div class="myPopComment">'+ feature.properties.popupContent +'</div>';
+    popupHtml += '<div class="myPopPicture">';
+    popupHtml += '<img src=./comment_png/'+key+'.png ></img>';
+    popupHtml += '</div>';
+	popupHtml += '</div>';
+	layer.bindPopup(popupHtml);
+}
+function closePop() {
+	$(".leaflet-popup-close-button")[0].click();
+}
+function MarkPoint(element) {
+    var that = $(element);
+    var key = that.attr("data-key");
+    var layerNumber = key.split('_')[0];
+    var oldValue = localStorage.getItem(key);
+    var newValue = !oldValue;
+    localStorage.setItem(key, newValue ? "1" : "");
+	
+	if(newValue){
+			$('.mark-' + key).attr('src', './imgs/icon_' +layerNumber+'_done.png');
+			that.addClass("myPopSwitchDone");
+			that.removeClass("myPopSwitchTodo");
+			
+	}else{
+			$('.mark-' + key).attr('src', './imgs/icon_' +layerNumber+'.png');
+			that.addClass("myPopSwitchTodo");
+			that.removeClass("myPopSwitchDone");
+	}
 
-    if (feature.properties && feature.properties.popupContent) {
-        popupContent += feature.properties.popupContent;
-    }
-    layer.bindPopup(popupContent);
 }
 //定义分类的三个数组，分别对应坐标的组别，坐标的位置和坐标的名称，新增时在对应数组后增加对象即可
-var typearray1=[Layer_FST,Layer_YST,Layer_DLK_MD,Layer_DLK_LY,Layer_JYJJ,Layer_NSH,Layer_LLBH,Layer_GGG,Layer_DDL,Layer_SXLYH,Layer_MFMG,Layer_LLM,Layer_FCJ,Layer_PGYZ,Layer_YPS,Layer_SP,Layer_SJK_LY,Layer_BTK_LY,Layer_SJK_MD,Layer_BTK_MD,Layer_YJSW_LY,Layer_YJLZ_LY,Layer_LYSS_LY,Layer_ZWCLR_LY,Layer_SYFS_LY,Layer_DXQQR_LY,Layer_BX_MD];
-var typearray2=[JS_FST,JS_YST,JS_DLK_MD,JS_DLK_LY,JS_JYJJ,JS_NSH ,JS_LLBH,JS_GGG ,JS_DDL ,JS_SXLYH ,JS_MFMG,JS_LLM ,JS_FCJ ,JS_PGYZ,JS_YPS ,JS_SP,JS_SJK_LY ,JS_BTK_LY ,JS_SJK_MD ,JS_BTK_MD ,JS_YJSW_LY ,JS_YJLZ_LY ,JS_LYSS_LY ,JS_ZWCLR_LY,JS_SYFS_LY ,JS_DXQQR_LY,JS_BX_MD];
-var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR,BX_MD];
+var typearray1=[Layer_FST,Layer_YST,Layer_DLK_MD,Layer_DLK_LY,Layer_JYJJ,Layer_NSH,Layer_LLBH,Layer_GGG,Layer_DDL,Layer_SXLYH,Layer_MFMG,Layer_LLM,Layer_FCJ,Layer_PGYZ,Layer_YPS,Layer_SP,Layer_SJK_LY,Layer_BTK_LY,Layer_SJK_MD,Layer_BTK_MD,Layer_YJSW_LY,Layer_YJLZ_LY,Layer_LYSS_LY,Layer_ZWCLR_LY,Layer_SYFS_LY,Layer_DXQQR_LY,Layer_BX_MD,Layer_BX_LY];
+var typearray2=[JS_FST,JS_YST,JS_DLK_MD,JS_DLK_LY,JS_JYJJ,JS_NSH ,JS_LLBH,JS_GGG ,JS_DDL ,JS_SXLYH ,JS_MFMG,JS_LLM ,JS_FCJ ,JS_PGYZ,JS_YPS ,JS_SP,JS_SJK_LY ,JS_BTK_LY ,JS_SJK_MD ,JS_BTK_MD ,JS_YJSW_LY ,JS_YJLZ_LY ,JS_LYSS_LY ,JS_ZWCLR_LY,JS_SYFS_LY ,JS_DXQQR_LY,JS_BX_MD,JS_BX_LY];
+//var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR,BX_MD];
 //初始化各个坐标
 for(let i=0;i<typearray2.length;i++)
 {
+	localStorage.setItem("layerNumber", i);
     L.geoJSON(typearray2[i], {
         pointToLayer: function (feature, latlng) {
-            return L.marker([latlng.lng, latlng.lat], {
-                icon: typearray3[i],
+			var key  = i+"_"+feature.id;
+			var markedFlag = false;
+            if (localStorage.getItem(key)) {
+					markedFlag = true;
+            }
+			var doneUrl = markedFlag ? "_done" : ""
+			var iconUrl = "./imgs/icon_"+ i + doneUrl + ".png";
+			return L.marker([latlng.lng, latlng.lat], {
+                icon: new L.Icon({
+					className: "mark-"+i+"_"+`${feature.id}`,
+					iconUrl: iconUrl,
+					iconSize: getIconInfo(i).iconSize, // size of the icon
+					shadowSize: getIconInfo(i).shadowSize, // size of the shadow
+					iconAnchor: getIconInfo(i).iconAnchor, // point of the icon which will correspond to marker's location
+					shadowAnchor: getIconInfo(i).shadowAnchor, // the same for the shadow
+					popupAnchor: getIconInfo(i). popupAnchor// point from which the popup should open relative to the iconAnchor
+				}),
                 alt:`${latlng.lng},${latlng.lat}`
             },
             ).addTo(typearray1[i]);
+
         },
         onEachFeature: onEachFeature
     })
 };
+
+function dealIcon(target,key) {
+
+
+	return target
+}
+
 //定义筛选器项目
 var overlays = {
     "<span class='Layer_FST map-opts'>风神瞳</span>": Layer_FST,
@@ -276,6 +276,7 @@ var overlays = {
     "<span class='Layer_ZWCLR_LY map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
     "<span class='Layer_LYSS_LY map-opts'>雷莹术士</span>": Layer_LYSS_LY,
     "<span class='Layer_BX_MD map-opts'>宝箱—蒙德</span>": Layer_BX_MD,
+	"<span class='Layer_BX_LY map-opts'>宝箱—璃月</span>": Layer_BX_LY,
 };
 //添加筛选器
 L.control.layers(null, overlays,{

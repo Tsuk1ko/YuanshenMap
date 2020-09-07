@@ -426,6 +426,9 @@ body,
 
 
 }
+.myPopContainer {
+
+}
 .myPopTitle {
 	display: flex;
 flex-direction: column;
