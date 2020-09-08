@@ -281,3 +281,24 @@ var overlays = {
 L.control.layers(null, overlays, {
 	collapsed: false,
 }).addTo(map);
+
+map.on('popupopen', function(e) {
+  var marker = e.popup._source;
+  var className = marker.options.icon.options.className;
+  var key = className.substring(5,className.length);
+  var markedFlag = localStorage.getItem(key);
+  var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
+  var popupHtml = '<div class="myPopContainer">';
+  popupHtml = '<div class="myPopTitle" >';
+  popupHtml += '<div class="myPopName" >' + marker.feature.properties.popTitle + '</div>';
+  popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
+  popupHtml += '</div>';
+  popupHtml += '<div class="myPopLine"></div>';
+  popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
+  popupHtml += '<div class="myPopComment">' + marker.feature.properties.popupContent + '</div>';
+  popupHtml += '<div class="myPopPicture">';
+  popupHtml += '<img src=./comment_png/' + key + '.png ></img>';
+  popupHtml += '</div>';
+  popupHtml += '</div>';
+  marker.bindPopup(popupHtml);
+});
