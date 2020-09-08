@@ -246,6 +246,8 @@
 				//面板切换动画(m)
 				$(".fold-btn").click(function () {
 					if (statu == 1) {
+						$(".control-containor").css("width","420px");
+						$(".fold-btn").css("left","70px");
 						$(".control-containor").animate({
 							right: '0px'
 						}, function () {
@@ -257,6 +259,8 @@
 							right: '-285px'
 						}, function () {
 							statu = 1;
+							$(".control-containor").css("width","300px");
+							$(".fold-btn").css("left","-50px");
 						});
 						$(".con-type-label").fadeOut(500);
 					}
