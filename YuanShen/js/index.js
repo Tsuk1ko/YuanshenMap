@@ -89,7 +89,7 @@ function getIconInfo(i) {
 		};
 		return op;
 	}
-	if (i < 4) //DLK 
+	else if (i < 4) //DLK 
 	{
 		var op = {
 			shadowUrl: "./imgs/BK_45.png",
@@ -101,7 +101,7 @@ function getIconInfo(i) {
 		};
 		return op;
 	}
-	if (i < 16) { //WP
+	else if (i < 16) { //WP
 		var op = {
 			shadowUrl: "./imgs/BK_32.png",
 			iconSize: [16, 16], // size of the icon
@@ -112,7 +112,7 @@ function getIconInfo(i) {
 		};
 		return op;
 	}
-	if (i < 20) { //KW
+	else if (i < 20) { //KW
 		var op = {
 			iconSize: [20, 20], // size of the icon
 			shadowSize: [50, 64], // size of the shadow
@@ -122,7 +122,7 @@ function getIconInfo(i) {
 		};
 		return op;
 	}
-	if (i < 22) { //JYG
+	else if (i < 22) { //JYG
 		var op = {
 			shadowUrl: "./imgs/BK_32.png",
 			iconSize: [24, 24], // size of the icon
@@ -133,7 +133,7 @@ function getIconInfo(i) {
 		};
 		return op;
 	}
-	if (i < 26) { //PTG
+	else if (i < 26) { //PTG
 		var op = {
 			shadowUrl: "./imgs/BK_32.png",
 			iconSize: [16, 16], // size of the icon

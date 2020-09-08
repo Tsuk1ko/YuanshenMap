@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 	<title>原神地图</title>
@@ -14,20 +15,23 @@
 	<div class="control-containor">
 		<a href="javascript:;" class="fold-btn hd">fold</a>
 		<ul class="con-type-label-containor">
-			<li class="con-type-label on lable5" i_type="ALL">全部</li>
-			<li class="con-type-label lable1" i_type="GW">怪物</li>
-			<li class="con-type-label lable2" i_type="KW">矿物</li>
+			<li class="con-type-label on lable1" i_type="ALL">全部</li>
+			<li class="con-type-label lable2" i_type="TX">特性</li>
 			<li class="con-type-label lable3" i_type="TC">特产</li>
-			<li class="con-type-label lable4" i_type="TX">特性</li>
+			<li class="con-type-label lable4" i_type="KW">矿物</li>
+			<li class="con-type-label lable5" i_type="GW">怪物</li>
+
+
+
 		</ul>
 		<ul class="area-list-containor">
 			<a href="javascript:;" class="area-list-li-containor on" i_area="MD">
 				<span class="area-text">蒙德</span>
-				<span class="area-img area-img5 on hd">area-img</span>
+				<span class="area-img area-img2 on hd">area-img</span>
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off" i_area="LY">
 				<span class="area-text">璃月</span>
-				<span class="area-img area-img2 hd off">area-img</span>
+				<span class="area-img area-img5 hd off">area-img</span>
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off undone">
 				<span class="area-text">??</span>
@@ -66,6 +70,12 @@
 				</span>
 				<span class="Layer_DLK_LY map-opts" area="LY" itemtype="TX">
 					<div class="img-border"><img src="imgs/icon_3.png" class="map-opts-icon" alt="icon"></div>地灵龛-璃月
+				</span>
+				<span class="Layer_BX_MD map-opts" area="MD" itemtype="TX">
+					<div class="img-border"><img src="imgs/icon_26.png" class="map-opts-icon" alt="icon"></div>宝箱-蒙德
+				</span>
+				<span class="Layer_BX_LY map-opts" area="LY" itemtype="TX">
+					<div class="img-border"><img src="imgs/icon_27.png" class="map-opts-icon" alt="icon"></div>宝箱-璃月
 				</span>
 				<span class='Layer_SJK_LY map-opts' area="LY" itemtype="KW">
 					<div class="img-border"><img src="imgs/icon_16.png" class="map-opts-icon" alt="icon"></div>水晶矿-璃月
@@ -132,12 +142,6 @@
 				</span>
 				<span class="Layer_LYSS_LY map-opts" area="LY" itemtype="GW">
 					<div class="img-border"><img src="imgs/icon_22.png" class="map-opts-icon" alt="icon"></div>雷莹术士
-				</span>
-				<span class="Layer_BX_MD map-opts" area="MD" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_26.png" class="map-opts-icon" alt="icon"></div>宝箱-蒙德
-				</span>
-				<span class="Layer_BX_LY map-opts" area="LY" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_27.png" class="map-opts-icon" alt="icon"></div>宝箱-璃月
 				</span>
 			</div>
 		</div>
@@ -240,14 +244,16 @@
 				$(".fold-btn").show();
 				var statu = 1;
 				//几项M端的适配
+				$(".control-containor").css("transform-origin", "50% 0% 0");
 				$(".control-containor").css("transform", "scale(0.75)");
-				$(".control-containor").css("right", "-250px");
-				$(".area-text").css("width", "110%");
+				$(".control-containor").css("right", "-255px");
+				$(".control-containor").css("width", "300px");
+				$(".fold-btn").css("left", "-55px");
 				//面板切换动画(m)
 				$(".fold-btn").click(function () {
 					if (statu == 1) {
-						$(".control-containor").css("width","420px");
-						$(".fold-btn").css("left","70px");
+						$(".control-containor").css("width", "420px");
+						$(".fold-btn").css("left", "65px");
 						$(".control-containor").animate({
 							right: '-60px'
 						}, function () {
@@ -256,11 +262,11 @@
 						$(".con-type-label").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-250px'
+							right: '-255px'
 						}, function () {
 							statu = 1;
-							$(".control-containor").css("width","300px");
-							$(".fold-btn").css("left","-50px");
+							$(".control-containor").css("width", "300px");
+							$(".fold-btn").css("left", "-55px");
 						});
 						$(".con-type-label").fadeOut(500);
 					}
