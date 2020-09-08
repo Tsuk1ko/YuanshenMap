@@ -221,8 +221,8 @@
 				$(".selector-list-containor p:last").after(`
 					<p class="opt-selector" bind="${fclass}">${text}<a href="javascript:;" class="opt-selector-close hd">close</a></p>
 				`);
-				$(".selector-list-containor p:last a").click(function () {
-					let bind = $(this).parent().attr("bind");
+				$(".selector-list-containor p:last").click(function () {
+					let bind = $(this).attr("bind");
 					for (let i = 0; i < $(".options-list .map-opts").length; i++) {
 						if ($(".options-list .map-opts").eq(i).hasClass(bind) == true) {
 							$(".options-list .map-opts").eq(i).trigger("click");
