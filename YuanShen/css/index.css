@@ -276,10 +276,10 @@ body,
 {
     position: absolute;
     border-top: 1px solid rgba(0, 0, 0, 0);
-    top: 130px;
+    top: 86px;
     right: 17px;
     width: 255px;
-    height: 425px;
+    height: 450px;
     background: url(../imgs/con_img/border.png) no-repeat;
     background-size: 100% 100%;
 }
@@ -287,8 +287,8 @@ body,
 {
     margin: 10px 0 0 18px;
     width: 85%;
-    height: 90%;
-    padding-right:10px;
+    height: 93%;
+    padding-right: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -381,7 +381,7 @@ body,
 {
     position: absolute;
     display: flex;
-    top: 82px;
+    bottom: 18px;
     left: 150px;
     width: 245px;
     height: 40px;

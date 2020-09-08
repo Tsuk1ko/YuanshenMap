@@ -23,11 +23,11 @@
 		<ul class="area-list-containor">
 			<a href="javascript:;" class="area-list-li-containor on" i_area="MD">
 				<span class="area-text">蒙德</span>
-				<span class="area-img area-img2 on hd">area-img</span>
+				<span class="area-img area-img5 on hd">area-img</span>
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off" i_area="LY">
 				<span class="area-text">璃月</span>
-				<span class="area-img area-img1 hd off">area-img</span>
+				<span class="area-img area-img2 hd off">area-img</span>
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off undone">
 				<span class="area-text">??</span>
@@ -39,7 +39,7 @@
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off undone">
 				<span class="area-text">??</span>
-				<span class="area-img area-img5 hd on">area-img</span>
+				<span class="area-img area-img1 hd on">area-img</span>
 			</a>
 			<a href="javascript:;" class="area-list-li-containor off undone">
 				<span class="area-text">??</span>
@@ -240,8 +240,8 @@
 				$(".fold-btn").show();
 				var statu = 1;
 				//几项M端的适配
-				$(".control-containor").css("zoom", "0.75");
-				$(".control-containor").css("right", "-285px");
+				$(".control-containor").css("transform", "scale(0.75)");
+				$(".control-containor").css("right", "-250px");
 				$(".area-text").css("width", "110%");
 				//面板切换动画(m)
 				$(".fold-btn").click(function () {
@@ -249,14 +249,14 @@
 						$(".control-containor").css("width","420px");
 						$(".fold-btn").css("left","70px");
 						$(".control-containor").animate({
-							right: '0px'
+							right: '-60px'
 						}, function () {
 							statu = 0;
 						});
 						$(".con-type-label").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-285px'
+							right: '-250px'
 						}, function () {
 							statu = 1;
 							$(".control-containor").css("width","300px");
