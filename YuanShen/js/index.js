@@ -194,13 +194,13 @@ function MarkPoint(element) {
 	localStorage.setItem(key, newValue ? "1" : "");
 
 	if (newValue) {
-		// $('.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '_done.png');
+		$('.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '_done.png');
 		
 		that.addClass("myPopSwitchDone");
 		that.removeClass("myPopSwitchTodo");
 
 	} else {
-		// $('.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '.png');
+		$('.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '.png');
 		that.addClass("myPopSwitchTodo");
 		that.removeClass("myPopSwitchDone");
 	}
