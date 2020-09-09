@@ -153,7 +153,6 @@
 	<script src="leaflet/leaflet.js"></script>
 	<script src="js/Item_Json.js"></script>
 	<script src="js/index.js"></script>
-	<script src="js/fastclick.js"></script>
 	<script>
 		//筛选函数
 		var i_type = "ALL";
@@ -246,7 +245,6 @@
 		});
 		//初始化筛选器功能
 		$(document).ready(function () {
-			FastClick.attach(document.body);
 			$(".con-type-label:first").trigger("click");
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 				$(".fold-btn").show();
