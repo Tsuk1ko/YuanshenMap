@@ -13,7 +13,7 @@ var map = L.map("map", {
 	zoomControl: false
 });
 L.control.attribution({
-	prefix: "<a href='https://leafletjs.com/'>米游社空荧酒馆</a>"
+	prefix: "<a href='https://bbs.mihoyo.com/ys/article/1328298'>米游社空荧酒馆</a>"
 }).addTo(map);
 L.control.zoom({
 	zoomInTitle: '+',
