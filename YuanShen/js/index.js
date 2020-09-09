@@ -168,7 +168,7 @@ function onEachFeature(feature, layer) {
 	var key = layerNumber + "_" + feature.id;
 	var popupHtml = '<div class="myPopContainer">';
 	popupHtml = '<div class="myPopTitle" >';
-	popupHtml += '<div class="myPopName" >' + feature.properties.popTitle + '</div>';
+	popupHtml += '<div class="myPopName" >' + feature.properties.popTitle +feature.id+'</div>';
 	var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
 	popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
 	popupHtml += '</div>';
@@ -292,7 +292,7 @@ map.on('popupopen', function(e) {
 	var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
 	var popupHtml = '<div class="myPopContainer">';
 	popupHtml = '<div class="myPopTitle" >';
-	popupHtml += '<div class="myPopName" >' + marker.feature.properties.popTitle + '</div>';
+	popupHtml += '<div class="myPopName" >' + marker.feature.properties.popTitle +marker.feature.id+'</div>';
 	popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
 	popupHtml += '</div>';
 	popupHtml += '<div class="myPopLine"></div>';
