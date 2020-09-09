@@ -29,25 +29,26 @@ L.TileLayer.T = L.TileLayer.extend({
 L.tileLayer.t = function () {
 	return new L.TileLayer.T();
 }
-map.addLayer(L.tileLayer.t());
-L.TileLayer.T1 = L.TileLayer.extend({
-	getTileUrl: function (coords) {
-		x = coords.x
-		y = coords.y
-		if (x % 2 == 0)
-			if (y % 2 == 0)
-				return 'tiles2/SY.png';
-			else return 'tiles2/SY1.png';
-		else
-		if (y % 2 == 0)
-			return 'tiles2/SY1.png';
-		else return 'tiles2/SY.png';
-	}
-});
-L.tileLayer.t1 = function () {
-	return new L.TileLayer.T1();
-}
-map.addLayer(L.tileLayer.t1());
+//水印
+// map.addLayer(L.tileLayer.t());
+// L.TileLayer.T1 = L.TileLayer.extend({
+// 	getTileUrl: function (coords) {
+// 		x = coords.x
+// 		y = coords.y
+// 		if (x % 2 == 0)
+// 			if (y % 2 == 0)
+// 				return 'tiles2/SY.png';
+// 			else return 'tiles2/SY1.png';
+// 		else
+// 		if (y % 2 == 0)
+// 			return 'tiles2/SY1.png';
+// 		else return 'tiles2/SY.png';
+// 	}
+// });
+// L.tileLayer.t1 = function () {
+// 	return new L.TileLayer.T1();
+// }
+// map.addLayer(L.tileLayer.t1());
 //各个坐标的分类类别的初始化
 var Layer_FST = L.layerGroup();
 var Layer_YST = L.layerGroup();
