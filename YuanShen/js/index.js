@@ -29,8 +29,8 @@ L.TileLayer.T = L.TileLayer.extend({
 L.tileLayer.t = function () {
 	return new L.TileLayer.T();
 }
+map.addLayer(L.tileLayer.t());
 //水印
-// map.addLayer(L.tileLayer.t());
 // L.TileLayer.T1 = L.TileLayer.extend({
 // 	getTileUrl: function (coords) {
 // 		x = coords.x
