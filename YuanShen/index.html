@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 	<title>原神地图</title>
@@ -9,21 +8,20 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
-
 <body>
 	<div id='map'></div>
+	<!-- 筛选器 -->
 	<div class="control-containor">
 		<a href="javascript:;" class="fold-btn hd">fold</a>
+		<!-- 筛选器左侧页签 -->
 		<ul class="con-type-label-containor">
 			<li class="con-type-label on lable1" i_type="ALL">全部</li>
 			<li class="con-type-label lable2" i_type="TX">特性</li>
 			<li class="con-type-label lable3" i_type="TC">特产</li>
 			<li class="con-type-label lable4" i_type="KW">矿物</li>
 			<li class="con-type-label lable5" i_type="GW">怪物</li>
-
-
-
 		</ul>
+		<!-- 筛选器上侧地区分类 -->
 		<ul class="area-list-containor">
 			<a href="javascript:;" class="area-list-li-containor on" i_area="MD">
 				<span class="area-text">蒙德</span>
@@ -54,9 +52,11 @@
 				<span class="area-img area-img7 hd on">area-img</span>
 			</a>
 		</ul>
+		<!-- 筛选器下测已选项框体（占位元素，勿动） -->
 		<ul class="selector-list-containor">
 			<p style="display: none;"></p>
 		</ul>
+		<!-- 筛选器筛选列表以及筛选项 -->
 		<div class="options-containor">
 			<div class="options-list">
 				<span class="Layer_FST map-opts" area="MD" itemtype="TX">
@@ -77,10 +77,10 @@
 				<span class="Layer_BX_LY map-opts" area="LY" itemtype="TX">
 					<div class="img-border"><img src="imgs/icon_27.png" class="map-opts-icon" alt="icon"></div>宝箱-璃月
 				</span>
-				<span class='Layer_SJK_LY map-opts' area="LY" itemtype="KW">
+				<span class="Layer_SJK_LY map-opts" area="LY" itemtype="KW">
 					<div class="img-border"><img src="imgs/icon_16.png" class="map-opts-icon" alt="icon"></div>水晶矿-璃月
 				</span>
-				<span class='Layer_BTK_LY map-opts' area="LY" itemtype="KW">
+				<span class="Layer_BTK_LY map-opts" area="LY" itemtype="KW">
 					<div class="img-border"><img src="imgs/icon_17.png" class="map-opts-icon" alt="icon"></div>白铁矿-璃月
 				</span>
 				<span class="Layer_SJK_MD map-opts" area="MD" itemtype="KW">
@@ -158,7 +158,6 @@
 		//筛选函数
 		var i_type = "ALL";
 		var area_idx = "MD";
-
 		function filter() {
 			if (i_type == "ALL") {
 				for (let i = 0; i < $(".options-list .map-opts").length; i++) {
@@ -168,12 +167,16 @@
 						$(".options-list .map-opts").eq(i).hide();
 					}
 				}
-			} else {
+			} 
+			else 
+			{
 				for (let i = 0; i < $(".options-list .map-opts").length; i++) {
-					if ($(".options-list .map-opts").eq(i).attr("itemtype") == i_type && $(".options-list .map-opts").eq(i)
-						.attr("area") == area_idx) {
+					if ($(".options-list .map-opts").eq(i).attr("itemtype") == i_type && $(".options-list .map-opts").eq(i).attr("area") == area_idx) 
+					{
 						$(".options-list .map-opts").eq(i).show();
-					} else {
+					} 
+					else 
+					{
 						$(".options-list .map-opts").eq(i).hide();
 					}
 				}
@@ -199,15 +202,8 @@
 				filter();
 			}
 		});
-		//点击筛选项以改变地图图例显示
-		$(".options-list .map-opts").click(function () {
-			var typeclass = $(this).attr("class");
-			var idx = typeclass.indexOf(" ");
-			var typetext = typeclass.slice(0, idx);
-			$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
-		});
 		//点击筛选项以改变选择器项目
-		$(".options-list .map-opts").click(function () {
+		$(".options-list .map-opts").click(function(){
 			if ($(this).hasClass("on") == true) {
 				let text = $(this).text();
 				let fclass = $(this).attr("class");
@@ -218,7 +214,14 @@
 						$(".selector-list-containor p").eq(i).remove();
 					}
 				}
-			} else {
+				//改变地图标记
+				let typeclass = $(this).attr("class");
+				let idx = typeclass.indexOf(" ");
+				let typetext = typeclass.slice(0, idx);
+				$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
+			} 
+			else 
+			{
 				let text = $(this).text();
 				let fclass = $(this).attr("class");
 				fclass = fclass.slice(0, fclass.indexOf(" "));
@@ -233,14 +236,19 @@
 						}
 					}
 				});
+				//改变地图标记
+				let typeclass = $(this).attr("class");
+				let idx = typeclass.indexOf(" ");
+				let typetext = typeclass.slice(0, idx);
+				$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
 			}
 			$(this).toggleClass("on");
 		});
 		//初始化筛选器功能
 		$(document).ready(function () {
+			FastClick.attach(document.body);
 			$(".con-type-label:first").trigger("click");
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-				FastClick.attach(document.body);
 				$(".fold-btn").show();
 				var statu = 1;
 				//几项M端的适配
@@ -271,8 +279,9 @@
 						$(".con-type-label").fadeOut(500);
 					}
 				});
-			} else {
-
+			} 
+			else 
+			{
 				//面板切换动画(pc)
 				var Lock = true; //锁，防止抖动
 				$(".control-containor").mouseenter(function () {
@@ -299,6 +308,7 @@
 				});
 			}
 		});
+		//防止IOS的缩放函数
 		window.onload = function () {
 			// 阻止双击放大
 			var lastTouchEnd = 0;
@@ -321,5 +331,4 @@
 		}
 	</script>
 </body>
-
 </html>
