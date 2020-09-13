@@ -97,6 +97,152 @@
 		display: block;
 		padding:2px 2px 4px 0;
 	}
+	.myPopTitle {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 0px;
+    left: 14px;
+    top: 14px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+	.myPopName {
+		position: static;
+		height: auto;
+		left: 0px;
+		top: 0px;
+		font-family: font;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 28px;
+		display: flex;
+		align-items: left;
+		color: #4B5368;
+		flex: none;
+		order: 0;
+		align-self: left;
+		margin: 0px;
+	}
+
+	.myPopLine {
+		position: relative;
+		width: 327px;
+		height: 0px;
+		left: 13px;
+		top: 23px;
+		border: 1px solid rgba(167, 138, 113, 0.2);
+	}
+
+	.myPopComment {
+		position: relative;
+		width: auto;
+		height: 41px;
+		left: 14px;
+		top: 24px;
+		font-family: font;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 16px;
+		display: flex;
+		align-items: center;
+		color: #4B5368;
+	}
+
+	.myPopPicture {
+		position: relative;
+		display: inline-block;
+		width: 327px;
+		height: 326px;
+		left: 13px;
+		top: 27px;
+		border-radius: 5px;
+	}
+
+	.myPopPicture img {
+		width: 327px;
+		height: 326px;
+		left: 0px;
+		top: 0px;
+		border-radius: 5px;
+	}
+
+	.leaflet-popup-content-wrapper {
+		display: inline-block;
+		position: absolute;
+		width: 353px;
+		height: 496px;
+		left: -176.5px;
+		bottom: 0px;
+		border-radius: 7px;
+		background: #F0E9E2;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		transform-origin: 50% 100% 0;
+		transform: scale(0.6);
+		-webkit-transform: scale(0.6);
+		/*兼容-webkit-引擎浏览器*/
+		-moz-transform: scale(0.6);
+		/*兼容-moz-引擎浏览器*/
+	}
+
+	.leaflet-popup-content {
+		margin: 0px;
+	}
+
+	.leaflet-popup-tip {
+		background: #F0E9E2;
+	}
+
+	.myPopClose {
+		position: absolute !important;
+		right: 12px !important;
+		top: 14px !important;
+		background: url(imgs/con_img/popClose.png);
+		box-sizing: border-box !important;
+		width: 32px;
+		height: 31px;
+		cursor: pointer;
+	}
+
+	.myPopSwitchTodo {
+		position: static;
+		width: 131px;
+		height: 38px;
+		left: 0px;
+		top: 39px;
+		background: url(imgs/con_img/Todo.png);
+		cursor: pointer;
+		flex: none;
+		order: 1;
+		align-self: flex-start;
+		margin: 10px 0px;
+	}
+
+	.myPopSwitchDone {
+		position: static;
+		width: 131px;
+		height: 38px;
+		left: 0px;
+		top: 39px;
+		background: url(imgs/con_img/Done.png);
+		cursor: pointer;
+		flex: none;
+		order: 1;
+		align-self: flex-start;
+		margin: 10px 0px;
+	}
+	@media screen and (max-width: 750px) {
+		.leaflet-popup-content-wrapper {
+		transform-origin: 50% 100% 0;
+		transform: scale(0.5);
+		-webkit-transform: scale(0.5);
+		/*兼容-webkit-引擎浏览器*/
+		-moz-transform: scale(0.5);
+		/*兼容-moz-引擎浏览器*/
+		}
+	}
 </style>
 
 <body>

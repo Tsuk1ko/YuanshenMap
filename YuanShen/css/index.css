@@ -557,7 +557,7 @@ body,
 }
 @media screen and (max-width: 750px) {
     .leaflet-popup-content-wrapper {
-        transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
     transform: scale(0.5);
     -webkit-transform: scale(0.5);
     /*兼容-webkit-引擎浏览器*/
