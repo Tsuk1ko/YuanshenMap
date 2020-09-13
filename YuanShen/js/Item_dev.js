@@ -134,77 +134,90 @@ var PTG = L.Icon.extend({
         popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
     }
 });
+var BX_Base = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_32_1.png",
+        iconSize: [16, 16], // size of the icon
+        shadowSize: [22, 22], // size of the shadow
+        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+        shadowAnchor: [11, 11], // the same for the shadow
+        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+    }
+});
 var FST = new ST({
-    iconUrl: "./imgs/FST.png"
+    iconUrl: "./imgs/icon_0.png"
 });
 var YST = new ST({
-    iconUrl: "./imgs/YST.png"
+    iconUrl: "./imgs/icon_1.png"
 });
 var DLK_MD = new DLK({
-    iconUrl: "./imgs/DLK_MD.png",
+    iconUrl: "./imgs/icon_2.png",
 });
 var DLK_LY = new DLK({
-    iconUrl: "./imgs/DLK_LY.png"
+    iconUrl: "./imgs/icon_3.png"
 });
 var JYJJ = new WP({
-    iconUrl: "./imgs/JYJJ.png"
+    iconUrl: "./imgs/icon_4.png"
 });
 var NSH = new WP({
-    iconUrl: "./imgs/NSH.png"
+    iconUrl: "./imgs/icon_5.png"
 });
 var LLBH = new WP({
-    iconUrl: "./imgs/LLBH.png"
+    iconUrl: "./imgs/icon_6.png"
 });
 var PGYZ = new WP({
-    iconUrl: "./imgs/PGYZ.png"
+    iconUrl: "./imgs/icon_13.png"
 });
 var FCJ = new WP({
-    iconUrl: "./imgs/FCJ.png"
+    iconUrl: "./imgs/icon_12.png"
 });
 var GGG = new WP({
-    iconUrl: "./imgs/GGG.png"
+    iconUrl: "./imgs/icon_7.png"
 });
 var DDL = new WP({
-    iconUrl: "./imgs/DDL.png"
+    iconUrl: "./imgs/icon_8.png"
 });
 var SXLYH = new WP({
-    iconUrl: "./imgs/SXLYH.png"
+    iconUrl: "./imgs/icon_9.png"
 });
 var MFMG = new WP({
-    iconUrl: "./imgs/MFMG.png"
+    iconUrl: "./imgs/icon_10.png"
 });
 var LLM = new WP({
-    iconUrl: "./imgs/LLM.png"
+    iconUrl: "./imgs/icon_11.png"
 });
 var YPS = new WP({
-    iconUrl: "./imgs/YPS.png"
+    iconUrl: "./imgs/icon_14.png"
 });
 var SP = new WP({
-    iconUrl: "./imgs/SP.png"
+    iconUrl: "./imgs/icon_15.png"
 });
 var SJK = new KW({
-    iconUrl: "./imgs/SJK.png"
+    iconUrl: "./imgs/icon_16.png"
 });
 var BTK = new KW({
-    iconUrl: "./imgs/BTK.png"
+    iconUrl: "./imgs/icon_17.png"
 });
 var YJSW = new JYG({
-    iconUrl: "./imgs/YJSW.png"
+    iconUrl: "./imgs/icon_20.png"
 });
 var YJLZ = new JYG({
-    iconUrl: "./imgs/YJLZ.png"
+    iconUrl: "./imgs/icon_21.png"
 });
 var SYFS = new PTG({
-    iconUrl: "./imgs/SYFS.png"
+    iconUrl: "./imgs/icon_24.png"
 });
 var ZWCLR = new PTG({
-    iconUrl: "./imgs/ZWCLR.png"
+    iconUrl: "./imgs/icon_23.png"
 });
 var LYSS = new PTG({
-    iconUrl: "./imgs/LYSS.png"
+    iconUrl: "./imgs/icon_22.png"
 });
 var DXQQR = new PTG({
-    iconUrl: "./imgs/DXQQR.png"
+    iconUrl: "./imgs/icon_25.png"
+});
+var BX_MD = new BX_Base({
+    iconUrl: "./imgs/icon_26.png"
 });
 //添加坐标点击信息
 function onEachFeature(feature, layer) {

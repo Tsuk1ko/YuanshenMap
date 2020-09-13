@@ -45,7 +45,7 @@
 	border-radius: 2px 2px;
 	background-color: white;
 	width: 250px;
-	height: 280px;
+	height: 380px;
 	top: 10%;
 	left: 10%;
 	font-family: font;
@@ -120,6 +120,7 @@
 					<option class="CJW-LY">采集物-璃月</option>
 					<option class="CJW-MD">采集物-蒙德</option>
 					<option class="JYG-LY">精英怪-璃月</option>
+					<option class="JYG-LY">精英怪-蒙德</option>
 				</select>
 				<label class="tool-label">请选择点位实例类型（若出现图与点不对应的情况，请切换一下该项重试）</label>
 				<select class="mark-item-type on">
@@ -162,6 +163,14 @@
 					<option class="ZWCLR">债务处理人</option>
 					<option class="LYSS">雷莹术士</option>
 				</select>
+				<select class="mark-item-type" style="display: none;">
+					<option class="YJSW">遗迹守卫</option>
+					<option class="DXQQR">大型丘丘人</option>
+					<option class="SYFS">深渊法师</option>
+					<option class="LYSS">雷莹术士</option>
+				</select>
+			</br>输入备注标题<input type="text" id="PopTitle" placeholder="风神瞳">
+		</br>输入备注内容<input type="text" id="PopContent" placeholder="这是一个风神瞳"></br>
 				<input type="button" class="clear-btn" value="清除所有新增点位">
 				<input type="submit" class="add-submit-btn" value="提交新增点位">
 			</div>
@@ -208,8 +217,151 @@
 			$(".mark-item-type option").eq(i).attr("op-idx",i);
 		}
 	});
-	var markericon=FST
-	var add_type_icon_array=[FST,YST,DLK_MD,DLK_LY,SJK,BTK,JYJJ,NSH,LLBH,YPS,SP,GGG,DDL,LLM,SXLYH,MFMG,FCJ,PGYZ,YJSW,YJLZ,DXQQR,SYFS,ZWCLR,LYSS];
+	var ST = L.Icon.extend({
+    options: {
+        iconSize: [21.6, 22.8], // size of the icon
+        shadowSize: [50, 64], // size of the shadow
+        iconAnchor: [10.8, 11.4], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 62], // the same for the shadow
+        popupAnchor: [0, -11.4] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var DLK = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_45.png",
+        iconSize: [33, 33], // size of the icon
+        shadowSize: [45, 45], // size of the shadow
+        iconAnchor: [16.5, 16.5], // point of the icon which will correspond to marker's location
+        shadowAnchor: [22.5, 22.5], // the same for the shadow
+        popupAnchor: [0, -16.5] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var WP = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_32.png",
+        iconSize: [16, 16], // size of the icon
+        shadowSize: [22, 22], // size of the shadow
+        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+        shadowAnchor: [11, 11], // the same for the shadow
+        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var KW = L.Icon.extend({
+    options: {
+        iconSize: [20, 20], // size of the icon
+        shadowSize: [50, 64], // size of the shadow
+        iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 62], // the same for the shadow
+        popupAnchor: [0, -10] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var JYG = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_32.png",
+        iconSize: [24, 24], // size of the icon
+        shadowSize: [32, 32], // size of the shadow
+        iconAnchor: [12, 12], // point of the icon which will correspond to marker's location
+        shadowAnchor: [16, 16], // the same for the shadow
+        popupAnchor: [0, -12] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var PTG = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_32.png",
+        iconSize: [16, 16], // size of the icon
+        shadowSize: [22, 22], // size of the shadow
+        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+        shadowAnchor: [11, 11], // the same for the shadow
+        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var BX_Base = L.Icon.extend({
+    options: {
+        shadowUrl: "./imgs/BK_32_1.png",
+        iconSize: [16, 16], // size of the icon
+        shadowSize: [22, 22], // size of the shadow
+        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+        shadowAnchor: [11, 11], // the same for the shadow
+        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
+    }
+});
+var FST = new ST({
+    iconUrl: "./imgs/icon_0.png"
+});
+var YST = new ST({
+    iconUrl: "./imgs/icon_1.png"
+});
+var DLK_MD = new DLK({
+    iconUrl: "./imgs/icon_2.png",
+});
+var DLK_LY = new DLK({
+    iconUrl: "./imgs/icon_3.png"
+});
+var JYJJ = new WP({
+    iconUrl: "./imgs/icon_4.png"
+});
+var NSH = new WP({
+    iconUrl: "./imgs/icon_5.png"
+});
+var LLBH = new WP({
+    iconUrl: "./imgs/icon_6.png"
+});
+var PGYZ = new WP({
+    iconUrl: "./imgs/icon_13.png"
+});
+var FCJ = new WP({
+    iconUrl: "./imgs/icon_12.png"
+});
+var GGG = new WP({
+    iconUrl: "./imgs/icon_7.png"
+});
+var DDL = new WP({
+    iconUrl: "./imgs/icon_8.png"
+});
+var SXLYH = new WP({
+    iconUrl: "./imgs/icon_9.png"
+});
+var MFMG = new WP({
+    iconUrl: "./imgs/icon_10.png"
+});
+var LLM = new WP({
+    iconUrl: "./imgs/icon_11.png"
+});
+var YPS = new WP({
+    iconUrl: "./imgs/icon_14.png"
+});
+var SP = new WP({
+    iconUrl: "./imgs/icon_15.png"
+});
+var SJK = new KW({
+    iconUrl: "./imgs/icon_16.png"
+});
+var BTK = new KW({
+    iconUrl: "./imgs/icon_17.png"
+});
+var YJSW = new JYG({
+    iconUrl: "./imgs/icon_20.png"
+});
+var YJLZ = new JYG({
+    iconUrl: "./imgs/icon_21.png"
+});
+var SYFS = new PTG({
+    iconUrl: "./imgs/icon_24.png"
+});
+var ZWCLR = new PTG({
+    iconUrl: "./imgs/icon_23.png"
+});
+var LYSS = new PTG({
+    iconUrl: "./imgs/icon_22.png"
+});
+var DXQQR = new PTG({
+    iconUrl: "./imgs/icon_25.png"
+});
+var BX_MD = new BX_Base({
+    iconUrl: "./imgs/icon_26.png"
+});
+	var markericon=FST;
+	var add_type_icon_array=[FST,YST,DLK_MD,DLK_LY,SJK,BTK,SJK,BTK,JYJJ,NSH,LLBH,YPS,SP,GGG,DDL,LLM,SXLYH,MFMG,FCJ,PGYZ,YJSW,YJLZ,DXQQR,SYFS,ZWCLR,LYSS,YJSW,DXQQR,SYFS,LYSS];
 	$(".mark-type").change(function(){
 		var marktypeindex=$(".mark-type option:selected").index();
 		$(".mark-item-type").hide().removeClass("on");
@@ -227,8 +379,10 @@
 	var markerid=0;
 	var loactionsarray=[];
 
+
 	//在地图上打点函数
 	map.on('click', function (e) {
+		markerid=markers.length+1;
 		var locationtype = `{
             "geometry": {
                 "type": "Point",
@@ -238,10 +392,10 @@
             },
             "type": "Feature",
             "properties": {
-				"popTitle": "风神瞳",
-                "popupContent": "这是一个风神瞳",
+                "popTitle": "${document.getElementById('PopTitle').value ? document.getElementById('PopTitle').value : '风神瞳'}",
+                "popupContent": "${document.getElementById('PopContent').value ? document.getElementById('PopContent').value : '这是一个风神瞳'}",
             },
-            "id": "1"
+            "id": ${markerid}
 		}`;
 		loactionsarray.push(locationtype);
 		//添加地图标记
@@ -291,6 +445,25 @@
 		loactionsarray=[];
 		console.log(markers);
 	});
+	// 复制的方法
+	function copyText(text, callback) { // text: 要复制的内容， callback: 回调
+		var tag = document.createElement('input');
+		tag.setAttribute('id', 'cp_hgz_input');
+		tag.value = text;
+		document.getElementsByTagName('body')[0].appendChild(tag);
+		document.getElementById('cp_hgz_input').select();
+		document.execCommand('copy');
+		document.getElementById('cp_hgz_input').remove();
+		if (callback) { callback(text) }
+	}
+	//提交点位
+	$(".add-submit-btn").click(function(){
+		toolresult = loactionsarray.toString();
+		var texts = toolresult
+		copyText(texts, function () { alert('复制成功 \n复制内容内容' + texts) })
+		console.log(toolresult);
+	})
+
 	</script>
 	<script>
 		var datalist=['YuanShen.GuaiWu','YuanShen.KuangWu'];
