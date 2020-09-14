@@ -50,34 +50,64 @@ map.addLayer(L.tileLayer.t());
 // }
 // map.addLayer(L.tileLayer.t1());
 //各个坐标的分类类别的初始化
-var Layer_FST = L.layerGroup();
-var Layer_YST = L.layerGroup();
-var Layer_DLK_MD = L.layerGroup();
-var Layer_DLK_LY = L.layerGroup();
-var Layer_JYJJ = L.layerGroup();
-var Layer_NSH = L.layerGroup();
-var Layer_LLBH = L.layerGroup();
-var Layer_GGG = L.layerGroup();
-var Layer_DDL = L.layerGroup();
-var Layer_SXLYH = L.layerGroup();
-var Layer_MFMG = L.layerGroup();
-var Layer_LLM = L.layerGroup();
-var Layer_FCJ = L.layerGroup();
-var Layer_PGYZ = L.layerGroup();
-var Layer_YPS = L.layerGroup();
-var Layer_SP = L.layerGroup();
-var Layer_SJK_LY = L.layerGroup();
-var Layer_BTK_LY = L.layerGroup();
-var Layer_SJK_MD = L.layerGroup();
-var Layer_BTK_MD = L.layerGroup();
-var Layer_YJSW_LY = L.layerGroup();
-var Layer_YJLZ_LY = L.layerGroup();
-var Layer_LYSS_LY = L.layerGroup();
-var Layer_ZWCLR_LY = L.layerGroup();
-var Layer_SYFS_LY = L.layerGroup();
-var Layer_DXQQR_LY = L.layerGroup();
-var Layer_BX_MD = L.layerGroup();
-var Layer_BX_LY = L.layerGroup();
+var LayerMap = {
+	Layer_FST:L.layerGroup(),
+	Layer_YST:L.layerGroup(),
+	Layer_DLK_MD:L.layerGroup(),
+	Layer_DLK_LY:L.layerGroup(),
+	Layer_JYJJ:L.layerGroup(),
+	Layer_NSH:L.layerGroup(),
+	Layer_LLBH:L.layerGroup(),
+	Layer_GGG:L.layerGroup(),
+	Layer_DDL:L.layerGroup(),
+	Layer_SXLYH:L.layerGroup(),
+	Layer_MFMG:L.layerGroup(),
+	Layer_LLM:L.layerGroup(),
+	Layer_FCJ:L.layerGroup(),
+	Layer_PGYZ:L.layerGroup(),
+	Layer_YPS:L.layerGroup(),
+	Layer_SP:L.layerGroup(),
+	Layer_SJK_LY:L.layerGroup(),
+	Layer_BTK_LY:L.layerGroup(),
+	Layer_SJK_MD:L.layerGroup(),
+	Layer_BTK_MD:L.layerGroup(),
+	Layer_YJSW_LY:L.layerGroup(),
+	Layer_YJLZ_LY:L.layerGroup(),
+	Layer_LYSS_LY : L.layerGroup(),
+	Layer_ZWCLR_LY:L.layerGroup(),
+	Layer_SYFS_LY:L.layerGroup(),
+	Layer_DXQQR_LY:L.layerGroup(),
+	Layer_BX_MD:L.layerGroup(),
+	Layer_BX_LY:L.layerGroup()
+}
+// var Layer_FST = L.layerGroup();
+// var Layer_YST = L.layerGroup();
+// var Layer_DLK_MD = L.layerGroup();
+// var Layer_DLK_LY = L.layerGroup();
+// var Layer_JYJJ = L.layerGroup();
+// var Layer_NSH = L.layerGroup();
+// var Layer_LLBH = L.layerGroup();
+// var Layer_GGG = L.layerGroup();
+// var Layer_DDL = L.layerGroup();
+// var Layer_SXLYH = L.layerGroup();
+// var Layer_MFMG = L.layerGroup();
+// var Layer_LLM = L.layerGroup();
+// var Layer_FCJ = L.layerGroup();
+// var Layer_PGYZ = L.layerGroup();
+// var Layer_YPS = L.layerGroup();
+// var Layer_SP = L.layerGroup();
+// var Layer_SJK_LY = L.layerGroup();
+// var Layer_BTK_LY = L.layerGroup();
+// var Layer_SJK_MD = L.layerGroup();
+// var Layer_BTK_MD = L.layerGroup();
+// var Layer_YJSW_LY = L.layerGroup();
+// var Layer_YJLZ_LY = L.layerGroup();
+// var Layer_LYSS_LY = L.layerGroup();
+// var Layer_ZWCLR_LY = L.layerGroup();
+// var Layer_SYFS_LY = L.layerGroup();
+// var Layer_DXQQR_LY = L.layerGroup();
+// var Layer_BX_MD = L.layerGroup();
+// var Layer_BX_LY = L.layerGroup();
 //定义各个坐标使用的图标
 function getIconInfo(i) {
 	if (i < 2) { //ST
@@ -208,7 +238,11 @@ function MarkPoint(element) {
 
 }
 //定义分类的三个数组，分别对应坐标的组别，坐标的位置和坐标的名称，新增时在对应数组后增加对象即可
-var typearray1 = [Layer_FST, Layer_YST, Layer_DLK_MD, Layer_DLK_LY, Layer_JYJJ, Layer_NSH, Layer_LLBH, Layer_GGG, Layer_DDL, Layer_SXLYH, Layer_MFMG, Layer_LLM, Layer_FCJ, Layer_PGYZ, Layer_YPS, Layer_SP, Layer_SJK_LY, Layer_BTK_LY, Layer_SJK_MD, Layer_BTK_MD, Layer_YJSW_LY, Layer_YJLZ_LY, Layer_LYSS_LY, Layer_ZWCLR_LY, Layer_SYFS_LY, Layer_DXQQR_LY, Layer_BX_MD, Layer_BX_LY];
+//var typearray1 = [Layer_FST, Layer_YST, Layer_DLK_MD, Layer_DLK_LY, Layer_JYJJ, Layer_NSH, Layer_LLBH, Layer_GGG, Layer_DDL, Layer_SXLYH, Layer_MFMG, Layer_LLM, Layer_FCJ, Layer_PGYZ, Layer_YPS, Layer_SP, Layer_SJK_LY, Layer_BTK_LY, Layer_SJK_MD, Layer_BTK_MD, Layer_YJSW_LY, Layer_YJLZ_LY, Layer_LYSS_LY, Layer_ZWCLR_LY, Layer_SYFS_LY, Layer_DXQQR_LY, Layer_BX_MD, Layer_BX_LY];
+var typearray1 = [];
+for(let k in LayerMap){
+	typearray1.push(LayerMap[k]);
+}
 var typearray2 = [JS_FST, JS_YST, JS_DLK_MD, JS_DLK_LY, JS_JYJJ, JS_NSH, JS_LLBH, JS_GGG, JS_DDL, JS_SXLYH, JS_MFMG, JS_LLM, JS_FCJ, JS_PGYZ, JS_YPS, JS_SP, JS_SJK_LY, JS_BTK_LY, JS_SJK_MD, JS_BTK_MD, JS_YJSW_LY, JS_YJLZ_LY, JS_LYSS_LY, JS_ZWCLR_LY, JS_SYFS_LY, JS_DXQQR_LY, JS_BX_MD, JS_BX_LY];
 //var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR,BX_MD];
 //初始化各个坐标
@@ -248,41 +282,41 @@ function dealIcon(target, key) {
 	return target
 }
 
-//定义筛选器项目
-var overlays = {
-	"<span class='Layer_FST map-opts'>风神瞳</span>": Layer_FST,
-	"<span class='Layer_YST map-opts'>岩神瞳</span>": Layer_YST,
-	"<span class='Layer_DLK_MD map-opts'>蒙德</span>": Layer_DLK_MD,
-	"<span class='Layer_DLK_LY map-opts'>璃月</span>": Layer_DLK_LY,
-	"<span class='Layer_SJK_LY map-opts'>水晶矿</span>": Layer_SJK_LY,
-	"<span class='Layer_BTK_LY map-opts'>白铁矿</span>": Layer_BTK_LY,
-	"<span class='Layer_SJK_MD map-opts'>水晶矿</span>": Layer_SJK_MD,
-	"<span class='Layer_BTK_MD map-opts'>白铁矿</span>": Layer_BTK_MD,
-	"<span class='Layer_JYJJ map-opts'>绝云椒椒</span>": Layer_JYJJ,
-	"<span class='Layer_NSH map-opts'>霓裳花</span>": Layer_NSH,
-	"<span class='Layer_LLBH map-opts'>琉璃百合</span>": Layer_LLBH,
-	"<span class='Layer_YPS map-opts'>夜泊石</span>": Layer_YPS,
-	"<span class='Layer_SP map-opts'>石珀</span>": Layer_SP,
-	"<span class='Layer_GGG map-opts'>钩钩果</span>": Layer_GGG,
-	"<span class='Layer_DDL map-opts'>嘟嘟莲</span>": Layer_DDL,
-	"<span class='Layer_LLM map-opts'>落落梅</span>": Layer_LLM,
-	"<span class='Layer_SXLYH map-opts'>塞西莉亚花</span>": Layer_SXLYH,
-	"<span class='Layer_MFMG map-opts'>慕风蘑菇</span>": Layer_MFMG,
-	"<span class='Layer_FCJ map-opts'>风车菊</span>": Layer_FCJ,
-	"<span class='Layer_PGYZ map-opts'>蒲公英籽</span>": Layer_PGYZ,
-	"<span class='Layer_YJSW_LY map-opts'>遗迹守卫</span>": Layer_YJSW_LY,
-	"<span class='Layer_YJLZ_LY map-opts'>遗迹猎者</span>": Layer_YJLZ_LY,
-	"<span class='Layer_DXQQR_LY map-opts'>大型丘丘人</span>": Layer_DXQQR_LY,
-	"<span class='Layer_SYFS_LY map-opts'>深渊法师</span>": Layer_SYFS_LY,
-	"<span class='Layer_ZWCLR_LY map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
-	"<span class='Layer_LYSS_LY map-opts'>雷莹术士</span>": Layer_LYSS_LY,
-	"<span class='Layer_BX_MD map-opts'>宝箱—蒙德</span>": Layer_BX_MD,
-	"<span class='Layer_BX_LY map-opts'>宝箱—璃月</span>": Layer_BX_LY,
-};
-//添加筛选器
-L.control.layers(null, overlays, {
-	collapsed: false,
-}).addTo(map);
+// //定义筛选器项目
+// var overlays = {
+// 	"<span class='Layer_FST map-opts'>风神瞳</span>": Layer_FST,
+// 	"<span class='Layer_YST map-opts'>岩神瞳</span>": Layer_YST,
+// 	"<span class='Layer_DLK_MD map-opts'>蒙德</span>": Layer_DLK_MD,
+// 	"<span class='Layer_DLK_LY map-opts'>璃月</span>": Layer_DLK_LY,
+// 	"<span class='Layer_SJK_LY map-opts'>水晶矿</span>": Layer_SJK_LY,
+// 	"<span class='Layer_BTK_LY map-opts'>白铁矿</span>": Layer_BTK_LY,
+// 	"<span class='Layer_SJK_MD map-opts'>水晶矿</span>": Layer_SJK_MD,
+// 	"<span class='Layer_BTK_MD map-opts'>白铁矿</span>": Layer_BTK_MD,
+// 	"<span class='Layer_JYJJ map-opts'>绝云椒椒</span>": Layer_JYJJ,
+// 	"<span class='Layer_NSH map-opts'>霓裳花</span>": Layer_NSH,
+// 	"<span class='Layer_LLBH map-opts'>琉璃百合</span>": Layer_LLBH,
+// 	"<span class='Layer_YPS map-opts'>夜泊石</span>": Layer_YPS,
+// 	"<span class='Layer_SP map-opts'>石珀</span>": Layer_SP,
+// 	"<span class='Layer_GGG map-opts'>钩钩果</span>": Layer_GGG,
+// 	"<span class='Layer_DDL map-opts'>嘟嘟莲</span>": Layer_DDL,
+// 	"<span class='Layer_LLM map-opts'>落落梅</span>": Layer_LLM,
+// 	"<span class='Layer_SXLYH map-opts'>塞西莉亚花</span>": Layer_SXLYH,
+// 	"<span class='Layer_MFMG map-opts'>慕风蘑菇</span>": Layer_MFMG,
+// 	"<span class='Layer_FCJ map-opts'>风车菊</span>": Layer_FCJ,
+// 	"<span class='Layer_PGYZ map-opts'>蒲公英籽</span>": Layer_PGYZ,
+// 	"<span class='Layer_YJSW_LY map-opts'>遗迹守卫</span>": Layer_YJSW_LY,
+// 	"<span class='Layer_YJLZ_LY map-opts'>遗迹猎者</span>": Layer_YJLZ_LY,
+// 	"<span class='Layer_DXQQR_LY map-opts'>大型丘丘人</span>": Layer_DXQQR_LY,
+// 	"<span class='Layer_SYFS_LY map-opts'>深渊法师</span>": Layer_SYFS_LY,
+// 	"<span class='Layer_ZWCLR_LY map-opts'>债务处理人</span>": Layer_ZWCLR_LY,
+// 	"<span class='Layer_LYSS_LY map-opts'>雷莹术士</span>": Layer_LYSS_LY,
+// 	"<span class='Layer_BX_MD map-opts'>宝箱—蒙德</span>": Layer_BX_MD,
+// 	"<span class='Layer_BX_LY map-opts'>宝箱—璃月</span>": Layer_BX_LY,
+// };
+// //添加筛选器
+// L.control.layers(null, overlays, {
+// 	collapsed: false,
+// }).addTo(map);
 
 map.on('popupopen', function(e) {
 	var marker = e.popup._source;

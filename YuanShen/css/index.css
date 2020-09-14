@@ -362,7 +362,7 @@ body,
 }
 .fold-btn
 {
-    display: none;
+    /* display: none; */
     position: absolute;
     top: 15px;
     left: 60px;

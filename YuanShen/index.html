@@ -217,7 +217,8 @@
 				let typeclass = $(this).attr("class");
 				let idx = typeclass.indexOf(" ");
 				let typetext = typeclass.slice(0, idx);
-				$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
+				// $(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
+				map.removeLayer(LayerMap[fclass]);
 			} 
 			else 
 			{
@@ -239,16 +240,16 @@
 				let typeclass = $(this).attr("class");
 				let idx = typeclass.indexOf(" ");
 				let typetext = typeclass.slice(0, idx);
-				$(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
+				// $(`.leaflet-control-layers-overlays .${typetext}`).parent().prev().trigger("click");
+				map.addLayer(LayerMap[fclass]);
 			}
 			$(this).toggleClass("on");
 		});
 		//初始化筛选器功能
 		$(document).ready(function () {
 			$(".con-type-label:first").trigger("click");
+			var statu = 1;
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-				$(".fold-btn").show();
-				var statu = 1;
 				//几项M端的适配
 				$(".control-containor").css("transform-origin", "50% 0% 0");
 				$(".control-containor").css("transform", "scale(0.75)");
@@ -278,31 +279,55 @@
 					}
 				});
 			} 
-			else 
+			// else 
+			// {
+			// 	//面板切换动画(pc)
+			// 	var Lock = true; //锁，防止抖动
+			// 	$(".control-containor").mouseenter(function () {
+			// 		Lock = true;
+			// 		$(".control-containor").animate({
+			// 			right: '0px'
+			// 		});
+			// 		for (let i = 0; i < 5; i++) {
+			// 			$(".con-type-label").fadeIn(500);
+			// 		}
+			// 	});
+			// 	$(".control-containor").mouseleave(function () {
+			// 		Lock = false;
+			// 		setTimeout(function () {
+			// 			if (Lock == false) {
+			// 				$(".control-containor").animate({
+			// 					right: '-270px'
+			// 				});
+			// 				for (let i = 0; i < 5; i++) {
+			// 					$(".con-type-label").fadeOut(500);
+			// 				}
+			// 			}
+			// 		}, 500) //移出鼠标延迟500ms收回
+			// 	});
+			// }
+			else
 			{
-				//面板切换动画(pc)
-				var Lock = true; //锁，防止抖动
-				$(".control-containor").mouseenter(function () {
-					Lock = true;
-					$(".control-containor").animate({
-						right: '0px'
-					});
-					for (let i = 0; i < 5; i++) {
+				$(".fold-btn").click(function () {
+					if (statu == 1) {
+						$(".control-containor").css("width", "420px");
+						$(".fold-btn").css("left", "60px");
+						$(".control-containor").animate({
+							right: '0px'
+						}, function () {
+							statu = 0;
+						});
 						$(".con-type-label").fadeIn(500);
+					} else {
+						$(".control-containor").animate({
+							right: '-270px'
+						}, function () {
+							statu = 1;
+							$(".control-containor").css("width", "300px");
+							$(".fold-btn").css("left", "-60px");
+						});
+						$(".con-type-label").fadeOut(500);
 					}
-				});
-				$(".control-containor").mouseleave(function () {
-					Lock = false;
-					setTimeout(function () {
-						if (Lock == false) {
-							$(".control-containor").animate({
-								right: '-270px'
-							});
-							for (let i = 0; i < 5; i++) {
-								$(".con-type-label").fadeOut(500);
-							}
-						}
-					}, 500) //移出鼠标延迟500ms收回
 				});
 			}
 		});
