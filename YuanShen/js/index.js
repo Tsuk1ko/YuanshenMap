@@ -216,6 +216,8 @@ function closePop() {
 	$(".leaflet-popup-close-button")[0].click();
 }
 
+var markers = {};
+
 function MarkPoint(element) {
 	var that = $(element);
 	var key = that.attr("data-key");
@@ -223,10 +225,23 @@ function MarkPoint(element) {
 	var oldValue = localStorage.getItem(key);
 	var newValue = !oldValue;
 	localStorage.setItem(key, newValue ? "1" : "");
+	
+	var doneUrl = newValue ? "_done" : ""
+	var iconUrl = "./imgs/icon_" + layerNumber + doneUrl + ".png";
+	var newIcon = new L.Icon({
+		className: "mark-" + key,
+		iconUrl: iconUrl,
+		shadowUrl: getIconInfo(layerNumber).shadowUrl, // size of the icon
+		iconSize: getIconInfo(layerNumber).iconSize, // size of the icon
+		shadowSize: getIconInfo(layerNumber).shadowSize, // size of the shadow
+		iconAnchor: getIconInfo(layerNumber).iconAnchor, // point of the icon which will correspond to marker's location
+		shadowAnchor: getIconInfo(layerNumber).shadowAnchor, // the same for the shadow
+		popupAnchor: getIconInfo(layerNumber).popupAnchor // point from which the popup should open relative to the iconAnchor
+	});
+	markers[key].setIcon(newIcon);
 
 	if (newValue) {
 		$('.leaflet-marker-icon.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '_done.png');
-		
 		that.addClass("myPopSwitchDone");
 		that.removeClass("myPopSwitchTodo");
 
@@ -245,6 +260,7 @@ for(let k in LayerMap){
 }
 var typearray2 = [JS_FST, JS_YST, JS_DLK_MD, JS_DLK_LY, JS_JYJJ, JS_NSH, JS_LLBH, JS_GGG, JS_DDL, JS_SXLYH, JS_MFMG, JS_LLM, JS_FCJ, JS_PGYZ, JS_YPS, JS_SP, JS_SJK_LY, JS_BTK_LY, JS_SJK_MD, JS_BTK_MD, JS_YJSW_LY, JS_YJLZ_LY, JS_LYSS_LY, JS_ZWCLR_LY, JS_SYFS_LY, JS_DXQQR_LY, JS_BX_MD, JS_BX_LY];
 //var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR,BX_MD];
+
 //初始化各个坐标
 for (let i = 0; i < typearray2.length; i++) {
 	localStorage.setItem("layerNumber", i);
@@ -257,7 +273,7 @@ for (let i = 0; i < typearray2.length; i++) {
 			}
 			var doneUrl = markedFlag ? "_done" : ""
 			var iconUrl = "./imgs/icon_" + i + doneUrl + ".png";
-			return L.marker([latlng.lng, latlng.lat], {
+			var marker = L.marker([latlng.lng, latlng.lat], {
 				icon: new L.Icon({
 					className: "mark-" + i + "_" + `${feature.id}`,
 					iconUrl: iconUrl,
@@ -269,7 +285,9 @@ for (let i = 0; i < typearray2.length; i++) {
 					popupAnchor: getIconInfo(i).popupAnchor // point from which the popup should open relative to the iconAnchor
 				}),
 				alt: `${latlng.lng},${latlng.lat}`
-			}, ).addTo(typearray1[i]);
+			}, );
+			markers[key] = marker;
+			return marker.addTo(typearray1[i]);
 
 		},
 		onEachFeature: onEachFeature
