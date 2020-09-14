@@ -177,11 +177,11 @@ function getIconInfo(i) {
 	} else { // BX_Base
 
 		var op = {
-			shadowUrl: "./imgs/BK_32_1.png",
+			//shadowUrl: "./imgs/BK_32_1.png",
 			iconSize: [16, 16], // size of the icon
-			shadowSize: [22, 22], // size of the shadow
+			//shadowSize: [22, 22], // size of the shadow
 			iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-			shadowAnchor: [11, 11], // the same for the shadow
+			//shadowAnchor: [11, 11], // the same for the shadow
 			popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
 		}
 		return op;

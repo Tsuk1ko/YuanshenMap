@@ -177,11 +177,11 @@ function getIconInfo(i) {
 	} else { // BX_Base
 
 		var op = {
-			shadowUrl: "./imgs/BK_32_1.png",
-			iconSize: [16, 16], // size of the icon
-			shadowSize: [22, 22], // size of the shadow
+			//shadowUrl: "./imgs/BK_32_1.png",
+			iconSize: [28, 28], // size of the icon
+			//shadowSize: [22, 22], // siz	e of the shadow
 			iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-			shadowAnchor: [11, 11], // the same for the shadow
+			//shadowAnchor: [11, 11], // the same for the shadow
 			popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
 		}
 		return op;
@@ -239,18 +239,14 @@ function MarkPoint(element) {
 		popupAnchor: getIconInfo(layerNumber).popupAnchor // point from which the popup should open relative to the iconAnchor
 	});
 	markers[key].setIcon(newIcon);
-
 	if (newValue) {
-		$('.leaflet-marker-icon.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '_done.png');
 		that.addClass("myPopSwitchDone");
 		that.removeClass("myPopSwitchTodo");
 
 	} else {
-		$('.leaflet-marker-icon.mark-' + key).attr('src', './imgs/icon_' + layerNumber + '.png');
 		that.addClass("myPopSwitchTodo");
 		that.removeClass("myPopSwitchDone");
 	}
-
 }
 //定义分类的三个数组，分别对应坐标的组别，坐标的位置和坐标的名称，新增时在对应数组后增加对象即可
 //var typearray1 = [Layer_FST, Layer_YST, Layer_DLK_MD, Layer_DLK_LY, Layer_JYJJ, Layer_NSH, Layer_LLBH, Layer_GGG, Layer_DDL, Layer_SXLYH, Layer_MFMG, Layer_LLM, Layer_FCJ, Layer_PGYZ, Layer_YPS, Layer_SP, Layer_SJK_LY, Layer_BTK_LY, Layer_SJK_MD, Layer_BTK_MD, Layer_YJSW_LY, Layer_YJLZ_LY, Layer_LYSS_LY, Layer_ZWCLR_LY, Layer_SYFS_LY, Layer_DXQQR_LY, Layer_BX_MD, Layer_BX_LY];
