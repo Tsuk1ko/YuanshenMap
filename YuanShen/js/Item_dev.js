@@ -23,7 +23,7 @@ L.TileLayer.T = L.TileLayer.extend({
 	getTileUrl: function (coords) {
 		x = coords.x
 		y = coords.y
-		return 'tiles1/' + coords.z + '/ppp' + x + '_' + y + '.png';
+		return 'tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
 	}
 });
 L.tileLayer.t = function () {

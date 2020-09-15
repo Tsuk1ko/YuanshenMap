@@ -5,7 +5,7 @@ var map = L.map("map", {
 	center: [-35, 45],
 	zoomDelta: 0.5,
 	zoomSnap: 0.5,
-	maxZoom: 7,
+	maxZoom: 8,
 	minZoom: 4,
 	zoom: 4,
 	maxBounds: t,
@@ -23,7 +23,7 @@ L.TileLayer.T = L.TileLayer.extend({
 	getTileUrl: function (coords) {
 		x = coords.x
 		y = coords.y
-		return 'tiles1/' + coords.z + '/ppp' + x + '_' + y + '.png';
+		return 'tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
 	}
 });
 L.tileLayer.t = function () {
@@ -177,11 +177,11 @@ function getIconInfo(i) {
 	} else { // BX_Base
 
 		var op = {
-			//shadowUrl: "./imgs/BK_32_1.png",
-			iconSize: [28, 28], // size of the icon
-			//shadowSize: [22, 22], // siz	e of the shadow
+			shadowUrl: "./imgs/BK_32_1.png",
+			iconSize: [16, 16], // size of the icon
+			shadowSize: [22, 22], // size of the shadow
 			iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-			//shadowAnchor: [11, 11], // the same for the shadow
+			shadowAnchor: [11, 11], // the same for the shadow
 			popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
 		}
 		return op;

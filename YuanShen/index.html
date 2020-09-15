@@ -151,8 +151,8 @@
 	</div>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="leaflet/leaflet.js"></script>
-	<script src="js/Item_Json.js"></script>
-	<script src="js/index.js"></script>
+	<script src="http://yuanshen.site:81/js/Item_Json.js"></script>
+	<script src="http://yuanshen.site:81/js/index.js"></script>
 	<script>
 		//筛选函数
 		var i_type = "ALL";
@@ -329,6 +329,14 @@
 						$(".con-type-label").fadeOut(500);
 					}
 				});
+				$(".control-containor").css("width", "420px");
+						$(".fold-btn").css("left", "60px");
+						$(".control-containor").animate({
+							right: '0px'
+						}, function () {
+							statu = 0;
+						});
+						$(".con-type-label").fadeIn(500);
 			}
 		});
 		//防止IOS的缩放函数

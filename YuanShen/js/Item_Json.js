@@ -1493,7 +1493,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -46.08847179577592, 46.42822265625001
+                    -46.93526088057719, 50.99853515625001
                 ]
             },
             "type": "Feature",
@@ -1899,7 +1899,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -52.84259457223952, 31.102294921875004
+                    -50.95842672335993, 115.31250000000001
                 ]
             },
             "type": "Feature",
@@ -2277,7 +2277,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -44.62175409623325, 32.16796875000001
+                    -47.44294999517949, 32.95898437500001
                 ]
             },
             "type": "Feature",
@@ -2305,7 +2305,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -46.10370875598025, 33.34350585937501
+                    -56.9809114245448, 47.59277343750001
                 ]
             },
             "type": "Feature",
@@ -2724,7 +2724,7 @@ var JS_YST = {
         {
             "geometry": {
                 "type": "Point",
-                "coordinates": [-44.66865287227319, 51.05346679687501]
+                "coordinates": [-54.83866361297512, 61.67724609375001]
             },
             "type": "Feature",
             "properties": {
@@ -2732,6 +2732,18 @@ var JS_YST = {
                 "popupContent": "这是一个岩神瞳",
             },
             "id": 230
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-42.24478535602799, 36.87011718750001]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "岩神瞳",
+                "popupContent": "这是一个岩神瞳",
+            },
+            "id": 231
         },
     ]
 };
