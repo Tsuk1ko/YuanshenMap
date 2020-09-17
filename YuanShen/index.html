@@ -270,8 +270,8 @@
 			var statu = 1;
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 				//几项M端的适配
-				$(".control-containor").css("transform-origin", "50% 0% 0");
-				$(".control-containor").css("transform", "scale(0.75)");
+				$(".control-containor").css("transform-origin", "0% 0% 0");
+				$(".control-containor").css("transform", "scale(0.5)");
 				// $(".control-containor").css("right", "-255px");
 				// $(".control-containor").css("width", "300px");
 				// $(".fold-btn").css("left", "-55px");
@@ -282,7 +282,7 @@
 						// $(".control-containor").css("width", "431px");
 						// $(".fold-btn").css("left", "65px");
 						$(".control-containor").animate({
-							right: '-86px'
+							right: '-215px'
 						}, function () {
 							statu = 0;
 						});
