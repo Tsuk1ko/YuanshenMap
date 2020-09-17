@@ -79,6 +79,10 @@
 	{
 		border: 1px solid #808080;
 	}
+	.leaflet-popup-content
+	{
+		font-size: 30px;
+	}
 	</style>
 </head>
 <body>
@@ -157,7 +161,7 @@
 				<a href="javascript:;" class="add-submit-btn">提交新增点位</a>
 			</div>
 			<div class="panel modify-panel" style="display: none;">
-				<lable class="tool-label" style="margin-bottom: 20px;">请拖动要修改的点位,获取其坐标</lable>
+				<lable class="tool-label" style="margin-bottom: 20px;">请<b>点击</b>要修改的点位,获取其坐标</lable>
 				<lable class="tool-label">要修改的点位X,Y坐标如下
 					<span style="display: block;">x:<input type="text" class="modify-x"> </span></span>
 					<span  style="display: block;">y:<input type="text" class="modify-y"> </span></span>
@@ -741,13 +745,14 @@ var BX_MD = new BX_Base({
 				draggable:true,
 				icon:markericon
 			}).addTo(map);
-			marker.on('dragend', function (event) {
+			marker.on('click', function (event) {
 				var position = marker.getLatLng();
 				$(".modify-x").val(position.lat);
 				$(".modify-y").val(position.lng);
 			});
+			
 		markers.push(marker);
-		marker.bindPopup(`<b>添加的点</b><br><span>初始坐标 x:${e.latlng.lat},y:${e.latlng.lng}</span><br><a href="javascript:delmarker(${markerid});" class="marker-del-btn markerid-${markerid}">删除</a>`);
+		marker.bindPopup(`<b>添加的点</b><br><span>初始坐标 x:${e.latlng.lat},<br>y:${e.latlng.lng}</span><br><a href="javascript:delmarker(${markerid});" class="marker-del-btn markerid-${markerid}">删除</a>`);
 		console.log(markers);
 	});
 	//删除对应点位的函数(新增点位，未上传)
@@ -781,24 +786,6 @@ var BX_MD = new BX_Base({
 		loactionsarray=[];
 		console.log(markers);
 	});
-	// 复制的方法
-	function copyText(text, callback) { // text: 要复制的内容， callback: 回调
-		var tag = document.createElement('input');
-		tag.setAttribute('id', 'cp_hgz_input');
-		tag.value = text;
-		document.getElementsByTagName('body')[0].appendChild(tag);
-		document.getElementById('cp_hgz_input').select();
-		document.execCommand('copy');
-		document.getElementById('cp_hgz_input').remove();
-		if (callback) { callback(text) }
-	}
-	//提交点位
-	$(".add-submit-btn").click(function(){
-		toolresult = loactionsarray.toString();
-		var texts = toolresult
-		copyText(texts, function () { alert('复制成功 \n复制内容内容' + texts) })
-		console.log(toolresult);
-	})
 	</script>
 </body>
 </html>

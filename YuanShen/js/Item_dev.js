@@ -283,6 +283,11 @@ for (let i = 0; i < typearray2.length; i++) {
 				alt: `${latlng.lng},${latlng.lat}`,
 				draggable:true
 			});
+			marker.on('click', function (event) {
+				var position = marker.getLatLng();
+				$(".modify-x").val(position.lat);
+				$(".modify-y").val(position.lng);
+			});
 			markers[key] = marker;
 			return marker.addTo(typearray1[i]);
 

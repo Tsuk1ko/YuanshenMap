@@ -115,11 +115,15 @@ body,
     opacity: 0.5;
     cursor: not-allowed;
     width: 50px;
-    margin-left: 65px;
+    margin-left: 65px !important;
+}
+.area-list-li-containor.off
+{
+    margin-left: 3px;
 }
 .area-list-li-containor.undone .area-img
 {
-    width: 50px;
+    width: 46.2px;
     background-position: 0px 100%;
 }
 .area-list-li-containor.undone .area-text
@@ -134,11 +138,12 @@ body,
 .mengde
 {
     background: url(../imgs/con_img/mengde.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: 95% 100%;
 }
 .liyue
 {
     background: url(../imgs/con_img/liyue.png) no-repeat;
+    background-size: 95% 100%;
 }
 .daoqi
 {
