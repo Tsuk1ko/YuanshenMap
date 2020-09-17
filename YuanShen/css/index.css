@@ -98,7 +98,7 @@ body,
     position: absolute;
     display: none;
     top: 110px;
-    left: 12px;
+    left: 15px;
     width: 245px;
     height: 400px;
 }
@@ -113,70 +113,80 @@ body,
 .area-list-li-containor.undone
 {
     opacity: 0.5;
-    cursor:not-allowed;
+    cursor: not-allowed;
+    width: 50px;
+    margin-left: 65px;
+}
+.area-list-li-containor.undone .area-img
+{
+    width: 50px;
+    background-position: 0px 100%;
+}
+.area-list-li-containor.undone .area-text
+{
+    display: none;
 }
 .area-img
 {
     width: 117px;
     height: 51px;
-
 }
 .mengde
 {
-    background: url(../imgs/con_img/mengde.png);
+    background: url(../imgs/con_img/mengde.png) no-repeat;
     background-size: 100% 100%;
 }
 .liyue
 {
-    background: url(../imgs/con_img/liyue.png);
+    background: url(../imgs/con_img/liyue.png) no-repeat;
 }
 .daoqi
 {
-    background: url(../imgs/con_img/daoqi.png);
+    background: url(../imgs/con_img/daoqi.png) no-repeat;
 }
 .zhidong
 {
-    background: url(../imgs/con_img/zhidong.png);
+    background: url(../imgs/con_img/zhidong.png) no-repeat;
 }
 .xumi
 {
-    background: url(../imgs/con_img/xumi.png);
+    background: url(../imgs/con_img/xumi.png) no-repeat;
 }
 .fengdan
 {
-    background: url(../imgs/con_img/fengdan.png);
+    background: url(../imgs/con_img/fengdan.png) no-repeat;
 }
 .munata
 {
-    background: url(../imgs/con_img/munata.png);
+    background: url(../imgs/con_img/munata.png) no-repeat;
 }
 .mengde.on
 {
-    background: url(../imgs/con_img/mengde-on.png);
+    background: url(../imgs/con_img/mengde-on.png) no-repeat;
 }
 .liyue.on
 {
-    background: url(../imgs/con_img/liyue-on.png);
+    background: url(../imgs/con_img/liyue-on.png) no-repeat;
 }
 .daoqi.on
 {
-    background: url(../imgs/con_img/daoqi-on.png);
+    background: url(../imgs/con_img/daoqi-on.png) no-repeat;
 }
 .zhidong.on
 {
-    background: url(../imgs/con_img/zhidong-on.png);
+    background: url(../imgs/con_img/zhidong-on.png) no-repeat;
 }
 .xumi.on
 {
-    background: url(../imgs/con_img/xumi-on.png);
+    background: url(../imgs/con_img/xumi-on.png) no-repeat;
 }
 .fengdan.on
 {
-    background: url(../imgs/con_img/fengdan-on.png);
+    background: url(../imgs/con_img/fengdan-on.png) no-repeat;
 }
 .munata.on
 {
-    background: url(../imgs/con_img/munata-on.png);
+    background: url(../imgs/con_img/munata-on.png) no-repeat;
 }
 .area-text
 {
