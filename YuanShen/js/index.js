@@ -5,7 +5,7 @@ var map = L.map("map", {
 	center: [-35, 45],
 	zoomDelta: 0.5,
 	zoomSnap: 0.5,
-	maxZoom: 8,
+	maxZoom: 7,
 	minZoom: 4,
 	zoom: 4,
 	maxBounds: t,
@@ -23,7 +23,7 @@ L.TileLayer.T = L.TileLayer.extend({
 	getTileUrl: function (coords) {
 		x = coords.x
 		y = coords.y
-		return 'tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
+		return 'http://a8chan.gitee.io/yuan-shen-dt/tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
 	}
 });
 L.tileLayer.t = function () {
@@ -206,7 +206,7 @@ function onEachFeature(feature, layer) {
 	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
 	popupHtml += '<div class="myPopComment">' + feature.properties.popupContent + '</div>';
 	popupHtml += '<div class="myPopPicture">';
-	popupHtml += '<img src=./comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
+	popupHtml += '<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
 	popupHtml += '</div>';
 	popupHtml += '</div>';
 	layer.bindPopup(popupHtml);
@@ -347,7 +347,7 @@ map.on('popupopen', function(e) {
 	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
 	popupHtml += '<div class="myPopComment">' + marker.feature.properties.popupContent + '</div>';
 	popupHtml += '<div class="myPopPicture">';
-	popupHtml += '<img src=./comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
+	popupHtml += '<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
 	popupHtml += '</div>';
 	popupHtml += '</div>';
 	marker.bindPopup(popupHtml);

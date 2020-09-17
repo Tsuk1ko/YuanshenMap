@@ -1493,7 +1493,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -46.93526088057719, 50.99853515625001
+                    -46.95401192579361,51.19079589843751
                 ]
             },
             "type": "Feature",
@@ -1885,7 +1885,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -52.649729197309426, 29.729003906250004
+                    -52.759567615468335,29.805908203125004
                 ]
             },
             "type": "Feature",
@@ -1913,7 +1913,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -52.902275861683094, 32.23388671875001
+                    -52.72963909783716, 31.893310546875004
                 ]
             },
             "type": "Feature",
@@ -1927,7 +1927,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -53.59250480903937, 26.78466796875
+                    -53.488045536056205,26.8011474609375
                 ]
             },
             "type": "Feature",
@@ -2081,7 +2081,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -57.657157596582984, 37.73803710937501
+                    -57.73348483383159,37.55676269531251
                 ]
             },
             "type": "Feature",
@@ -2137,7 +2137,7 @@ var JS_YST = {
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -50.14170587960566, 24.642333984375
+                    -49.88047763874254,24.01611328125
                 ]
             },
             "type": "Feature",
@@ -2744,6 +2744,18 @@ var JS_YST = {
                 "popupContent": "这是一个岩神瞳",
             },
             "id": 231
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-52.889020448995225,31.124267578125004]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "岩神瞳",
+                "popupContent": "这是一个岩神瞳",
+            },
+            "id": 232
         },
     ]
 };

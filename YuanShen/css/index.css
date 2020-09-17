@@ -1,8 +1,8 @@
 /* 初始化地图样式，字体 */
-@font-face {
+/* @font-face {
     font-family: font;
     src: url(hywh_thin.ttf);
-}
+} */
 html,
 body,
 #map {
@@ -345,20 +345,49 @@ body,
 .bottom-rules
 {
     z-index: 99999;
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
-    width: 96px;
-    height: 18px;
-    background: rgba(255, 255, 255, 0.7)
+    width: auto;
+    height: auto;
 }
 .disclaimer
 {
-    position: absolute;
-    left: 6px;
-    top: 1px;
+    position: relative;
+    left: 0;
+    bottom: 0;
     color: #0078A8;
     font-size: 12px;
+    padding: 1px 5px;
+    background: rgba(255, 255, 255, 0.7)
+}
+.disclaimer:hover
+{
+    text-decoration: underline;
+}
+.bottom-beian
+{
+    position: absolute;
+    z-index: 99999;
+    bottom: 0;
+    left: 50%;
+    width: auto;
+    height: auto;
+}
+.beian
+{
+    position: relative;
+    left: -50%;
+    float: left;
+    bottom: 0;
+    color: #0078A8;
+    font-size: 12px;
+    padding: 1px 5px;
+    background: rgba(255, 255, 255, 0.7)
+}
+.beian:hover
+{
+    text-decoration: underline;
 }
 .fold-btn
 {
