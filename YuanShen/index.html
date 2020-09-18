@@ -260,6 +260,12 @@
 				map.addLayer(LayerMap[fclass]);
 			}
 			$(this).toggleClass("on");
+			$(".map-opts.on").click(function(){
+				if($(".opt-selector").length==0)
+				{
+					$(".selector-hint").show();
+				}
+			})
 		});
 		//初始化筛选器功能
 		$(document).ready(function () {
@@ -269,6 +275,7 @@
 			})
 			var statu = 1;
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+				$(".bottom-beian").hide();
 				//几项M端的适配
 				$(".control-containor").css("transform-origin", "0% 0% 0");
 				$(".control-containor").css("transform", "scale(0.5)");
@@ -286,16 +293,16 @@
 						}, function () {
 							statu = 0;
 						});
-						$(".area-list-containor").fadeIn(500);
+						$(".area-list-li-containor").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-400px'
+							right: '-415px'
 						}, function () {
 							statu = 1;
 							// $(".control-containor").css("width", "431px");
 							// $(".fold-btn").css("left", "-55px");
 						});
-						$(".area-list-containor").fadeOut(500);
+						$(".area-list-li-containor").fadeOut(500);
 					}
 				});
 			} 

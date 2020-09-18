@@ -161,8 +161,8 @@
 				<a href="javascript:;" class="add-submit-btn">提交新增点位</a>
 			</div>
 			<div class="panel modify-panel" style="display: none;">
-				<lable class="tool-label" style="margin-bottom: 20px;">请<b>点击</b>要修改的点位,获取其坐标</lable>
-				<lable class="tool-label">要修改的点位X,Y坐标如下
+				<lable class="tool-label" style="margin-bottom: 20px;">请<b>点击或拖动</b>要修改的点位,获取其坐标</lable>
+				<lable class="tool-label">要修改的点位当前X,Y坐标如下
 					<span style="display: block;">x:<input type="text" class="modify-x"> </span></span>
 					<span  style="display: block;">y:<input type="text" class="modify-y"> </span></span>
 				</lable>
@@ -175,11 +175,13 @@
 	<div id='map'></div>
 	<!-- 筛选器 -->
 	<div class="control-containor">
+		<img class="Background" src="imgs/con_img/Content.png">
 		<a href="javascript:;" class="fold-btn hd">fold</a>
 		<div class="person-div">
 			<a href="javascript:;" class="reg_log_link hd">登录/注册</a>
 			<a href="javascript:;" class="save-btn disable hd">存档</a>
 		</div>
+		<div class="topLine"></div>
 		<!-- 筛选器左侧页签 -->
 		<ul class="con-type-label-containor">
 			<li class="con-type-label lable1" i_type="TX">特性</li>
@@ -324,6 +326,8 @@
 	<script src="js/Item_Json.js"></script>
 	<script src="js/Item_dev.js"></script>
 	<script>
+		$(".area-list-li-containor").hide();
+		$(".area-list-containor").show();
 		//筛选函数
 		var i_type = "ALL";
 		var area_idx = "MD";
@@ -429,30 +433,30 @@
 			var statu = 1;
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 				//几项M端的适配
-				$(".control-containor").css("transform-origin", "50% 0% 0");
-				$(".control-containor").css("transform", "scale(0.75)");
-				$(".control-containor").css("right", "-255px");
-				$(".control-containor").css("width", "300px");
-				$(".fold-btn").css("left", "-55px");
+				$(".control-containor").css("transform-origin", "0% 0% 0");
+				$(".control-containor").css("transform", "scale(0.5)");
+				// $(".control-containor").css("right", "-255px");
+				// $(".control-containor").css("width", "300px");
+				// $(".fold-btn").css("left", "-55px");
 				//面板切换动画(m)
 				$(".fold-btn").click(function () {
 					if (statu == 1) {
 						$(".area-list-containor").show();
-						$(".control-containor").css("width", "420px");
-						$(".fold-btn").css("left", "65px");
+						// $(".control-containor").css("width", "431px");
+						// $(".fold-btn").css("left", "65px");
 						$(".control-containor").animate({
-							right: '-60px'
+							right: '-215px'
 						}, function () {
 							statu = 0;
 						});
 						$(".area-list-containor").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-255px'
+							right: '-400px'
 						}, function () {
 							statu = 1;
-							$(".control-containor").css("width", "300px");
-							$(".fold-btn").css("left", "-55px");
+							// $(".control-containor").css("width", "431px");
+							// $(".fold-btn").css("left", "-55px");
 						});
 						$(".area-list-containor").fadeOut(500);
 					}
@@ -489,23 +493,23 @@
 			{
 				$(".fold-btn").click(function () {
 					if (statu == 1) {
-						$(".control-containor").css("width", "420px");
-						$(".fold-btn").css("left", "60px");
+						// $(".control-containor").css("width", "420px");
+						// $(".fold-btn").css("left", "60px");
 						$(".control-containor").animate({
-							right: '0px'
+							right: '-108px'
 						}, function () {
 							statu = 0;
 						});
-						$(".area-list-containor").fadeIn(500);
+						$(".area-list-li-containor").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-270px'
+							right: '-400px'
 						}, function () {
 							statu = 1;
-							$(".control-containor").css("width", "300px");
-							$(".fold-btn").css("left", "-60px");
+							// $(".control-containor").css("width", "300px");
+							// $(".fold-btn").css("left", "-60px");
 						});
-						$(".area-list-containor").fadeOut(500);
+						$(".area-list-li-containor").fadeOut(500);
 					}
 				});
 			}
@@ -786,6 +790,26 @@ var BX_MD = new BX_Base({
 		loactionsarray=[];
 		console.log(markers);
 	});
+	</script>
+	<!-- Ajax -->
+	<script>
+		var datalist=['YuanShen.GuaiWu','YuanShen.KuangWu'];
+		for(let i=0;i<datalist.length;i++)
+		{
+			var postdata=datalist[i]
+			$.ajax(
+			{
+				type : "POST",
+				url:'php/dbdata.php',
+				data:{postdata:postdata},
+				success:function(result)
+				{
+					result=JSON.parse(result)
+					console.log(result);
+				}
+			}
+		)
+		}
 	</script>
 </body>
 </html>
