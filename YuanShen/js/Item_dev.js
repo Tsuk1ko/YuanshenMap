@@ -55,30 +55,30 @@ var LayerMap = {
 	Layer_YST:L.layerGroup(),
 	Layer_DLK_MD:L.layerGroup(),
 	Layer_DLK_LY:L.layerGroup(),
-	Layer_JYJJ:L.layerGroup(),
-	Layer_NSH:L.layerGroup(),
-	Layer_LLBH:L.layerGroup(),
-	Layer_GGG:L.layerGroup(),
-	Layer_DDL:L.layerGroup(),
-	Layer_SXLYH:L.layerGroup(),
-	Layer_MFMG:L.layerGroup(),
-	Layer_LLM:L.layerGroup(),
-	Layer_FCJ:L.layerGroup(),
-	Layer_PGYZ:L.layerGroup(),
-	Layer_YPS:L.layerGroup(),
-	Layer_SP:L.layerGroup(),
+	Layer_BX_MD:L.layerGroup(),
+	Layer_BX_LY:L.layerGroup(),
 	Layer_SJK_LY:L.layerGroup(),
 	Layer_BTK_LY:L.layerGroup(),
 	Layer_SJK_MD:L.layerGroup(),
 	Layer_BTK_MD:L.layerGroup(),
+	Layer_JYJJ:L.layerGroup(),
+	Layer_NSH:L.layerGroup(),
+	Layer_LLBH:L.layerGroup(),
+	Layer_YPS:L.layerGroup(),
+	Layer_SP:L.layerGroup(),
+	Layer_GGG:L.layerGroup(),
+	Layer_DDL:L.layerGroup(),
+	Layer_LLM:L.layerGroup(),
+	Layer_SXLYH:L.layerGroup(),
+	Layer_MFMG:L.layerGroup(),
+	Layer_FCJ:L.layerGroup(),
+	Layer_PGYZ:L.layerGroup(),
 	Layer_YJSW_LY:L.layerGroup(),
 	Layer_YJLZ_LY:L.layerGroup(),
-	Layer_LYSS_LY : L.layerGroup(),
-	Layer_ZWCLR_LY:L.layerGroup(),
-	Layer_SYFS_LY:L.layerGroup(),
 	Layer_DXQQR_LY:L.layerGroup(),
-	Layer_BX_MD:L.layerGroup(),
-	Layer_BX_LY:L.layerGroup()
+	Layer_SYFS_LY:L.layerGroup(),
+	Layer_ZWCLR_LY:L.layerGroup(),
+	Layer_LYSS_LY:L.layerGroup()
 }
 // var Layer_FST = L.layerGroup();
 // var Layer_YST = L.layerGroup();
@@ -254,9 +254,60 @@ var typearray1 = [];
 for(let k in LayerMap){
 	typearray1.push(LayerMap[k]);
 }
-var typearray2 = [JS_FST, JS_YST, JS_DLK_MD, JS_DLK_LY, JS_JYJJ, JS_NSH, JS_LLBH, JS_GGG, JS_DDL, JS_SXLYH, JS_MFMG, JS_LLM, JS_FCJ, JS_PGYZ, JS_YPS, JS_SP, JS_SJK_LY, JS_BTK_LY, JS_SJK_MD, JS_BTK_MD, JS_YJSW_LY, JS_YJLZ_LY, JS_LYSS_LY, JS_ZWCLR_LY, JS_SYFS_LY, JS_DXQQR_LY, JS_BX_MD, JS_BX_LY];
-//var typearray3=[FST,YST,DLK_MD,DLK_LY,JYJJ,NSH,LLBH,GGG,DDL,SXLYH,MFMG,LLM,FCJ,PGYZ,YPS,SP,SJK,BTK,SJK,BTK,YJSW,YJLZ,LYSS,ZWCLR,SYFS,DXQQR,BX_MD];
-
+// Ajax与页面数据渲染
+var datalist=["YuanShen.GuaiWu","YuanShen.KuangWu","YuanShen.TeXing","YuanShen.TeChan"];
+var datalist_array=[];
+for(let i=0;i<datalist.length;i++)
+{
+	var postdata=datalist[i]
+	$.ajax(
+	{
+		type : "POST",
+		url:'php/dbdata.php',
+		async:false,
+		data:{postdata:postdata},
+		success:function(result)
+		{
+			result=JSON.parse(result);
+			datalist_array.push(result);
+		}
+	}
+	)
+}
+console.log(datalist_array);
+var typelist=[];
+for(let i=0;i<$(".itemname").length;i++)
+{
+	typelist.push($(`.itemname:eq(${i})`).text());
+}
+console.log(typelist);
+var [JS_FST,JS_YST,JS_DLK_MD,JS_DLK_LY,JS_BX_MD,JS_BX_LY,JS_SJK_LY,JS_BTK_LY,JS_SJK_MD,JS_BTK_MD,JS_JYJJ,JS_NSH,JS_LLBH,JS_YPS,JS_SP,JS_GGG,JS_DDL,JS_LLM,JS_SXLYH,JS_MFMG,JS_FCJ,JS_PGYZ,JS_YJSW_LY,JS_YJLZ_LY,JS_DXQQR_LY,JS_SYFS_LY,JS_ZWCLR_LY,JS_LYSS_LY]=[null];
+var typearray2 = [JS_FST,JS_YST,JS_DLK_MD,JS_DLK_LY,JS_BX_MD,JS_BX_LY,JS_SJK_LY,JS_BTK_LY,JS_SJK_MD,JS_BTK_MD,JS_JYJJ,JS_NSH,JS_LLBH,JS_YPS,JS_SP,JS_GGG,JS_DDL,JS_LLM,JS_SXLYH,JS_MFMG,JS_FCJ,JS_PGYZ,JS_YJSW_LY,JS_YJLZ_LY,JS_DXQQR_LY,JS_SYFS_LY,JS_ZWCLR_LY,JS_LYSS_LY];
+for(let i=0;i<typearray2.length;i++)
+{
+	typearray2[i]={
+		type: "FeatureCollection",
+		features: []
+	};
+}
+console.log(typearray2[0].features);
+for(let i=0;i<typelist.length;i++)
+{
+	for(let j=0;j<datalist_array.length;j++)
+	{
+		for(let k=0;k<datalist_array[j].length;k++)
+		{
+			if(typelist[i]==datalist_array[j][k].ItemType)
+			{
+				for(let z=0;z<datalist_array[j][k].features.length;z++)
+				{
+					typearray2[i].features.push(datalist_array[j][k].features[z]);
+				}
+			}
+		}
+	}
+}
+console.log(typearray2);
 //初始化各个坐标
 for (let i = 0; i < typearray2.length; i++) {
 	localStorage.setItem("layerNumber", i);

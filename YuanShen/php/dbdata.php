@@ -15,8 +15,8 @@ $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery($datatype, $query);
 $resultlist=[];
 foreach ($cursor as $document) {
-    $document=json_encode($document);
-    // $resultval=json_decode($document,true);
+    array_push($resultlist,$document);
 }
-print_r($document);
+$resultlist=json_encode($resultlist);
+print_r($resultlist);
 ?>
