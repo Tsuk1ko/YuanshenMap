@@ -1,8 +1,8 @@
 /* 初始化地图样式，字体 */
-@font-face {
+/* @font-face {
     font-family: font;
     src: url(hywh_thin.ttf);
-}
+} */
 html,
 body,
 #map {

@@ -5,7 +5,7 @@ var map = L.map("map", {
 	center: [-35, 45],
 	zoomDelta: 0.5,
 	zoomSnap: 0.5,
-	maxZoom: 8,
+	maxZoom: 7,
 	minZoom: 4,
 	zoom: 4,
 	maxBounds: t,
@@ -23,7 +23,7 @@ L.TileLayer.T = L.TileLayer.extend({
 	getTileUrl: function (coords) {
 		x = coords.x
 		y = coords.y
-		return 'tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
+		return 'http://a8chan.gitee.io/yuan-shen-dt/tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
 	}
 });
 L.tileLayer.t = function () {
@@ -51,34 +51,34 @@ map.addLayer(L.tileLayer.t());
 // map.addLayer(L.tileLayer.t1());
 //各个坐标的分类类别的初始化
 var LayerMap = {
-	Layer_FST:L.layerGroup(),
-	Layer_YST:L.layerGroup(),
-	Layer_DLK_MD:L.layerGroup(),
-	Layer_DLK_LY:L.layerGroup(),
-	Layer_JYJJ:L.layerGroup(),
-	Layer_NSH:L.layerGroup(),
-	Layer_LLBH:L.layerGroup(),
-	Layer_GGG:L.layerGroup(),
-	Layer_DDL:L.layerGroup(),
-	Layer_SXLYH:L.layerGroup(),
-	Layer_MFMG:L.layerGroup(),
-	Layer_LLM:L.layerGroup(),
-	Layer_FCJ:L.layerGroup(),
-	Layer_PGYZ:L.layerGroup(),
-	Layer_YPS:L.layerGroup(),
-	Layer_SP:L.layerGroup(),
-	Layer_SJK_LY:L.layerGroup(),
-	Layer_BTK_LY:L.layerGroup(),
-	Layer_SJK_MD:L.layerGroup(),
-	Layer_BTK_MD:L.layerGroup(),
-	Layer_YJSW_LY:L.layerGroup(),
-	Layer_YJLZ_LY:L.layerGroup(),
-	Layer_LYSS_LY : L.layerGroup(),
-	Layer_ZWCLR_LY:L.layerGroup(),
-	Layer_SYFS_LY:L.layerGroup(),
-	Layer_DXQQR_LY:L.layerGroup(),
-	Layer_BX_MD:L.layerGroup(),
-	Layer_BX_LY:L.layerGroup()
+	Layer_FST: L.layerGroup(),
+	Layer_YST: L.layerGroup(),
+	Layer_DLK_MD: L.layerGroup(),
+	Layer_DLK_LY: L.layerGroup(),
+	Layer_JYJJ: L.layerGroup(),
+	Layer_NSH: L.layerGroup(),
+	Layer_LLBH: L.layerGroup(),
+	Layer_GGG: L.layerGroup(),
+	Layer_DDL: L.layerGroup(),
+	Layer_SXLYH: L.layerGroup(),
+	Layer_MFMG: L.layerGroup(),
+	Layer_LLM: L.layerGroup(),
+	Layer_FCJ: L.layerGroup(),
+	Layer_PGYZ: L.layerGroup(),
+	Layer_YPS: L.layerGroup(),
+	Layer_SP: L.layerGroup(),
+	Layer_SJK_LY: L.layerGroup(),
+	Layer_BTK_LY: L.layerGroup(),
+	Layer_SJK_MD: L.layerGroup(),
+	Layer_BTK_MD: L.layerGroup(),
+	Layer_YJSW_LY: L.layerGroup(),
+	Layer_YJLZ_LY: L.layerGroup(),
+	Layer_LYSS_LY: L.layerGroup(),
+	Layer_ZWCLR_LY: L.layerGroup(),
+	Layer_SYFS_LY: L.layerGroup(),
+	Layer_DXQQR_LY: L.layerGroup(),
+	Layer_BX_MD: L.layerGroup(),
+	Layer_BX_LY: L.layerGroup()
 }
 //定义各个坐标使用的图标
 function getIconInfo(Name) {
@@ -86,11 +86,11 @@ function getIconInfo(Name) {
 		case "ST": { //神瞳
 			var icon_base = L.Icon.extend({
 				options: {
-					iconSize: [21.6, 22.8], // size of the icon
+					iconSize: [32.4, 34.2], // size of the icon
 					shadowSize: [50, 64], // size of the shadow
-					iconAnchor: [10.8, 11.4], // point of the icon which will correspond to marker's location
+					iconAnchor: [16.2, 17.4], // point of the icon which will correspond to marker's location
 					shadowAnchor: [4, 62], // the same for the shadow
-					popupAnchor: [0, -11.4] // point from which the popup should open relative to the iconAnchor
+					popupAnchor: [0, -17.1] // point from which the popup should open relative to the iconAnchor
 				}
 			});
 			return icon_base;
@@ -194,7 +194,7 @@ function onEachFeature(feature, layer) {
 	var key = layerNumber + "_" + feature.id;
 	var popupHtml = '<div class="myPopContainer">';
 	popupHtml = '<div class="myPopTitle" >';
-	popupHtml += '<div class="myPopName" >' + feature.properties.popTitle +feature.id+'</div>';
+	popupHtml += '<div class="myPopName" >' + feature.properties.popTitle + feature.id + '</div>';
 	var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
 	popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
 	popupHtml += '</div>';
@@ -218,34 +218,35 @@ var typearray = [
 	[LayerMap["Layer_YST"], JS_YST, "ST"],
 	[LayerMap["Layer_DLK_MD"], JS_DLK_MD, "DLK"],
 	[LayerMap["Layer_DLK_LY"], JS_DLK_LY, "DLK"],
-	[LayerMap["Layer_BX_MD"], JS_BX_MD, "BX"],
-	[LayerMap["Layer_BX_LY"], JS_BX_LY, "BX"],
+	[LayerMap["Layer_JYJJ"], JS_JYJJ, "TC"],
+	[LayerMap["Layer_NSH"], JS_NSH, "TC"],
+	[LayerMap["Layer_LLBH"], JS_LLBH, "TC"],
+	[LayerMap["Layer_GGG"], JS_GGG, "TC"],
+	[LayerMap["Layer_DDL"], JS_DDL, "TC"],
+	[LayerMap["Layer_SXLYH"], JS_SXLYH, "TC"],
+	[LayerMap["Layer_MFMG"], JS_MFMG, "TC"],
+	[LayerMap["Layer_LLM"], JS_LLM, "TC"],
+	[LayerMap["Layer_FCJ"], JS_FCJ, "TC"],
+	[LayerMap["Layer_PGYZ"], JS_PGYZ, "TC"],
+	[LayerMap["Layer_YPS"], JS_YPS, "TC"],
+	[LayerMap["Layer_SP"], JS_SP, "TC"],
 	[LayerMap["Layer_SJK_LY"], JS_SJK_LY, "KW"],
 	[LayerMap["Layer_BTK_LY"], JS_BTK_LY, "KW"],
 	[LayerMap["Layer_SJK_MD"], JS_SJK_MD, "KW"],
 	[LayerMap["Layer_BTK_MD"], JS_BTK_MD, "KW"],
-	[LayerMap["Layer_JYJJ"], JS_JYJJ, "TC"],
-	[LayerMap["Layer_NSH"], JS_NSH, "TC"],
-	[LayerMap["Layer_LLBH"], JS_LLBH, "TC"],
-	[LayerMap["Layer_YPS"], JS_YPS, "TC"],
-	[LayerMap["Layer_SP"], JS_SP, "TC"],
-	[LayerMap["Layer_GGG"], JS_GGG, "TC"],
-	[LayerMap["Layer_DDL"], JS_DDL, "TC"],
-	[LayerMap["Layer_LLM"], JS_LLM, "TC"],
-	[LayerMap["Layer_SXLYH"], JS_SXLYH, "TC"],
-	[LayerMap["Layer_MFMG"], JS_MFMG, "TC"],
-	[LayerMap["Layer_FCJ"], JS_FCJ, "TC"],
-	[LayerMap["Layer_PGYZ"], JS_PGYZ, "TC"],
 	[LayerMap["Layer_YJSW_LY"], JS_YJSW_LY, "JYG"],
 	[LayerMap["Layer_YJLZ_LY"], JS_YJLZ_LY, "JYG"],
-	[LayerMap["Layer_DXQQR_LY"], JS_DXQQR_LY, "PTG"],
-	[LayerMap["Layer_SYFS_LY"], JS_SYFS_LY, "PTG"],
-	[LayerMap["Layer_ZWCLR_LY"], JS_ZWCLR_LY, "PTG"],
 	[LayerMap["Layer_LYSS_LY"], JS_LYSS_LY, "PTG"],
+	[LayerMap["Layer_ZWCLR_LY"], JS_ZWCLR_LY, "PTG"],
+	[LayerMap["Layer_SYFS_LY"], JS_SYFS_LY, "PTG"],
+	[LayerMap["Layer_DXQQR_LY"], JS_DXQQR_LY, "PTG"],
+	[LayerMap["Layer_BX_MD"], JS_BX_MD, "BX"],
+	[LayerMap["Layer_BX_LY"], JS_BX_LY, "BX"]
 ];
 
 //标记方法
 var markers = {};
+
 function MarkPoint(element) {
 	var that = $(element);
 	var key = that.attr("data-key");
@@ -254,18 +255,18 @@ function MarkPoint(element) {
 	var oldValue = localStorage.getItem(key);
 	var newValue = !oldValue;
 	localStorage.setItem(key, newValue ? "1" : "");
-	
+
 	var doneUrl = newValue ? "_done" : ""
 	var iconUrl = "./imgs/icon_" + layerNumber + doneUrl + ".png";
 
-	var currentShowdow=currentIcon.prototype.options.shadowUrl
-	var downShadow=newValue ? "./imgs/loc_find.svg" :"./imgs/loc_notfind.svg"
-	var doneShadowUrl=currentShowdow ? downShadow : ""
+	var currentShowdow = currentIcon.prototype.options.shadowUrl
+	var downShadow = newValue ? "./imgs/loc_find.svg" : "./imgs/loc_notfind.svg"
+	var doneShadowUrl = currentShowdow ? downShadow : ""
 	var newIcon = new currentIcon({
-			className: "mark-" + key,
-			iconUrl: iconUrl,
-			shadowUrl:doneShadowUrl,
-		});
+		className: "mark-" + key,
+		iconUrl: iconUrl,
+		shadowUrl: doneShadowUrl,
+	});
 	markers[key].setIcon(newIcon);
 	if (newValue) {
 		that.addClass("myPopSwitchDone");
@@ -290,14 +291,14 @@ for (let i = 0; i < typearray.length; i++) {
 			var doneUrl = markedFlag ? "_done" : ""
 			var iconUrl = "./imgs/icon_" + i + doneUrl + ".png";
 
-			var currentShowdow=currentIcon.prototype.options.shadowUrl
-			var downShadow=markedFlag ? "./imgs/loc_find.svg" :"./imgs/loc_notfind.svg"
-			var doneShadowUrl=currentShowdow ? downShadow : ""
+			var currentShowdow = currentIcon.prototype.options.shadowUrl
+			var downShadow = markedFlag ? "./imgs/loc_find.svg" : "./imgs/loc_notfind.svg"
+			var doneShadowUrl = currentShowdow ? downShadow : ""
 			var marker = L.marker([latlng.lng, latlng.lat], {
 				icon: new currentIcon({
 					className: "mark-" + i + "_" + `${feature.id}`,
 					iconUrl: iconUrl,
-					shadowUrl:doneShadowUrl,
+					shadowUrl: doneShadowUrl,
 				}),
 				alt: `${latlng.lng},${latlng.lat}`
 			}, );
@@ -350,15 +351,15 @@ function dealIcon(target, key) {
 // 	collapsed: false,
 // }).addTo(map);
 
-map.on('popupopen', function(e) {
+map.on('popupopen', function (e) {
 	var marker = e.popup._source;
 	var className = marker.options.icon.options.className;
-	var key = className.substring(5,className.length);
+	var key = className.substring(5, className.length);
 	var markedFlag = localStorage.getItem(key);
 	var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
 	var popupHtml = '<div class="myPopContainer">';
 	popupHtml = '<div class="myPopTitle" >';
-	popupHtml += '<div class="myPopName" >' + marker.feature.properties.popTitle +marker.feature.id+'</div>';
+	popupHtml += '<div class="myPopName" >' + marker.feature.properties.popTitle + marker.feature.id + '</div>';
 	popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
 	popupHtml += '</div>';
 	popupHtml += '<div class="myPopLine"></div>';
