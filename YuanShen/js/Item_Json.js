@@ -15395,6 +15395,7 @@ var JS_BX_MD = {
             },
             "id": 85
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -15410,6 +15411,7 @@ var JS_BX_MD = {
             },
             "id": 86
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -18149,6 +18151,7 @@ var JS_BX_MD = {
             },
             "id": 267
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -18164,6 +18167,7 @@ var JS_BX_MD = {
             },
             "id": 268
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -19492,6 +19496,7 @@ var JS_BX_MD = {
             },
             "id": 356
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -19507,6 +19512,7 @@ var JS_BX_MD = {
             },
             "id": 357
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21128,6 +21134,7 @@ var JS_BX_MD = {
             },
             "id": 464
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21143,6 +21150,7 @@ var JS_BX_MD = {
             },
             "id": 465
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21357,6 +21365,7 @@ var JS_BX_MD = {
             },
             "id": 479
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21372,6 +21381,7 @@ var JS_BX_MD = {
             },
             "id": 480
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -22870,7 +22880,6 @@ var JS_BX_LY = {
             },
             "id": 85
         },
-		/*
         {
             "geometry": {
                 "type": "Point",
@@ -22886,7 +22895,6 @@ var JS_BX_LY = {
             },
             "id": 86
         },
-		*/
         {
             "geometry": {
                 "type": "Point",
