@@ -21572,7 +21572,7 @@ var JS_BX_MD = {
         {
             "geometry": {
                 "type": "Point",
-                "coordinates": [-20.723269085826093, 80.14225014624321]
+                "coordinates": [-20.384090883683587, 79.65827344566452]
             },
             "type": "Feature",
             "properties": {
