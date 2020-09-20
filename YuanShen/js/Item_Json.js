@@ -14373,6 +14373,7 @@ var JS_BX_MD = {
             },
             "id": 17
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -14388,6 +14389,7 @@ var JS_BX_MD = {
             },
             "id": 18
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -15618,6 +15620,7 @@ var JS_BX_MD = {
             },
             "id": 100
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -15633,6 +15636,7 @@ var JS_BX_MD = {
             },
             "id": 101
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -15738,6 +15742,7 @@ var JS_BX_MD = {
             },
             "id": 108
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -15768,6 +15773,7 @@ var JS_BX_MD = {
             },
             "id": 110
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -15798,6 +15804,7 @@ var JS_BX_MD = {
             },
             "id": 112
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -15813,6 +15820,7 @@ var JS_BX_MD = {
             },
             "id": 113
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -15828,6 +15836,7 @@ var JS_BX_MD = {
             },
             "id": 114
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -15843,6 +15852,7 @@ var JS_BX_MD = {
             },
             "id": 115
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -15978,6 +15988,7 @@ var JS_BX_MD = {
             },
             "id": 124
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -15993,6 +16004,8 @@ var JS_BX_MD = {
             },
             "id": 125
         },
+		*/
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -16008,6 +16021,7 @@ var JS_BX_MD = {
             },
             "id": 126
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -16053,6 +16067,7 @@ var JS_BX_MD = {
             },
             "id": 129
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -16068,6 +16083,7 @@ var JS_BX_MD = {
             },
             "id": 130
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -16143,6 +16159,7 @@ var JS_BX_MD = {
             },
             "id": 135
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -16158,6 +16175,7 @@ var JS_BX_MD = {
             },
             "id": 136
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -16323,6 +16341,7 @@ var JS_BX_MD = {
             },
             "id": 147
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -16353,6 +16372,7 @@ var JS_BX_MD = {
             },
             "id": 149
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -16398,6 +16418,7 @@ var JS_BX_MD = {
             },
             "id": 152
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -16413,6 +16434,7 @@ var JS_BX_MD = {
             },
             "id": 153
         },
+		*/
         // {
         //     "geometry": {
         //         "type": "Point",
@@ -17043,6 +17065,7 @@ var JS_BX_MD = {
             },
             "id": 195
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -17058,6 +17081,7 @@ var JS_BX_MD = {
             },
             "id": 196
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -17673,6 +17697,7 @@ var JS_BX_MD = {
             },
             "id": 237
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -17688,6 +17713,7 @@ var JS_BX_MD = {
             },
             "id": 238
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -18288,6 +18314,7 @@ var JS_BX_MD = {
             },
             "id": 278
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -18303,6 +18330,7 @@ var JS_BX_MD = {
             },
             "id": 279
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -18363,6 +18391,7 @@ var JS_BX_MD = {
             },
             "id": 283
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -18378,6 +18407,7 @@ var JS_BX_MD = {
             },
             "id": 284
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -18678,6 +18708,7 @@ var JS_BX_MD = {
             },
             "id": 304
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -18693,6 +18724,7 @@ var JS_BX_MD = {
             },
             "id": 305
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -18918,6 +18950,7 @@ var JS_BX_MD = {
             },
             "id": 320
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -18933,6 +18966,7 @@ var JS_BX_MD = {
             },
             "id": 321
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -19608,6 +19642,7 @@ var JS_BX_MD = {
             },
             "id": 366
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -19623,6 +19658,7 @@ var JS_BX_MD = {
             },
             "id": 367
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -19683,6 +19719,7 @@ var JS_BX_MD = {
             },
             "id": 371
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -19698,6 +19735,7 @@ var JS_BX_MD = {
             },
             "id": 372
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -19743,6 +19781,7 @@ var JS_BX_MD = {
             },
             "id": 375
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -19758,6 +19797,7 @@ var JS_BX_MD = {
             },
             "id": 376
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -20148,6 +20188,7 @@ var JS_BX_MD = {
             },
             "id": 402
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -20163,6 +20204,8 @@ var JS_BX_MD = {
             },
             "id": 403
         },
+		*/
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -20178,6 +20221,7 @@ var JS_BX_MD = {
             },
             "id": 404
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -20883,6 +20927,7 @@ var JS_BX_MD = {
             },
             "id": 451
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -20898,6 +20943,7 @@ var JS_BX_MD = {
             },
             "id": 452
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -20913,6 +20959,7 @@ var JS_BX_MD = {
             },
             "id": 453
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -20928,6 +20975,7 @@ var JS_BX_MD = {
             },
             "id": 454
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21003,6 +21051,7 @@ var JS_BX_MD = {
             },
             "id": 459
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21063,6 +21112,7 @@ var JS_BX_MD = {
             },
             "id": 463
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21123,6 +21173,7 @@ var JS_BX_MD = {
             },
             "id": 467
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21138,6 +21189,8 @@ var JS_BX_MD = {
             },
             "id": 468
         },
+		*/
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21153,6 +21206,7 @@ var JS_BX_MD = {
             },
             "id": 469
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21393,6 +21447,7 @@ var JS_BX_MD = {
             },
             "id": 485
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21408,6 +21463,7 @@ var JS_BX_MD = {
             },
             "id": 486
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21476,7 +21532,67 @@ var JS_BX_MD = {
                 "popupContent": "这是一个蒙德宝箱",
             },
             "id": 491
-        }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-20.045794944762697, 43.656869056219584]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "蒙德宝箱",
+                "popupContent": "这是一个蒙德宝箱",
+            },
+            "id": 492
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-20.42514372961673, 79.23063231308234]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "蒙德宝箱",
+                "popupContent": "这是一个蒙德宝箱",
+            },
+            "id": 493
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-19.96139208503998, 79.85668311416873]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "蒙德宝箱",
+                "popupContent": "这是一个蒙德宝箱",
+            },
+            "id": 494
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-20.723269085826093, 80.14225014624321]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "蒙德宝箱",
+                "popupContent": "这是一个蒙德宝箱",
+            },
+            "id": 495
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-20.723269085826093, 80.14225014624321]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "蒙德宝箱",
+                "popupContent": "这是一个蒙德宝箱",
+            },
+            "id": 496
+        }		
     ]
 };
 
@@ -21722,6 +21838,7 @@ var JS_BX_LY = {
             },
             "id": 16
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21737,6 +21854,8 @@ var JS_BX_LY = {
             },
             "id": 17
         },
+		*/
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21752,6 +21871,7 @@ var JS_BX_LY = {
             },
             "id": 18
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21782,6 +21902,7 @@ var JS_BX_LY = {
             },
             "id": 20
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -21797,6 +21918,7 @@ var JS_BX_LY = {
             },
             "id": 21
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -21992,6 +22114,7 @@ var JS_BX_LY = {
             },
             "id": 34
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -22007,6 +22130,7 @@ var JS_BX_LY = {
             },
             "id": 35
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -22232,6 +22356,7 @@ var JS_BX_LY = {
             },
             "id": 51
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -22247,6 +22372,7 @@ var JS_BX_LY = {
             },
             "id": 52
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -22697,6 +22823,7 @@ var JS_BX_LY = {
             },
             "id": 82
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -22712,6 +22839,7 @@ var JS_BX_LY = {
             },
             "id": 83
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -22742,6 +22870,7 @@ var JS_BX_LY = {
             },
             "id": 85
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -22757,6 +22886,7 @@ var JS_BX_LY = {
             },
             "id": 86
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -25547,6 +25677,7 @@ var JS_BX_LY = {
             },
             "id": 273
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -25562,6 +25693,7 @@ var JS_BX_LY = {
             },
             "id": 274
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -26897,6 +27029,7 @@ var JS_BX_LY = {
             },
             "id": 366
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -26912,6 +27045,7 @@ var JS_BX_LY = {
             },
             "id": 367
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -27017,6 +27151,7 @@ var JS_BX_LY = {
             },
             "id": 374
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -27032,6 +27167,7 @@ var JS_BX_LY = {
             },
             "id": 375
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -30736,6 +30872,7 @@ var JS_BX_LY = {
             },
             "id": 623
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -30751,6 +30888,8 @@ var JS_BX_LY = {
             },
             "id": 624
         },
+		*/
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -30766,6 +30905,7 @@ var JS_BX_LY = {
             },
             "id": 625
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -31201,6 +31341,7 @@ var JS_BX_LY = {
             },
             "id": 654
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -31216,6 +31357,7 @@ var JS_BX_LY = {
             },
             "id": 655
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -34006,6 +34148,7 @@ var JS_BX_LY = {
             },
             "id": 842
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -34021,6 +34164,7 @@ var JS_BX_LY = {
             },
             "id": 843
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -34096,6 +34240,7 @@ var JS_BX_LY = {
             },
             "id": 848
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -34111,6 +34256,7 @@ var JS_BX_LY = {
             },
             "id": 849
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -34141,6 +34287,7 @@ var JS_BX_LY = {
             },
             "id": 851
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -34156,6 +34303,7 @@ var JS_BX_LY = {
             },
             "id": 852
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -34231,6 +34379,7 @@ var JS_BX_LY = {
             },
             "id": 857
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -34246,6 +34395,7 @@ var JS_BX_LY = {
             },
             "id": 858
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -34321,6 +34471,7 @@ var JS_BX_LY = {
             },
             "id": 863
         },
+		/*
         {
             "geometry": {
                 "type": "Point",
@@ -34336,6 +34487,7 @@ var JS_BX_LY = {
             },
             "id": 864
         },
+		*/
         {
             "geometry": {
                 "type": "Point",
@@ -34886,7 +35038,67 @@ var JS_BX_LY = {
                 "popupContent": "这是一个璃月宝箱",
             },
             "id": 902
-        }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-34.36897485903535, 41.82207476016911]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "璃月宝箱",
+                "popupContent": "这是一个璃月宝箱",
+            },
+            "id": 903
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-33.622476794155524, 45.24887914506314]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "璃月宝箱",
+                "popupContent": "这是一个璃月宝箱",
+            },
+            "id": 904
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-37.33208931627734, 37.4946358895016]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "璃月宝箱",
+                "popupContent": "这是一个璃月宝箱",
+            },
+            "id": 905
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-35.77088637159458, 37.066285341389865]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "璃月宝箱",
+                "popupContent": "这是一个璃月宝箱",
+            },
+            "id": 906
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-32.31437257631442, 36.08876742390404]
+            },
+            "type": "Feature",
+            "properties": {
+                "popTitle": "璃月宝箱",
+                "popupContent": "这是一个璃月宝箱",
+            },
+            "id": 907
+        },		
     ]
 };
 var JS_Item = {
