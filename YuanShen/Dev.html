@@ -7,171 +7,52 @@
 	<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<style>
-	.tools {	
-		position: fixed;
-		z-index: 99999;
-		border: 1px solid rgba(0, 0, 0, 0);
-		border-radius: 2px 2px;
-		background-color: white;
-		width: 280px;
-		height: 390px;
-		top: 10%;
-		left: 10%;
-		font-family: font;
-	}
-	.tools-cover
-	{
-		position: relative;
-	}
-	.tools-options
-	{
-		margin: 5px 5% 0 5%;
-		padding: 0;
-		width: 90%;
-		display: flex;
-		list-style-type: none;
-		justify-content: space-between;
-	}
-	.tools-options li
-	{
-		font-size: 15px;
-		line-height: 20px;
-		height: 20px;
-		cursor: pointer;
-		color:#F4A460;
-	}
-	.tools-options li.on,.tools-options li:hover
-	{
-		border-bottom:5px solid #DEB887;
-		font-weight: bold;
-	}
-	.add-panel
-	{
-		width: 90%;
-		margin: 10px 5% 0 5%;
-	}
-	.swtich-tools-btn
-	{
-		z-index: 99999;
-		position: fixed;
-		top: 7.5%;
-		left: 10%;
-	}
-	.tool-label
-	{
-		display: block;
-	}
-	select
-	{
-		display: block;
-		padding:2px 2px 4px 0;
-	}
-	.swtich-tools-btn,.clear-btn,.add-submit-btn
-	{
-		color: #fff;
-		background: #808080;
-		border-radius: 2px;
-		padding: 3px;
-		font-family:font;
-	}
-	#PopTitle,#PopContent
-	{
-		border: 1px solid #808080;
-	}
-	.leaflet-popup-content
-	{
-		font-size: 30px;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/dev.css">
 </head>
 <body>
-	<a href="javascript:;" class="swtich-tools-btn">显示/隐藏编辑面板</a>
-		<div class="tools">
-			<ul class="tools-options">
-				<li class="on">添加点位</li>
-				<li>修改点位</li>
-				<li>删除点位</li>
-			</ul>
-			<div class="panel add-panel">
-				<div class="locations-banel">
-					<label class="tool-label" style="margin-bottom: 20px;">点击地图，新增点位</label>
-				</div>
-				<label class="tool-label">请选择点位类型（若出现图与点不对应的情况，请切换一下该项重试）</label>
-				<select class="mark-type">
-					<option class="ST">神瞳</option>
-					<option class="DLK">地灵龛</option>
-					<option class="KW-LY">矿物-璃月</option>
-					<option class="KW-MD">矿物-蒙德</option>
-					<option class="CJW-LY">采集物-璃月</option>
-					<option class="CJW-MD">采集物-蒙德</option>
-					<option class="JYG-LY">精英怪-璃月</option>
-					<option class="JYG-LY">精英怪-蒙德</option>
-				</select>
-				<label class="tool-label">请选择点位实例类型（若出现图与点不对应的情况，请切换一下该项重试）</label>
-				<select class="mark-item-type on">
-					<option class="FST">风神瞳</option>
-					<option class="YST">岩神瞳</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="DLK_MD">蒙德</option>
-					<option class="DLK_LY">璃月</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="SJK">水晶矿</option>
-					<option class="BTK">白铁矿</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="SJK">水晶矿</option>
-					<option class="BTK">白铁矿</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="JYJJ"> 绝云椒椒</option>
-					<option class="NSH">霓裳花</option>
-					<option class="LLBH">琉璃百合</option>
-					<option class="YPS">夜泊石</option>
-					<option class="SP">石珀</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="GGG">钩钩果</option>
-					<option class="DDL">嘟嘟莲</option>
-					<option class="LLM">落落梅</option>
-					<option class="SXLYH">塞西莉亚花</option>
-					<option class="MFMG">慕风蘑菇</option>
-					<option class="FCJ">风车菊</option>
-					<option class="PGYZ">蒲公英籽</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="YJSW">遗迹守卫</option>
-					<option class="YJLZ">遗迹猎者</option>
-					<option class="DXQQR">大型丘丘人</option>
-					<option class="SYFS">深渊法师</option>
-					<option class="ZWCLR">债务处理人</option>
-					<option class="LYSS">雷莹术士</option>
-				</select>
-				<select class="mark-item-type" style="display: none;">
-					<option class="YJSW">遗迹守卫</option>
-					<option class="DXQQR">大型丘丘人</option>
-					<option class="SYFS">深渊法师</option>
-					<option class="LYSS">雷莹术士</option>
-				</select>
-				<label class="tool-label">输入备注标题</label><input type="text" id="PopTitle" placeholder="风神瞳">
-				<label class="tool-label">输入备注内容</label><input type="text" id="PopContent" placeholder="这是一个风神瞳" style="margin-bottom: 10px;"></br>
-				<a href="javascript:;" class="clear-btn">清除所有新增点位</a>
-				<a href="javascript:;" class="add-submit-btn">提交新增点位</a>
-			</div>
-			<div class="panel modify-panel" style="display: none;">
-				<lable class="tool-label" style="margin-bottom: 20px;">请<b>点击或拖动</b>要修改的点位,获取其坐标</lable>
-				<lable class="tool-label">要修改的点位当前X,Y坐标如下
-					<span style="display: block;">x:<input type="text" class="modify-x"> </span></span>
-					<span  style="display: block;">y:<input type="text" class="modify-y"> </span></span>
-				</lable>
-			</div>
-			<div class="panel del-panel" style="display: none;">
-				<label class="tool-label">点击一个已有点位，点击弹出面板之中的删除即可删除</label>
-				<label class="tool-label"><b style="color: red;">注意</b>：删除原有的点位会同时从数据库中删除对应点位数据，请谨慎操作</label>
-			</div>
-		</div>
+	<input type="button" class="switch-btn" value="显示/隐藏面板">
+	<div class="panel-table">
+		<h1 class="tname">点位名称</h1>
+		<select class="item-select">
+				<option class="FST">风神瞳</option>
+				<option class="YST">岩神瞳</option>
+				<option class="DLK_MD">地灵龛-蒙德</option>
+				<option class="DLK_LY">地灵龛-璃月</option>
+				<option class="BX_LY">宝箱-璃月</option>
+				<option class="BX_MD">宝箱-蒙德</option>
+				<option class="SJK_LY">水晶矿-璃月</option>
+				<option class="BTK_LY">白铁矿-璃月</option>
+				<option class="SJK_MD">水晶矿-蒙德</option>
+				<option class="BTK_MD">白铁矿-蒙德</option>
+				<option class="JYJJ"> 绝云椒椒</option>
+				<option class="NSH">霓裳花</option>
+				<option class="LLBH">琉璃百合</option>
+				<option class="YPS">夜泊石</option>
+				<option class="SP">石珀</option>
+				<option class="GGG">钩钩果</option>
+				<option class="DDL">嘟嘟莲</option>
+				<option class="LLM">落落梅</option>
+				<option class="SXLYH">塞西莉亚花</option>
+				<option class="MFMG">慕风蘑菇</option>
+				<option class="FCJ">风车菊</option>
+				<option class="PGYZ">蒲公英籽</option>
+				<option class="YJSW">遗迹守卫</option>
+				<option class="YJLZ">遗迹猎者</option>
+				<option class="DXQQR">大型丘丘人</option>
+				<option class="SYFS">深渊法师</option>
+				<option class="ZWCLR">债务处理人</option>
+				<option class="LYSS">雷莹术士</option>
+		</select>
+		<table class="data-table">
+			<tr class="table-options-title">
+				<td class="table-options-name">名称</td>
+				<td class="table-options-id">ID</td>
+				<td class="table-options-coordinate">坐标</td>
+				<td class="table-options-description">点位描述</td>
+				<td class="table-options-operation">操作</td>
+			</tr>
+		</table>
+	</div>
 	<div id='map'></div>
 	<!-- 筛选器 -->
 	<div class="control-containor">
@@ -229,116 +110,89 @@
 		<div class="options-containor">
 			<div class="options-list">
 				<span class="Layer_FST map-opts" area="MD" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_0.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">风神瞳</span>
+					<div class="img-border"><img src="imgs/icon_0.png" class="map-opts-icon" alt="icon"></div>风神瞳
 				</span>
 				<span class="Layer_YST map-opts" area="LY" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_1.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">岩神瞳</span>
+					<div class="img-border"><img src="imgs/icon_1.png" class="map-opts-icon" alt="icon"></div>岩神瞳
 				</span>
 				<span class="Layer_DLK_MD map-opts" area="MD" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_2.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">地灵龛-蒙德</span>
+					<div class="img-border"><img src="imgs/icon_2.png" class="map-opts-icon" alt="icon"></div>地灵龛-蒙德
 				</span>
 				<span class="Layer_DLK_LY map-opts" area="LY" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_3.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">地灵龛-璃月</span>
+					<div class="img-border"><img src="imgs/icon_3.png" class="map-opts-icon" alt="icon"></div>地灵龛-璃月
 				</span>
 				<span class="Layer_BX_MD map-opts" area="MD" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_26.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">宝箱-蒙德</span>
+					<div class="img-border"><img src="imgs/icon_26.png" class="map-opts-icon" alt="icon"></div>宝箱-蒙德
 				</span>
 				<span class="Layer_BX_LY map-opts" area="LY" itemtype="TX">
-					<div class="img-border"><img src="imgs/icon_27.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">宝箱-璃月</span>
+					<div class="img-border"><img src="imgs/icon_27.png" class="map-opts-icon" alt="icon"></div>宝箱-璃月
 				</span>
 				<span class="Layer_SJK_LY map-opts" area="LY" itemtype="KW">
-					<div class="img-border"><img src="imgs/icon_16.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">水晶矿-璃月</span>
+					<div class="img-border"><img src="imgs/icon_16.png" class="map-opts-icon" alt="icon"></div>水晶矿-璃月
 				</span>
 				<span class="Layer_BTK_LY map-opts" area="LY" itemtype="KW">
-					<div class="img-border"><img src="imgs/icon_17.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">白铁矿-璃月</span>
+					<div class="img-border"><img src="imgs/icon_17.png" class="map-opts-icon" alt="icon"></div>白铁矿-璃月
 				</span>
 				<span class="Layer_SJK_MD map-opts" area="MD" itemtype="KW">
-					<div class="img-border"><img src="imgs/icon_18.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">水晶矿-蒙德</span>
+					<div class="img-border"><img src="imgs/icon_18.png" class="map-opts-icon" alt="icon"></div>水晶矿-蒙德
 				</span>
 				<span class="Layer_BTK_MD map-opts" area="MD" itemtype="KW">
-					<div class="img-border"><img src="imgs/icon_19.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">白铁矿-蒙德</span>
+					<div class="img-border"><img src="imgs/icon_19.png" class="map-opts-icon" alt="icon"></div>白铁矿-蒙德
 				</span>
 				<span class="Layer_JYJJ map-opts" area="LY" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_4.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">绝云椒椒</span>
+					<div class="img-border"><img src="imgs/icon_4.png" class="map-opts-icon" alt="icon"></div>绝云椒椒
 				</span>
 				<span class="Layer_NSH map-opts" area="LY" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_5.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">霓裳花</span>
+					<div class="img-border"><img src="imgs/icon_5.png" class="map-opts-icon" alt="icon"></div>霓裳花
 				</span>
 				<span class="Layer_LLBH map-opts" area="LY" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_6.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">琉璃百合</span>
+					<div class="img-border"><img src="imgs/icon_6.png" class="map-opts-icon" alt="icon"></div>琉璃百合
 				</span>
 				<span class="Layer_YPS map-opts" area="LY" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_14.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">夜泊石</span>
+					<div class="img-border"><img src="imgs/icon_14.png" class="map-opts-icon" alt="icon"></div>夜泊石
 				</span>
 				<span class="Layer_SP map-opts" area="LY" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_15.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">石珀</span>
+					<div class="img-border"><img src="imgs/icon_15.png" class="map-opts-icon" alt="icon"></div>石珀
 				</span>
 				<span class="Layer_GGG map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_7.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">钩钩果</span>
+					<div class="img-border"><img src="imgs/icon_7.png" class="map-opts-icon" alt="icon"></div>钩钩果
 				</span>
 				<span class="Layer_DDL map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_8.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">嘟嘟莲</span>
+					<div class="img-border"><img src="imgs/icon_8.png" class="map-opts-icon" alt="icon"></div>嘟嘟莲
 				</span>
 				<span class="Layer_LLM map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_11.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">落落梅</span>
+					<div class="img-border"><img src="imgs/icon_11.png" class="map-opts-icon" alt="icon"></div>落落梅
 				</span>
 				<span class="Layer_SXLYH map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_9.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">塞西莉亚花</span>
+					<div class="img-border"><img src="imgs/icon_9.png" class="map-opts-icon" alt="icon"></div>塞西莉亚花
 				</span>
 				<span class="Layer_MFMG map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_10.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">慕风蘑菇</span>
+					<div class="img-border"><img src="imgs/icon_10.png" class="map-opts-icon" alt="icon"></div>慕风蘑菇
 				</span>
 				<span class="Layer_FCJ map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_12.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">风车菊</span>
+					<div class="img-border"><img src="imgs/icon_12.png" class="map-opts-icon" alt="icon"></div>风车菊
 				</span>
 				<span class="Layer_PGYZ map-opts" area="MD" itemtype="TC">
-					<div class="img-border"><img src="imgs/icon_13.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">蒲公英籽</span>
+					<div class="img-border"><img src="imgs/icon_13.png" class="map-opts-icon" alt="icon"></div>蒲公英籽
 				</span>
 				<span class="Layer_YJSW_LY map-opts" area="LY" itemtype="GW">
-					<div class="img-border"><img src="imgs/icon_20.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">遗迹守卫</span>
+					<div class="img-border"><img src="imgs/icon_20.png" class="map-opts-icon" alt="icon"></div>遗迹守卫
 				</span>
 				<span class="Layer_YJLZ_LY map-opts" area="LY" itemtype="GW">
-					<div class="img-border"><img src="imgs/icon_21.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">遗迹猎者</span>
+					<div class="img-border"><img src="imgs/icon_21.png" class="map-opts-icon" alt="icon"></div>遗迹猎者
 				</span>
 				<span class="Layer_DXQQR_LY map-opts" area="LY" itemtype="GW">
-					<div class="img-border"><img src="imgs/icon_25.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">大型丘丘人</span>
+					<div class="img-border"><img src="imgs/icon_25.png" class="map-opts-icon" alt="icon"></div>大型丘丘人
 				</span>
 				<span class="Layer_SYFS_LY map-opts" area="LY" itemtype="GW">
-					<div class="img-border"><img src="imgs/icon_24.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">深渊法师</span>
+					<div class="img-border"><img src="imgs/icon_24.png" class="map-opts-icon" alt="icon"></div>深渊法师
 				</span>
 				<span class="Layer_ZWCLR_LY map-opts" area="LY" itemtype="GW">
-					<div class="img-border"><img src="imgs/icon_23.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">债务处理人</span>
+					<div class="img-border"><img src="imgs/icon_23.png" class="map-opts-icon" alt="icon"></div>债务处理人
 				</span>
 				<span class="Layer_LYSS_LY map-opts" area="LY" itemtype="GW">
-					<div class="img-border"><img src="imgs/icon_22.png" class="map-opts-icon" alt="icon"></div>
-					<span class="itemname">雷莹术士</span>
+					<div class="img-border"><img src="imgs/icon_22.png" class="map-opts-icon" alt="icon"></div>雷莹术士
+				</span>
 			</div>
 		</div>
 	</div>
@@ -348,10 +202,49 @@
 	<div class="bottom-beian">
 		<a href="http://beian.miit.gov.cn" target="_bal" class="beian">蜀ICP备2020028219号</a>
 	</div>
+	<!-- 修改点位的弹窗 -->
+	<div class="dialog" id="modify_window" style="display: none;">
+		<div class="dia-con">
+			<div style="width: 100%;height: 1px;"></div>
+			<form action="" method="POST">
+				<div class="options-div">
+					<label class="form-options">
+						<span>点位名称：</span>
+						<input type="text" class="modify-window-input">
+					</label>
+					<label class="form-options">
+						<span>点位描述：</span>
+						<textarea></textarea>
+					</label>
+				</div>
+			</form>
+		</div>
+		<a class="dia-close dev-close" href="javascript:closeDialog()" title="关闭">×</a>
+	</div>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="leaflet/leaflet.js"></script>
-	<!-- <script src="js/Item_Json.js"></script> -->
-	<script src="js/Item_dev.js"></script>
+	<script src="js/Item_Json.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/milo.js"></script>
+	<script>
+		//修改弹窗的弹出函数调用
+		function TGDialogS(e){
+				// 利用milo库引入dialog组件
+				need("biz.dialog",function(Dialog){
+					Dialog.show({
+						id:e,
+						bgcolor:'#000', //弹出“遮罩”的颜色，格式为"#FF6600"，可修改，默认为"#fff"
+						opacity:50 //弹出“遮罩”的透明度，格式为｛10-100｝，可选
+					});
+				});
+			}
+        function closeDialog(){
+            // 利用milo库引入dialog组件
+            need("biz.dialog",function(Dialog){
+                Dialog.hide();
+            });
+        }
+	</script>
 	<script>
 		$(".area-list-li-containor").hide();
 		$(".area-list-containor").show();
@@ -450,6 +343,12 @@
 				map.addLayer(LayerMap[fclass]);
 			}
 			$(this).toggleClass("on");
+			$(".map-opts.on").click(function(){
+				if($(".opt-selector").length==0)
+				{
+					$(".selector-hint").show();
+				}
+			})
 		});
 		//初始化筛选器功能
 		$(document).ready(function () {
@@ -459,6 +358,7 @@
 			})
 			var statu = 1;
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+				$(".bottom-beian").hide();
 				//几项M端的适配
 				$(".control-containor").css("transform-origin", "0% 0% 0");
 				$(".control-containor").css("transform", "scale(0.5)");
@@ -479,7 +379,7 @@
 						$(".area-list-li-containor").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-400px'
+							right: '-415px'
 						}, function () {
 							statu = 1;
 							// $(".control-containor").css("width", "431px");
@@ -530,7 +430,7 @@
 						$(".area-list-li-containor").fadeIn(500);
 					} else {
 						$(".control-containor").animate({
-							right: '-400px'
+							right: '-415px'
 						}, function () {
 							statu = 1;
 							// $(".control-containor").css("width", "300px");
@@ -563,260 +463,45 @@
 			});
 		}
 	</script>
-	<!-- 上传工具相关 -->
 	<script>
-			//获取点击点位的坐标
-	map.on('click', function (e) {
-		console.log(e.latlng);
-	});
-	//编辑面板相关
-
-	//切换面板可见度
-	$(".swtich-tools-btn").click(function(){
-		$(".tools").toggle();
-	});
-	//切换面板子页
-	$(".tools-options li").click(function(){
-		let i=$(this).index();
-		$(".panel").hide();
-		$(".panel").eq(i).show();
-		$(".tools-options li").removeClass("on")
-		$(".tools-options li").eq(i).addClass("on");
-	});
-	//添加点位子页相关函数
-	$(document).ready(function(){
-		for(let i=0;i<$(".mark-item-type option").length;i++)
-		{
-			$(".mark-item-type option").eq(i).attr("op-idx",i);
-		}
-	});
-	var ST = L.Icon.extend({
-    options: {
-        iconSize: [21.6, 22.8], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [10.8, 11.4], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [0, -11.4] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var DLK = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_45.png",
-        iconSize: [33, 33], // size of the icon
-        shadowSize: [45, 45], // size of the shadow
-        iconAnchor: [16.5, 16.5], // point of the icon which will correspond to marker's location
-        shadowAnchor: [22.5, 22.5], // the same for the shadow
-        popupAnchor: [0, -16.5] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var WP = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32.png",
-        iconSize: [16, 16], // size of the icon
-        shadowSize: [22, 22], // size of the shadow
-        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-        shadowAnchor: [11, 11], // the same for the shadow
-        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var KW = L.Icon.extend({
-    options: {
-        iconSize: [20, 20], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [0, -10] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var JYG = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32.png",
-        iconSize: [24, 24], // size of the icon
-        shadowSize: [32, 32], // size of the shadow
-        iconAnchor: [12, 12], // point of the icon which will correspond to marker's location
-        shadowAnchor: [16, 16], // the same for the shadow
-        popupAnchor: [0, -12] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var PTG = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32.png",
-        iconSize: [16, 16], // size of the icon
-        shadowSize: [22, 22], // size of the shadow
-        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-        shadowAnchor: [11, 11], // the same for the shadow
-        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var BX_Base = L.Icon.extend({
-    options: {
-        shadowUrl: "./imgs/BK_32_1.png",
-        iconSize: [16, 16], // size of the icon
-        shadowSize: [22, 22], // size of the shadow
-        iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
-        shadowAnchor: [11, 11], // the same for the shadow
-        popupAnchor: [0, -8] // point from which the popup should open relative to the iconAnchor
-    }
-});
-var FST = new ST({
-    iconUrl: "./imgs/icon_0.png"
-});
-var YST = new ST({
-    iconUrl: "./imgs/icon_1.png"
-});
-var DLK_MD = new DLK({
-    iconUrl: "./imgs/icon_2.png",
-});
-var DLK_LY = new DLK({
-    iconUrl: "./imgs/icon_3.png"
-});
-var JYJJ = new WP({
-    iconUrl: "./imgs/icon_4.png"
-});
-var NSH = new WP({
-    iconUrl: "./imgs/icon_5.png"
-});
-var LLBH = new WP({
-    iconUrl: "./imgs/icon_6.png"
-});
-var PGYZ = new WP({
-    iconUrl: "./imgs/icon_13.png"
-});
-var FCJ = new WP({
-    iconUrl: "./imgs/icon_12.png"
-});
-var GGG = new WP({
-    iconUrl: "./imgs/icon_7.png"
-});
-var DDL = new WP({
-    iconUrl: "./imgs/icon_8.png"
-});
-var SXLYH = new WP({
-    iconUrl: "./imgs/icon_9.png"
-});
-var MFMG = new WP({
-    iconUrl: "./imgs/icon_10.png"
-});
-var LLM = new WP({
-    iconUrl: "./imgs/icon_11.png"
-});
-var YPS = new WP({
-    iconUrl: "./imgs/icon_14.png"
-});
-var SP = new WP({
-    iconUrl: "./imgs/icon_15.png"
-});
-var SJK = new KW({
-    iconUrl: "./imgs/icon_16.png"
-});
-var BTK = new KW({
-    iconUrl: "./imgs/icon_17.png"
-});
-var YJSW = new JYG({
-    iconUrl: "./imgs/icon_20.png"
-});
-var YJLZ = new JYG({
-    iconUrl: "./imgs/icon_21.png"
-});
-var SYFS = new PTG({
-    iconUrl: "./imgs/icon_24.png"
-});
-var ZWCLR = new PTG({
-    iconUrl: "./imgs/icon_23.png"
-});
-var LYSS = new PTG({
-    iconUrl: "./imgs/icon_22.png"
-});
-var DXQQR = new PTG({
-    iconUrl: "./imgs/icon_25.png"
-});
-var BX_MD = new BX_Base({
-    iconUrl: "./imgs/icon_26.png"
-});
-	var markericon=FST;
-	var add_type_icon_array=[FST,YST,DLK_MD,DLK_LY,SJK,BTK,SJK,BTK,JYJJ,NSH,LLBH,YPS,SP,GGG,DDL,LLM,SXLYH,MFMG,FCJ,PGYZ,YJSW,YJLZ,DXQQR,SYFS,ZWCLR,LYSS,YJSW,DXQQR,SYFS,LYSS];
-	$(".mark-type").change(function(){
-		var marktypeindex=$(".mark-type option:selected").index();
-		$(".mark-item-type").hide().removeClass("on");
-		$(".mark-item-type").eq(marktypeindex).show().addClass("on");
-		var marktypeindex2=$(`.mark-item-type.on option:selected`).attr("op-idx");
-		markericon=add_type_icon_array[marktypeindex2];
-	});
-	
-	$(".mark-item-type").change(function(){
-		var marktypeindex=$(`.mark-item-type.on option:selected`).attr("op-idx");
-		console.log(marktypeindex);
-		markericon=add_type_icon_array[marktypeindex];
-	});
-	var markers=[];
-	var markerid=0;
-	var loactionsarray=[];
-	//在地图上打点函数
-	map.on('click', function (e) {
-		markerid=markers.length+1;
-		var locationtype = `{
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-				${e.latlng.lat}, ${e.latlng.lng}
-                ]
-            },
-            "type": "Feature",
-            "properties": {
-                "popTitle": "${document.getElementById('PopTitle').value ? document.getElementById('PopTitle').value : '风神瞳'}",
-                "popupContent": "${document.getElementById('PopContent').value ? document.getElementById('PopContent').value : '这是一个风神瞳'}",
-            },
-            "id": ${markerid}
-		}`;
-		loactionsarray.push(locationtype);
-		//添加地图标记
-		markerid=markers.length+1;
-		var marker = L.marker([e.latlng.lat, e.latlng.lng],{
-				alt:`${e.latlng.lng},${e.latlng.lat}`,
-				draggable:true,
-				icon:markericon
-			}).addTo(map);
-			marker.on('click', function (event) {
-				var position = marker.getLatLng();
-				$(".modify-x").val(position.lat);
-				$(".modify-y").val(position.lng);
+		$(".switch-btn").click(function(){
+			$(".panel-table").toggle();
+		});
+		var typearray2 = [JS_FST,JS_YST,JS_DLK_MD,JS_DLK_LY,JS_BX_LY,JS_BX_MD,JS_SJK_LY,JS_BTK_LY,JS_SJK_MD,JS_BTK_MD,JS_JYJJ,JS_NSH,JS_LLBH,JS_YPS,JS_SP,JS_GGG,JS_DDL,JS_LLM,JS_SXLYH,JS_MFMG,JS_FCJ,JS_PGYZ,JS_YJSW_LY,JS_YJLZ_LY,JS_DXQQR_LY,JS_SYFS_LY,JS_ZWCLR_LY,JS_LYSS_LY];
+		$(".item-select").change(function(){
+			//查看当前选中项在地图上的点位
+			$(".options-list .map-opts.on").trigger("click");
+			var idxclass=$(".item-select option:selected").attr("class");
+			var layerarray=LayerMap[`Layer_${idxclass}`].getLayers();
+			$(`.options-list .Layer_${idxclass}`).trigger("click");
+			//渲染表格
+			$(".table-options").remove();
+			var index=$(".item-select option:selected").index();
+			for(let i=0;i<typearray2[index].features.length;i++)
+			{
+				$(".data-table tr:last").after(`
+				<tr class="table-options">
+					<td class="table-options-name">${typearray2[index].features[i].properties.popTitle}</td>
+					<td class="table-options-id">${i}</td>
+					<td class="table-options-coordinate">
+						<span class="x-coord">x坐标：<span>${typearray2[index].features[i].geometry.coordinates[0]}</span></span>
+						<span class="y-coord">Y坐标：<span>${typearray2[index].features[i].geometry.coordinates[1]}</span></span>
+					</td>
+					<td class="table-options-description">${typearray2[index].features[i].properties.popupContent}</td>
+					<td class="table-options-operation">
+						<a href="javascript:;" class="checkout" lid="${i}">查看</a>
+						<a href="javascript:;" onclick="TGDialogS('modify_window')">修改点位</a>
+						<a href="javascript:;">删除点位</a>
+					</td>
+				</tr>
+				`)
+			}
+			//查看当前选中项在地图上的点位
+			$(".checkout").click(function(){
+				let index=$(this).attr("lid");
+				layerarray[index].openPopup();
 			});
-			
-		markers.push(marker);
-		marker.bindPopup(`<b>添加的点</b><br><span>初始坐标 x:${e.latlng.lat},<br>y:${e.latlng.lng}</span><br><a href="javascript:delmarker(${markerid});" class="marker-del-btn markerid-${markerid}">删除</a>`);
-		console.log(markers);
-	});
-	//删除对应点位的函数(新增点位，未上传)
-	function delmarker(index){
-		//清除选中的地图标记
-		map.removeLayer(markers[index-1]);
-		//清除选中的地图标记在数组中的值
-		markers.splice(markers[index-1]);
-		console.log(markers);
-	};
-	//删除对应点位的函数(已有点位)
-	function delmarker2(index){
-		//确认点位类别
-		var delmarker2index=0;
-		if(index>0&&index<65)
-		{
-			if(index==1)
-			{Layer_FST.removeLayer(146);}
-			else
-			{Layer_FST.removeLayer(index+146);}
-		}
-	};
-	//清除所有点位及其数据
-	$(".clear-btn").click(function(){
-		//逐一清除地图标记
-		for(i=0;i<markers.length;i++)
-		{map.removeLayer(markers[i]);}
-		//清除储存地图标记的数组
-		markers=[];
-		//清除储存地图标记坐标的数组
-		loactionsarray=[];
-		console.log(markers);
-	});
+		});
 	</script>
 </body>
 </html>
