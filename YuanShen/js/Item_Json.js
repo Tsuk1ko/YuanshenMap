@@ -35177,18 +35177,7 @@ var JS_LLD = {
             "popupContent": "这是一个琉璃袋",
         },
         "id": 4
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-36.80928470205939, 47.68066406250001]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 5
-    }, {
+    },{
         "geometry": {
             "type": "Point",
             "coordinates": [-37.01859574489768, 47.7685546875]
@@ -35378,7 +35367,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-51.99073892124841, 54.64599609375001]
+            "coordinates": [-52.03802036310863, 54.93164062500001]
         },
         "type": "Feature",
         "properties": {
@@ -35389,7 +35378,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-52.03802036310863, 54.93164062500001]
+            "coordinates": [-51.955977892391466, 54.75585937500001]
         },
         "type": "Feature",
         "properties": {
@@ -35400,7 +35389,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-51.955977892391466, 54.75585937500001]
+            "coordinates": [-33.30678923080533, 32.981391134147316]
         },
         "type": "Feature",
         "properties": {
@@ -35411,7 +35400,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-33.30678923080533, 32.981391134147316]
+            "coordinates": [-33.970697997361626, 32.81616210937501]
         },
         "type": "Feature",
         "properties": {
@@ -35422,7 +35411,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-33.970697997361626, 32.81616210937501]
+            "coordinates": [-36.08462129606931, 36.49658203125001]
         },
         "type": "Feature",
         "properties": {
@@ -35433,7 +35422,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.08462129606931, 36.49658203125001]
+            "coordinates": [-36.24427318493909, 36.67236328125001]
         },
         "type": "Feature",
         "properties": {
@@ -35444,7 +35433,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.24427318493909, 36.67236328125001]
+            "coordinates": [-36.27970720524017, 36.25488281250001]
         },
         "type": "Feature",
         "properties": {
@@ -35455,7 +35444,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.27970720524017, 36.25488281250001]
+            "coordinates": [-36.42128244364948, 36.45263671875001]
         },
         "type": "Feature",
         "properties": {
@@ -35466,7 +35455,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.42128244364948, 36.45263671875001]
+            "coordinates": [-35.62158189955967, 38.36425781250001]
         },
         "type": "Feature",
         "properties": {
@@ -35477,7 +35466,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.226550147470896, 36.51855468750001]
+            "coordinates": [-35.83562838887371, 38.34228515625001]
         },
         "type": "Feature",
         "properties": {
@@ -35488,7 +35477,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.62158189955967, 38.36425781250001]
+            "coordinates": [-35.74651225991851, 38.43017578125001]
         },
         "type": "Feature",
         "properties": {
@@ -35499,7 +35488,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.83562838887371, 38.38623046875001]
+            "coordinates": [-34.93998515156043, 39.35302734375001]
         },
         "type": "Feature",
         "properties": {
@@ -35510,7 +35499,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.78217070326606, 38.14453125000001]
+            "coordinates": [-35.0030033952767, 39.18823242187501]
         },
         "type": "Feature",
         "properties": {
@@ -35521,7 +35510,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.83562838887371, 38.34228515625001]
+            "coordinates": [-34.84085858477277, 39.13330078125001]
         },
         "type": "Feature",
         "properties": {
@@ -35532,7 +35521,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.88905007936092, 38.12255859375001]
+            "coordinates": [-34.7506398050501, 39.39697265625001]
         },
         "type": "Feature",
         "properties": {
@@ -35543,7 +35532,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.62158189955967, 38.38623046875001]
+            "coordinates": [-35.666222341034775, 38.331298828125]
         },
         "type": "Feature",
         "properties": {
@@ -35554,7 +35543,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.74651225991851, 38.43017578125001]
+            "coordinates": [-33.7243396617476, 38.023681640625]
         },
         "type": "Feature",
         "properties": {
@@ -35565,7 +35554,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-34.93998515156043, 39.35302734375001]
+            "coordinates": [-34.225429015241396, 35.93627929687501]
         },
         "type": "Feature",
         "properties": {
@@ -35576,7 +35565,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.0030033952767, 39.18823242187501]
+            "coordinates": [-34.56085936708385, 37.50732421875001]
         },
         "type": "Feature",
         "properties": {
@@ -35587,7 +35576,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-34.84085858477277, 39.13330078125001]
+            "coordinates": [-37.160316546736766, 24.763183593750004]
         },
         "type": "Feature",
         "properties": {
@@ -35598,7 +35587,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-34.7506398050501, 39.39697265625001]
+            "coordinates": [-37.14280344371683, 24.708251953125004]
         },
         "type": "Feature",
         "properties": {
@@ -35609,7 +35598,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-35.666222341034775, 38.331298828125]
+            "coordinates": [-37.055177106660814, 24.752197265625004]
         },
         "type": "Feature",
         "properties": {
@@ -35620,7 +35609,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-33.7243396617476, 38.023681640625]
+            "coordinates": [-41.959490098924654, 21.796875000000004]
         },
         "type": "Feature",
         "properties": {
@@ -35631,7 +35620,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-34.225429015241396, 35.93627929687501]
+            "coordinates": [-41.8450126727069, 21.972656250000004]
         },
         "type": "Feature",
         "properties": {
@@ -35642,7 +35631,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-34.56085936708385, 37.50732421875001]
+            "coordinates": [-41.992160233376296, 22.049560546875]
         },
         "type": "Feature",
         "properties": {
@@ -35653,7 +35642,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.949891786813275, 24.6533203125]
+            "coordinates": [-44.229456568301686, 20.236816406250004]
         },
         "type": "Feature",
         "properties": {
@@ -35664,7 +35653,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.14280344371683, 24.49951171875]
+            "coordinates": [-44.221583765457964, 20.456542968750004]
         },
         "type": "Feature",
         "properties": {
@@ -35675,7 +35664,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.160316546736766, 24.763183593750004]
+            "coordinates": [-47.99912799255882, 34.50401852918277]
         },
         "type": "Feature",
         "properties": {
@@ -35686,7 +35675,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.046408899699564, 24.642333984375]
+            "coordinates": [-48.18592508491406, 34.597240614593126]
         },
         "type": "Feature",
         "properties": {
@@ -35697,7 +35686,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-36.85325222344017, 24.78515625]
+            "coordinates": [-47.96785877999252, 34.32128906250001]
         },
         "type": "Feature",
         "properties": {
@@ -35708,7 +35697,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.14280344371683, 24.708251953125004]
+            "coordinates": [-48.03401915864286, 34.33227539062501]
         },
         "type": "Feature",
         "properties": {
@@ -35719,7 +35708,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.770714738496096, 25.642089843750004]
+            "coordinates": [-48.23930899024906, 34.21142578125001]
         },
         "type": "Feature",
         "properties": {
@@ -35730,7 +35719,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-38.58252615935331, 22.335205078125]
+            "coordinates": [-52.96187505907602, 27.608642578125004]
         },
         "type": "Feature",
         "properties": {
@@ -35741,7 +35730,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.151560502236656, 24.719238281250004]
+            "coordinates": [-54.0658357716128, 31.091308593750004]
         },
         "type": "Feature",
         "properties": {
@@ -35752,7 +35741,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-37.055177106660814, 24.752197265625004]
+            "coordinates": [-54.46365264504478, 31.662597656250004]
         },
         "type": "Feature",
         "properties": {
@@ -35763,7 +35752,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-41.959490098924654, 21.796875000000004]
+            "coordinates": [-54.52108149544361, 30.695800781250004]
         },
         "type": "Feature",
         "properties": {
@@ -35774,7 +35763,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-41.8450126727069, 21.972656250000004]
+            "coordinates": [-54.62297813269033, 30.563964843750004]
         },
         "type": "Feature",
         "properties": {
@@ -35785,7 +35774,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-41.992160233376296, 22.049560546875]
+            "coordinates": [-54.52745749948722, 30.838623046875004]
         },
         "type": "Feature",
         "properties": {
@@ -35796,7 +35785,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-41.89409955811395, 21.90673828125]
+            "coordinates": [-55.19820975961101, 31.1169494259406]
         },
         "type": "Feature",
         "properties": {
@@ -35807,7 +35796,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-44.229456568301686, 20.236816406250004]
+            "coordinates": [-55.65665990769862, 26.64228932624448]
         },
         "type": "Feature",
         "properties": {
@@ -35818,7 +35807,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-44.221583765457964, 20.456542968750004]
+            "coordinates": [-55.892606239966156, 26.564604255069188]
         },
         "type": "Feature",
         "properties": {
@@ -35829,7 +35818,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-47.99912799255882, 34.50401852918277]
+            "coordinates": [-56.04043314674207, 26.719974397419737]
         },
         "type": "Feature",
         "properties": {
@@ -35840,7 +35829,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-48.18592508491406, 34.597240614593126]
+            "coordinates": [-56.47462805805593, 27.487792968750004]
         },
         "type": "Feature",
         "properties": {
@@ -35851,7 +35840,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-47.96785877999252, 34.32128906250001]
+            "coordinates": [-56.583691721283365, 29.849853515625]
         },
         "type": "Feature",
         "properties": {
@@ -35862,7 +35851,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-48.03401915864286, 34.33227539062501]
+            "coordinates": [-56.529199140184694, 30.025634765625004]
         },
         "type": "Feature",
         "properties": {
@@ -35873,7 +35862,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-48.23930899024906, 34.21142578125001]
+            "coordinates": [-55.48507903752611, 34.39819335937501]
         },
         "type": "Feature",
         "properties": {
@@ -35884,7 +35873,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-52.96187505907602, 27.608642578125004]
+            "coordinates": [-56.21824731410957, 32.42065429687501]
         },
         "type": "Feature",
         "properties": {
@@ -35895,7 +35884,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-54.0658357716128, 31.091308593750004]
+            "coordinates": [-56.27922114827927, 32.57446289062501]
         },
         "type": "Feature",
         "properties": {
@@ -35906,7 +35895,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-54.46365264504478, 31.662597656250004]
+            "coordinates": [-56.18161638713203, 32.60742187500001]
         },
         "type": "Feature",
         "properties": {
@@ -35917,7 +35906,7 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-54.52108149544361, 30.695800781250004]
+            "coordinates": [-56.0653875114709, 32.90405273437501]
         },
         "type": "Feature",
         "properties": {
@@ -35928,160 +35917,6 @@ var JS_LLD = {
     }, {
         "geometry": {
             "type": "Point",
-            "coordinates": [-54.62297813269033, 30.563964843750004]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 73
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-54.52745749948722, 30.838623046875004]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 74
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-55.19820975961101, 31.1169494259406]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 75
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-55.65665990769862, 26.64228932624448]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 76
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-55.892606239966156, 26.564604255069188]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 77
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.04043314674207, 26.719974397419737]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 78
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.47462805805593, 27.487792968750004]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 79
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.583691721283365, 29.849853515625]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 80
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.529199140184694, 30.025634765625004]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 81
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-55.48507903752611, 34.39819335937501]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 82
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.21824731410957, 32.42065429687501]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 83
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.27922114827927, 32.57446289062501]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 84
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.18161638713203, 32.60742187500001]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 85
-    }, {
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-56.0653875114709, 32.90405273437501]
-        },
-        "type": "Feature",
-        "properties": {
-            "popTitle": "琉璃袋",
-            "popupContent": "这是一个琉璃袋",
-        },
-        "id": 86
-    }, {
-        "geometry": {
-            "type": "Point",
             "coordinates": [-56.13272071536066, 33.12377929687501]
         },
         "type": "Feature",
@@ -36089,7 +35924,7 @@ var JS_LLD = {
             "popTitle": "琉璃袋",
             "popupContent": "这是一个琉璃袋",
         },
-        "id": 87
+        "id": 73
     }]
 }
 

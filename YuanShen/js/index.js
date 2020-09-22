@@ -5,7 +5,7 @@ var map = L.map("map", {
 	center: [-35, 45],
 	zoomDelta: 0.5,
 	zoomSnap: 0.5,
-	maxZoom: 7,
+	maxZoom: 8,
 	minZoom: 4,
 	zoom: 4,
 	maxBounds: t,
@@ -13,7 +13,7 @@ var map = L.map("map", {
 	zoomControl: false
 });
 L.control.attribution({
-	prefix: "<a href='https://bbs.mihoyo.com/ys/article/1328298' target='_blank'>米游社空荧酒馆</a>"
+	prefix: "<a href='https://bbs.mihoyo.com/ys/article/1328298' target='_blank'>使用说明/米游社空荧酒馆</a>"
 }).addTo(map);
 L.control.zoom({
 	zoomInTitle: '+',
