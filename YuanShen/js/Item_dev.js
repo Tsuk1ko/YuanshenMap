@@ -192,19 +192,22 @@ function getIconInfo(Name) {
 function onEachFeature(feature, layer) {
 	var layerNumber = localStorage.getItem("layerNumber");
 	var key = layerNumber + "_" + feature.id;
-	var popupHtml = '<div class="myPopContainer">';
-	popupHtml = '<div class="myPopTitle" >';
-	popupHtml += '<div class="myPopName" >' + feature.properties.popTitle + feature.id + '</div>';
 	var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
-	popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
-	popupHtml += '</div>';
-	popupHtml += '<div class="myPopLine"></div>';
-	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
-	popupHtml += '<div class="myPopComment">' + feature.properties.popupContent + '</div>';
-	popupHtml += '<div class="myPopPicture">';
-	popupHtml += '<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
-	popupHtml += '</div>';
-	popupHtml += '</div>';
+	var popupHtml=`
+			<div class="myPopContainer">
+				<div class="myPopTitle">
+					<div class="myPopName" >${feature.properties.popTitle}${feature.id}</div>
+					<div class="${switchClass}" onclick="MarkPoint(this)" data-key="${key}"></div>
+				</div>
+				<div class="myPopLine"></div>
+				<div class="myPopClose" onclick="closePop()"></div>
+				<div class="myPopComment">${feature.properties.popupContent}</div>
+				<div class="myPopPicture">
+					<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/${key}.png onerror="this.src='./imgs/Icon_51.png'">
+				</div>
+				<a href="javascript:;" class="marker-correct-btn" onclick="TGDialogS('modify_window'),modifymarker(${feature.id})" lid=${feature.id}>修改</a>
+				<a href="javascript:;" class="marker-del-btn" lid=${feature.id}>删除</a>
+			</div>`
 	layer.bindPopup(popupHtml);
 }
 
@@ -300,7 +303,8 @@ for (let i = 0; i < typearray.length; i++) {
 					iconUrl: iconUrl,
 					shadowUrl: doneShadowUrl,
 				}),
-				alt: `${latlng.lng},${latlng.lat}`
+				alt: `${latlng.lng},${latlng.lat}`,
+				draggable:true
 			}, );
 			markers[key] = marker;
 			return marker.addTo(typearray[i][0]);
@@ -357,17 +361,20 @@ map.on('popupopen', function (e) {
 	var key = className.substring(5, className.length);
 	var markedFlag = localStorage.getItem(key);
 	var switchClass = (!(localStorage.getItem(key))) ? "myPopSwitchTodo" : "myPopSwitchDone"
-	var popupHtml = '<div class="myPopContainer">';
-	popupHtml = '<div class="myPopTitle" >';
-	popupHtml += '<div class="myPopName" >' + marker.feature.properties.popTitle + marker.feature.id + '</div>';
-	popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"></div>';
-	popupHtml += '</div>';
-	popupHtml += '<div class="myPopLine"></div>';
-	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
-	popupHtml += '<div class="myPopComment">' + marker.feature.properties.popupContent + '</div>';
-	popupHtml += '<div class="myPopPicture">';
-	popupHtml += '<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
-	popupHtml += '</div>';
-	popupHtml += '</div>';
+	popupHtml=`
+			<div class="myPopContainer">
+				<div class="myPopTitle">
+					<div class="myPopName" >${marker.feature.properties.popTitle}${marker.feature.id}</div>
+					<div class="${switchClass}" onclick="MarkPoint(this)" data-key="${key}"></div>
+				</div>
+				<div class="myPopLine"></div>
+				<div class="myPopClose" onclick="closePop()"></div>
+				<div class="myPopComment">${marker.feature.properties.popupContent}</div>
+				<div class="myPopPicture">
+					<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/${key}.png onerror="this.src='./imgs/Icon_51.png'">
+				</div>
+				<a href="javascript:;" class="marker-correct-btn" onclick="TGDialogS('modify_window'),modifymarker(${marker.feature.id})" lid="${marker.feature.id}">修改</a>
+				<a href="javascript:;" class="marker-del-btn" onclick="delmarker(${marker.feature.id})">删除</a>
+			</div>`
 	marker.bindPopup(popupHtml);
 });
