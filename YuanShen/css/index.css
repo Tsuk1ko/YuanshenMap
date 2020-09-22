@@ -1,7 +1,7 @@
 /* 初始化地图样式，字体 */
 @font-face {
     font-family: font;
-    src: url(http://a8chan.gitee.io/yuan-shen-font/Font/hywh_thin.ttf);
+    src: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/css/hywh_thin.ttf);
 }
 html,
 body,
@@ -42,13 +42,13 @@ body,
 {
     width: 153px;
     height: 50px;
-    background: url(../imgs/con_img/log_reg.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/log_reg.png) no-repeat;
 }
 .save-btn
 {
     width: 40px;
     height: 50px;
-    background: url(../imgs/con_img/save.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/save.png) no-repeat;
     z-index: 200;
 }
 .save-btn.disable
@@ -157,59 +157,59 @@ body,
 }
 .mengde
 {
-    background: url(../imgs/con_img/mengde.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/mengde.png) no-repeat;
 }
 .liyue
 {
-    background: url(../imgs/con_img/liyue.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/liyue.png) no-repeat;
 }
 .daoqi
 {
-    background: url(../imgs/con_img/daoqi.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/daoqi.png) no-repeat;
 }
 .zhidong
 {
-    background: url(../imgs/con_img/zhidong.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/zhidong.png) no-repeat;
 }
 .xumi
 {
-    background: url(../imgs/con_img/xumi.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/xumi.png) no-repeat;
 }
 .fengdan
 {
-    background: url(../imgs/con_img/fengdan.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/fengdan.png) no-repeat;
 }
 .munata
 {
-    background: url(../imgs/con_img/munata.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/munata.png) no-repeat;
 }
 .mengde.on
 {
-    background: url(../imgs/con_img/mengde-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/mengde-on.png) no-repeat;
 }
 .liyue.on
 {
-    background: url(../imgs/con_img/liyue-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/liyue-on.png) no-repeat;
 }
 .daoqi.on
 {
-    background: url(../imgs/con_img/daoqi-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/daoqi-on.png) no-repeat;
 }
 .zhidong.on
 {
-    background: url(../imgs/con_img/zhidong-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/zhidong-on.png) no-repeat;
 }
 .xumi.on
 {
-    background: url(../imgs/con_img/xumi-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/xumi-on.png) no-repeat;
 }
 .fengdan.on
 {
-    background: url(../imgs/con_img/fengdan-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/fengdan-on.png) no-repeat;
 }
 .munata.on
 {
-    background: url(../imgs/con_img/munata-on.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/munata-on.png) no-repeat;
 }
 .area-text
 {
@@ -235,7 +235,7 @@ body,
     left: 33px;
     width: 365px;
     height: 593px;
-    background: url(../imgs/con_img/border.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/border.png) no-repeat;
     background-size: 100% 100%;
     z-index: 200;
 }
@@ -287,7 +287,7 @@ body,
     left: -37px;
     width: 79px;
     height: 79px;
-    background: url(../imgs/con_img/img-border.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/img-border.png) no-repeat;
     background-size: 100% 100%;
 }
 .map-opts-icon
@@ -353,7 +353,7 @@ body,
     left: -77px;
     width: 95px;
     height: 82px;
-    background:url(../imgs/con_img/fold.png) no-repeat;
+    background:url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/fold.png) no-repeat;
     background-size: 100% 100%;
     z-index: 200;
 }
@@ -411,7 +411,7 @@ body,
     right: 5px;
     width: 20px;
     height: 20px;
-    background:url(../imgs/con_img/icon_close.png) no-repeat;
+    background:url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/icon_close.png) no-repeat;
     background-size: 100% 100%;
 }
 .myPopTitle {
@@ -516,7 +516,7 @@ body,
     position: absolute !important;
     right: 12px !important;
     top: 14px !important;
-    background: url(../imgs/con_img/popClose.png);
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/popClose.png);
     box-sizing: border-box !important;
     width: 32px;
     height: 31px;
@@ -529,7 +529,7 @@ body,
     height: 38px;
     left: 0px;
     top: 39px;
-    background: url(../imgs/con_img/Todo.png);
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/Todo.png);
     cursor: pointer;
     flex: none;
     order: 1;
@@ -543,7 +543,7 @@ body,
     height: 38px;
     left: 0px;
     top: 39px;
-    background: url(../imgs/con_img/Done.png);
+    background: url(https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/imgs/con_img/Done.png);
     cursor: pointer;
     flex: none;
     order: 1;

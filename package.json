@@ -1,0 +1,16 @@
+{
+  "name": "yuanshen-map",
+  "version": "1.0.0",
+  "repository": "https://github.com/Tsuk1ko/YuanshenMap.git",
+  "author": "神代綺凜 <i@loli.best>",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
+    "html-minifier-terser": "^5.1.1",
+    "minify": "^5.2.0"
+  }
+}

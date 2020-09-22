@@ -1,3 +1,4 @@
+var BASE_URL = 'https://cdn.jsdelivr.net/gh/Tsuk1ko/YuanshenMap@gh-pages/';
 //初始化地图
 t = L.latLngBounds([0, 0], [-66.5, 90]);
 var map = L.map("map", {
@@ -23,7 +24,7 @@ L.TileLayer.T = L.TileLayer.extend({
 	getTileUrl: function (coords) {
 		x = coords.x
 		y = coords.y
-		return 'http://a8chan.gitee.io/yuan-shen-dt/tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
+		return BASE_URL + 'tiles_test/' + coords.z + '/ppp' + x + '_' + y + '.png';
 	}
 });
 L.tileLayer.t = function () {
@@ -99,7 +100,7 @@ function getIconInfo(Name) {
 		case "DLK": { //地灵龛
 			var icon_base = L.Icon.extend({
 				options: {
-					shadowUrl: "./imgs/loc_notfind.svg",
+					shadowUrl: BASE_URL + "imgs/loc_notfind.svg",
 					iconSize: [24, 23], // size of the icon
 					shadowSize: [40, 40], // size of the shadow
 					iconAnchor: [12, 34.5], // point of the icon which will correspond to marker's location
@@ -112,7 +113,7 @@ function getIconInfo(Name) {
 		case "TC": { //特产
 			var icon_base = L.Icon.extend({
 				options: {
-					shadowUrl: "./imgs/loc_notfind.svg",
+					shadowUrl: BASE_URL + "imgs/loc_notfind.svg",
 					iconSize: [18, 18], // size of the icon
 					shadowSize: [28, 28], // size of the shadow
 					iconAnchor: [8.8, 25], // point of the icon which will correspond to marker's location
@@ -137,7 +138,7 @@ function getIconInfo(Name) {
 		case "JYG": { //精英怪
 			var icon_base = L.Icon.extend({
 				options: {
-					shadowUrl: "./imgs/loc_notfind.svg",
+					shadowUrl: BASE_URL + "imgs/loc_notfind.svg",
 					iconSize: [23.4, 23.4], // size of the icon
 					shadowSize: [38, 38], // size of the shadow
 					iconAnchor: [11.7, 33.4], // point of the icon which will correspond to marker's location
@@ -150,7 +151,7 @@ function getIconInfo(Name) {
 		case "PTG": { //普通怪
 			var icon_base = L.Icon.extend({
 				options: {
-					shadowUrl: "./imgs/loc_notfind.svg",
+					shadowUrl: BASE_URL + "imgs/loc_notfind.svg",
 					iconSize: [17, 17], // size of the icon
 					shadowSize: [28, 28], // size of the shadow
 					iconAnchor: [8.5, 24.5], // point of the icon which will correspond to marker's location
@@ -163,7 +164,7 @@ function getIconInfo(Name) {
 		case "BX": { // 宝箱
 			var icon_base = L.Icon.extend({
 				options: {
-					shadowUrl: "./imgs/loc_notfind.svg",
+					shadowUrl: BASE_URL + "imgs/loc_notfind.svg",
 					iconSize: [16.5, 17], // size of the icon
 					shadowSize: [28, 28], // size of the shadow
 					iconAnchor: [8.2, 24.3], // point of the icon which will correspond to marker's location
@@ -176,7 +177,7 @@ function getIconInfo(Name) {
 		default: { //默认
 			var icon_base = L.Icon.extend({
 				options: {
-					shadowUrl: "./imgs/loc_notfind.svg",
+					shadowUrl: BASE_URL + "imgs/loc_notfind.svg",
 					iconSize: [17, 17], // size of the icon
 					shadowSize: [28, 28], // size of the shadow
 					iconAnchor: [8.5, 24.5], // point of the icon which will correspond to marker's location
@@ -203,7 +204,7 @@ function onEachFeature(feature, layer) {
 	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
 	popupHtml += '<div class="myPopComment">' + feature.properties.popupContent + '</div>';
 	popupHtml += '<div class="myPopPicture">';
-	popupHtml += '<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
+	popupHtml += '<img src=' + BASE_URL + 'comment_png/' + key + '.png onerror="this.src=\'' + BASE_URL + 'imgs/Icon_51.png\'">';
 	popupHtml += '</div>';
 	popupHtml += '</div>';
 	layer.bindPopup(popupHtml);
@@ -259,10 +260,10 @@ function MarkPoint(element) {
 	localStorage.setItem(key, newValue ? "1" : "");
 
 	var doneUrl = newValue ? "_done" : ""
-	var iconUrl = "./imgs/icon_" + layerNumber + doneUrl + ".png";
+	var iconUrl = BASE_URL + "imgs/icon_" + layerNumber + doneUrl + ".png";
 
 	var currentShowdow = currentIcon.prototype.options.shadowUrl
-	var downShadow = newValue ? "./imgs/loc_find.svg" : "./imgs/loc_notfind.svg"
+	var downShadow = newValue ? BASE_URL + "imgs/loc_find.svg" : BASE_URL + "imgs/loc_notfind.svg"
 	var doneShadowUrl = currentShowdow ? downShadow : ""
 	var newIcon = new currentIcon({
 		className: "mark-" + key,
@@ -291,10 +292,10 @@ for (let i = 0; i < typearray.length; i++) {
 				markedFlag = true;
 			}
 			var doneUrl = markedFlag ? "_done" : ""
-			var iconUrl = "./imgs/icon_" + i + doneUrl + ".png";
+			var iconUrl = BASE_URL + "imgs/icon_" + i + doneUrl + ".png";
 
 			var currentShowdow = currentIcon.prototype.options.shadowUrl
-			var downShadow = markedFlag ? "./imgs/loc_find.svg" : "./imgs/loc_notfind.svg"
+			var downShadow = markedFlag ? BASE_URL + "imgs/loc_find.svg" : BASE_URL + "imgs/loc_notfind.svg"
 			var doneShadowUrl = currentShowdow ? downShadow : ""
 			var marker = L.marker([latlng.lng, latlng.lat], {
 				icon: new currentIcon({
@@ -368,7 +369,7 @@ map.on('popupopen', function (e) {
 	popupHtml += '<div class="myPopClose" onclick="closePop()"></div>';
 	popupHtml += '<div class="myPopComment">' + marker.feature.properties.popupContent + '</div>';
 	popupHtml += '<div class="myPopPicture">';
-	popupHtml += '<img src=http://a8chan.gitee.io/yuan-shen-dt/comment_png/' + key + '.png onerror="this.src=\'./imgs/Icon_51.png\'">';
+	popupHtml += '<img src=' + BASE_URL + 'comment_png/' + key + '.png onerror="this.src=\'' + BASE_URL + 'imgs/Icon_51.png\'">';
 	popupHtml += '</div>';
 	popupHtml += '</div>';
 	marker.bindPopup(popupHtml);
